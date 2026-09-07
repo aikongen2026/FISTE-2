@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061713"><meta name="description" content="Vestfjella Fiske – live ferskvannsguide for Aremark.">
+<title>Vestfjella Fiske</title>
+<link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://unpkg.com"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/style.css?v=1.0">
+</head>
+<body>
+<div class="app" id="appState" data-state="loading">
+<header>
+  <div class="brand"><span class="eyebrow">FERSKVANN · VESTFJELLA · AREMARK</span><h1>Vestfjella Fiske <span>REV 1</span></h1><p id="status">Starter liveanalysen …</p></div>
+  <div class="actions">
+    <label><span>FISKETYPE</span><select id="fishType"><option value="orret">Ørret</option><option value="abbor">Abbor</option><option value="all">Alle ferskvannsarter</option></select></label>
+    <label><span>MÅL</span><select id="goal"><option value="numbers">Mest fisk</option><option value="big">Størst fisk</option></select></label>
+    <label><span>METODE</span><select id="method"><option value="all">Alle lovlige</option><option value="sluk">Sluk</option><option value="spinner">Spinner</option><option value="mark">Mark/dupp</option><option value="flue">Flue</option></select></label>
+    <label><span>TILKOMST</span><select id="access"><option value="all">Alle</option><option value="easy">Enkel</option><option value="wild">Mer naturpreg</option></select></label>
+    <label><span>TID</span><select id="timeMode"><option value="now">Nå</option><option value="+3">Om 3 timer</option><option value="+6">Om 6 timer</option><option value="evening">Neste kveld</option><option value="tomorrow">I morgen tidlig</option></select></label>
+    <label><span>KARTTYPE</span><select id="mapStyle"><option value="standard">Standardkart</option><option value="satellite">Satellittkart</option><option value="depth">NVE dybdekart</option></select></label>
+    <button id="allWaters" class="secondary">Vis alle vann</button><button id="locate">◎ Finn meg</button>
+  </div>
+</header>
+<main>
+  <section class="map-wrap"><div id="map"></div><div class="legend"><span><i class="excellent"></i> svært god</span><span><i class="good"></i> god</span><span><i class="fair"></i> brukbar</span><span><i class="fly"></i> kun flue</span></div></section>
+  <aside id="results">
+    <section class="card rules"><div class="card-head"><div><span class="card-label">VESTFJELLA-REGLER</span><h2>Fisk lovlig</h2></div><span class="source-dot">Inatur</span></div><div id="rulesGrid"></div></section>
+    <section class="card hero"><div class="card-head"><div><span class="card-label">FISK NÅ</span><h2>Beste vann akkurat nå</h2></div><span id="goalBadge" class="source-dot">Ørret</span></div><div id="bestNow"><p class="muted">Analyserer …</p></div></section>
+    <section class="card"><div class="card-head"><div><span class="card-label">FORHOLD</span><h2>Vær over Vestfjella</h2></div><span class="source-dot">MET</span></div><div id="weatherGrid" class="weather-grid"></div><p id="thermalNote" class="caveat"></p></section>
+    <section class="card timeline"><div class="card-head"><div><span class="card-label">PLANLEGG</span><h2>Når bør du fiske?</h2></div><span class="source-dot">Live</span></div><div id="timeHint"></div></section>
+    <section class="card waters-card"><div class="card-head"><div><span class="card-label">RANGERT NÅ</span><h2>Vann og anbefalinger</h2></div><span id="waterCount" class="source-dot">10 vann</span></div><div id="waterList"></div></section>
+    <section class="card catch-card"><div class="card-head"><div><span class="card-label">MIN HISTORIKK</span><h2>Fangstlogg</h2></div><span class="source-dot">Lokalt</span></div>
+      <form id="catchForm"><div class="form-grid"><label><span>Vann</span><select id="catchWater" name="water"></select></label><label><span>Resultat</span><select name="result"><option value="fangst">Fangst</option><option value="ingen">Ingen fangst</option></select></label><label><span>Lengde cm</span><input name="length" type="number" min="1" max="120" step="0.5"></label><label><span>Agn</span><input id="catchLure" name="lure" placeholder="Sluk/flue/mark"></label><label class="span-two"><span>Notat</span><textarea name="note" rows="2" maxlength="300"></textarea></label></div><button type="submit">Lagre tur</button></form><div id="catchEntries"></div>
+    </section>
+    <section class="card sources"><span class="card-label">KILDER OG METODE</span><p>Scoren er en veiledende beslutningsstøtte som kombinerer vær, tidspunkt, vannets profil, lovlig metode og kuraterte Vestfjella-råd. Lufttemperatur brukes ikke som om den var vanntemperatur.</p></section>
+  </aside>
+</main>
+</div>
+<dialog id="imageDialog"><button id="closeImage">×</button><img id="dialogImage" alt=""><p id="dialogCaption"></p></dialog>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="/app.js?v=1.0"></script>
+</body></html>

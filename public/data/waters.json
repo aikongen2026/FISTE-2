@@ -1,0 +1,247 @@
+{
+  "updated": "2026-09-07",
+  "area": "Vestfjella, Aremark",
+  "official": {
+    "season": "1. januar–30. september",
+    "minTroutCm": 25,
+    "noLiveBaitFish": true,
+    "noBoatForFishing": true,
+    "tollNok": 50,
+    "inaturUrl": "https://www.inatur.no/fiske/5105163ce4b02d9c4217516b",
+    "huts": 2
+  },
+  "waters": [
+    {
+      "id": "holmtjern",
+      "name": "Holmtjern",
+      "lat": 59.2649,
+      "lon": 11.5887,
+      "access": "svært enkel",
+      "accessScore": 5,
+      "flyOnly": false,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "base": 84,
+      "big": 66,
+      "best": "07–10 og 17–mørkt",
+      "character": "Tilrettelagt med kort vei fra parkering og fiskebrygge. Fisk landnært, odder, innos og utløp.",
+      "tips": "Morgen/kveld: rød/prikkete. Midt på dagen: mark eller spinner. Kveld: rød/oransje langs kantene.",
+      "source": "https://finnfisk.no/vann/aremark/holmtjernet"
+    },
+    {
+      "id": "kutjern",
+      "name": "Kutjern",
+      "lat": 59.27555,
+      "lon": 11.585,
+      "access": "svært enkel",
+      "accessScore": 5,
+      "flyOnly": false,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "base": 82,
+      "big": 64,
+      "best": "07–10 og 17–mørkt",
+      "character": "Tilrettelagt og lett tilgjengelig. Svak til moderat vind inn mot land er gunstig.",
+      "tips": "Morgen/kveld: liten rød sluk. Dagtid med krusning: spinner. Sol og blankt: mark.",
+      "source": "https://finnfisk.no/vann/aremark/kutjernet"
+    },
+    {
+      "id": "setertjern",
+      "name": "Sætertjern",
+      "lat": 59.2587,
+      "lon": 11.59655,
+      "access": "enkel",
+      "accessScore": 4,
+      "flyOnly": true,
+      "methods": [
+        "flue"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "base": 79,
+      "big": 70,
+      "best": "08–11 og 16–mørkt",
+      "character": "Kun fluefiske. Prioriter vak, insektaktivitet og rolige bukter/kantsoner.",
+      "tips": "Morgen: nymfe. Formiddag: Klinkhammer/CDC. Kveld: maur, bibio eller vårflue.",
+      "source": "https://finnfisk.no/vann/aremark/setertjernet"
+    },
+    {
+      "id": "midtre-ormtjern",
+      "name": "Midtre Ormtjern",
+      "lat": 59.25275,
+      "lon": 11.59775,
+      "access": "enkel",
+      "accessScore": 4,
+      "flyOnly": true,
+      "methods": [
+        "flue"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "base": 80,
+      "big": 72,
+      "best": "09–11:30 og 16–mørkt",
+      "character": "Kun fluefiske. Rolig presentasjon og aktiv observasjon etter vak.",
+      "tips": "Start med tørrflue ved vak. Ingen vak etter 30–45 min: gå over til liten mørk nymfe.",
+      "source": "https://finnfisk.no/vann/aremark/ormetjenna-midtre"
+    },
+    {
+      "id": "stubbetjern",
+      "name": "Stubbetjern",
+      "lat": 59.27935,
+      "lon": 11.58855,
+      "access": "enkel",
+      "accessScore": 4,
+      "flyOnly": true,
+      "methods": [
+        "flue"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "base": 78,
+      "big": 69,
+      "best": "08–11 og siste 2 timer før mørket",
+      "character": "Kun fluefiske. Fisk langs kantsoner og prioriter skumring/rolige forhold.",
+      "tips": "Streaking Caddis, foam-maur, små mørke nymfer og bibio. Kveldsøkta prioriteres.",
+      "source": "https://finnfisk.no/vann/aremark/stubbetjernet"
+    },
+    {
+      "id": "skogtjern2",
+      "name": "Skogtjern 2",
+      "lat": 59.25225,
+      "lon": 11.5926,
+      "access": "enkel",
+      "accessScore": 4,
+      "flyOnly": true,
+      "methods": [
+        "flue"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "base": 77,
+      "big": 67,
+      "best": "09–12 og 16–mørkt",
+      "character": "Kun fluefiske. Rolige dager med litt varme utover ettermiddagen er interessante.",
+      "tips": "Bytt mellom tørrflue og nymfe. Maur er joker på lune kvelder.",
+      "source": "https://finnfisk.no/vann/aremark/skotjenna-andre"
+    },
+    {
+      "id": "elgtjern",
+      "name": "Elgtjern",
+      "lat": 59.26025,
+      "lon": 11.58985,
+      "access": "middels/enkel",
+      "accessScore": 3,
+      "flyOnly": false,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "base": 81,
+      "big": 73,
+      "best": "07–10 og 16–mørkt",
+      "character": "Aktivt fiske lønner seg. Flytt etter vak og fisk nes, myrkanter og vindpåvirket land.",
+      "tips": "Overskyet: lys/sølvaktig sluk. Kveld: rød/kobber langs nes og myrkanter.",
+      "source": "https://finnfisk.no/vann/aremark/elgtjern"
+    },
+    {
+      "id": "laua",
+      "name": "Laua",
+      "lat": 59.26515,
+      "lon": 11.5801,
+      "access": "middels",
+      "accessScore": 3,
+      "flyOnly": false,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "base": 83,
+      "big": 76,
+      "best": "07–10 og 17–mørkt",
+      "character": "Mer naturvannpreg. Overskyet vær, etter regn og synlig vakaktivitet er spesielt interessant.",
+      "tips": "Overskyet: rød/oransje. Sol og blankt: mindre sluk eller mark.",
+      "source": "https://finnfisk.no/vann/aremark/lauva"
+    },
+    {
+      "id": "skibuvannet",
+      "name": "Skibuvannet",
+      "lat": 59.28495,
+      "lon": 11.59255,
+      "access": "middels",
+      "accessScore": 3,
+      "flyOnly": false,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "base": 82,
+      "big": 84,
+      "best": "08–11 og 15–mørkt",
+      "character": "Større vann. Vindside, viker, innløp og overganger mot dypere vann er nøkkelområder.",
+      "tips": "Bruk litt større sluk. Vind og lysere forhold: rosa/sølv. Kveld/mørkere vann: bred rød.",
+      "source": "https://finnfisk.no/vann/aremark/skibuvannet"
+    },
+    {
+      "id": "botiltjernet",
+      "name": "Botiltjernet",
+      "lat": 59.2872,
+      "lon": 11.5837,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "flyOnly": false,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "base": 75,
+      "big": 65,
+      "best": "08–11 og 16–mørkt",
+      "character": "Mindre offentlig detaljdokumentasjon. Fisk aktivt og flytt mellom plasser.",
+      "tips": "Gi hver plass 10–15 kast. Ingen aktivitet: flytt. Smal rød som startvalg, gul/oransje i gråvær.",
+      "source": "https://finnfisk.no/vann/aremark/botiltjernet"
+    }
+  ]
+}

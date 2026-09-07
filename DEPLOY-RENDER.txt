@@ -1,0 +1,9 @@
+ENKEL PUBLISERING
+1. Opprett et nytt GitHub-repo, f.eks. VESTFJELLA-FISKE.
+2. Add file -> Upload files -> dra inn ALT innholdet i denne mappen -> Commit changes.
+3. Render -> New Web Service -> velg repoet.
+4. Build Command: npm install
+5. Start Command: npm start
+6. Health Check Path: /api/health
+
+Etter deploy: åpne /api/health. Det skal stå Vestfjella Fiske og REV 1.

@@ -1,0 +1,2 @@
+LOKALT: dobbeltklikk START-HER.bat.
+GITHUB/RENDER: last opp ALLE filene og mappene i denne mappen til et nytt repo, opprett Web Service i Render, og bruk npm install / npm start.
