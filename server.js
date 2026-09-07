@@ -6,7 +6,7 @@ const os = require('os');
 let PNG = null;
 function pngParser(){ if(!PNG) ({PNG}=require('pngjs')); return PNG; }
 const PACKAGE = require('./package.json');
-const APP_REVISION = 'STABLE 1.2';
+const APP_REVISION = 'STABLE 1.3';
 
 const PORT = Number(process.env.PORT || 3000);
 const NVE_API_KEY = String(process.env.NVE_API_KEY || '').trim();

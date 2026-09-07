@@ -16,7 +16,7 @@ test('Vestfjella UI starts in the correct area and contains only freshwater choi
   const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
   const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
   assert.match(html,/Vestfjella Fiske/);
-  assert.match(html,/STABLE 1\.2/);
+  assert.match(html,/STABLE 1\.3/);
   assert.match(html,/value="orret" selected/);
   assert.match(html,/value="abbor"/);
   assert.match(html,/Ingen – vis ørret \+ abbor/);
@@ -111,7 +111,7 @@ test('all mode is freshwater trout plus perch, not the old sea multi-mode',()=>{
 
 test('service worker caches the stable shell and real cropped lure images',()=>{
   const sw=fs.readFileSync(path.join(root,'sw.js'),'utf8');
-  assert.match(sw,/vestfjella-fiste-stable-1-2/);
+  assert.match(sw,/vestfjella-fiste-stable-1-3/);
   assert.match(sw,/\/lures\/vestfjella\/rosa-solv-prikket\.jpg/);
   assert.match(sw,/\/data\/vestfjella-waters\.json/);
   assert.doesNotMatch(sw,/\/lures\/user\//);
@@ -167,4 +167,16 @@ test('server includes source knowledge adjustment and map aliases',()=>{
   assert.match(source,/sourceKnowledgeAdjustment/);
   assert.match(source,/mapAliases/);
   assert.match(source,/areaDaaApprox/);
+});
+
+
+test('access filter is restored and filters the water directory and zones',()=>{
+  const html=fs.readFileSync(path.join(__dirname,'../public/index.html'),'utf8');
+  const app=fs.readFileSync(path.join(__dirname,'../public/app.js'),'utf8');
+  assert.match(html,/id="accessFilter"/);
+  assert.match(html,/Lett tilkomst/);
+  assert.match(html,/Mer naturpreg \/ usikker/);
+  assert.match(app,/function accessMatchesItem/);
+  assert.match(app,/filterZonesByAccess/);
+  assert.match(app,/Tilkomst:/);
 });

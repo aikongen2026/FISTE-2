@@ -1,4 +1,4 @@
-Vestfjella Fiske – STABLE 1.2
+Vestfjella Fiske – STABLE 1.3
 
 Build command: npm install
 Start command: npm start

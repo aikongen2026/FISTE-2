@@ -1,6 +1,6 @@
 {
   "name": "vestfjella-fiske-stable",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "appRevision": 3,
   "description": "Vestfjella Fiske – Fiste ferskvannsmotor med kildebasert vannregister, bestand/kultivering, MET-vær, NVE og personlig slukboks.",
   "main": "server.js",

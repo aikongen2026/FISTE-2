@@ -1,4 +1,4 @@
-# Vestfjella Fiske – STABLE 1.2
+# Vestfjella Fiske – STABLE 1.3
 
 Dette er ferskvannsutgaven av den fungerende **Fiste REV26-motoren**, tilpasset Vestfjella/Aremark.
 
