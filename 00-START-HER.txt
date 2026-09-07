@@ -1,4 +1,4 @@
-VESTFJELLA FISKE – STABLE 1.0
+VESTFJELLA FISKE – STABLE 1.2
 
 ENKLEST PUBLISERING:
 1. Pakk ut hele ZIP-filen.
@@ -10,6 +10,6 @@ ENKLEST PUBLISERING:
 
 Forventet:
 "app":"Vestfjella Fiske"
-"version":"stable-1.0"
+"version":"stable-1.2"
 
 Dette er ikke en ny lapp på REV4. Det er ferskvannsappen bygget på den fungerende Fiste REV26-kjernen.

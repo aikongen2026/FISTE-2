@@ -1,4 +1,4 @@
-# Vestfjella Fiske – STABLE 1.0
+# Vestfjella Fiske – STABLE 1.2
 
 Dette er ferskvannsutgaven av den fungerende **Fiste REV26-motoren**, tilpasset Vestfjella/Aremark.
 
@@ -33,7 +33,7 @@ Den gamle løsningen brukte et separat koordinat-/verifiseringslag og kunne ende
 3. **Add file → Upload files**.
 4. Dra inn alt innholdet i denne mappen og commit til `main`.
 5. Render deployer automatisk. Hvis ikke: **Manual Deploy → Deploy latest commit**.
-6. Åpne `/api/health` på Render-adressen. Den skal vise `Vestfjella Fiske` og `stable-1.0`.
+6. Åpne `/api/health` på Render-adressen. Den skal vise `Vestfjella Fiske` og `stable-1.2`.
 
 Det er under 100 filer i pakken, så den kan lastes opp i én omgang via GitHub-nettsiden.
 

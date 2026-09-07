@@ -1,468 +1,2612 @@
 {
-  "title": "Vestfjella Utmarkslag – kjent vannliste",
-  "source": "Perfish/Vestfjella Utmarkslag og Inatur",
-  "note": "Vannlisten er et register. Kartsoner tegnes bare fra faktisk vanngeometri fra OpenStreetMap; gamle estimerte koordinater brukes ikke.",
+  "title": "Vestfjella Utmarkslag – vannregister med kildegrad",
+  "source": "Inatur / FishKing / Finnfisk-NVE / OpenStreetMap",
+  "note": "96 vann totalt er oppgitt av Inatur. Dette registeret inneholder digitalt navngitte vann vi kan bruke i appen; lokale navn kan avvike fra offentlige kart. Bestandsfelt er bare satt når åpne kilder støtter dem.",
   "count": 92,
   "waters": [
     {
       "name": "Botiltjernet",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 75,
+      "big": 65,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "areaKm2Official": 0.01,
+      "areaSource": "NVE innsjøregister via Finnfisk",
+      "sourceConfidence": "medium_high",
+      "sourceNote": "Finnfisk oppgir 0,01 km² fra NVE. Artsfunn rundt vannet er GBIF-nærfunn og behandles ikke som sikker bestand.",
+      "mapAliases": [
+        "Botiltjern"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "hiddenGem": false
     },
     {
       "name": "Bastianvanna",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 77,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "open_lake",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 180,
+      "depth": 7,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Revolvertjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Knuttjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Lille Berggrøttjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Berggrøttjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Skibuvannet",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 82,
+      "big": 84,
+      "waterTone": "mixed",
+      "waterBody": "open_lake",
+      "troutBias": 6,
+      "perchBias": 7,
+      "size": 180,
+      "depth": 7,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Større vann med stor ørret og abbor.",
+      "trophyPotential": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing omtaler Skibuvann som et av områdets større vann med stor ørret samt abbor.",
+      "mapAliases": [
+        "Skibuvann"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Øvre Svensketjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 76,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "hiddenGem": true,
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing lokal omtale",
+      "populationNote": "Omtalt som mulig «skattekiste»/småvann med ørretutsetting i området. Smygfiske og lett utstyr anbefales.",
+      "trophyPotential": "high",
+      "sourceConfidence": "medium",
+      "sourceNote": "FishKing nevner vannet som mulig småvann-skattekiste; vis hensyn og ikke overbeskatt små bestander.",
+      "mapAliases": []
     },
     {
       "name": "Loppetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Stubbetjerndyveln",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 2,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Tystbasttjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Nedre Svensketjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 76,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "hiddenGem": true,
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing lokal omtale",
+      "populationNote": "Omtalt som mulig «skattekiste»/småvann med ørretutsetting i området. Smygfiske og lett utstyr anbefales.",
+      "trophyPotential": "high",
+      "sourceConfidence": "medium",
+      "sourceNote": "FishKing nevner vannet som mulig småvann-skattekiste; vis hensyn og ikke overbeskatt små bestander.",
+      "mapAliases": []
     },
     {
       "name": "Vesle Blanketjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Blanketjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Ørret og storvokst abbor omtales.",
+      "trophyPotential": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing beskriver stor og feit abbor samt ørret.",
+      "mapAliases": [
+        "Store Blanketjern"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Sjølja",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Helgetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Kroktjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Stubbetjern",
       "flyOnly": true,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "enkel",
+      "accessScore": 4,
+      "base": 78,
+      "big": 69,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "flue"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "speciesEvidence": "FishKing/Inatur",
+      "populationNote": "Selvforsynt ørretbestand, også abbor. Kun fluefiske.",
+      "trophyPotential": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing beskriver selvforsynt ørretbestand og abbor; Inatur bekrefter kun fluefiske.",
+      "mapAliases": [
+        "Stubbetjernet"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Skarpsnoputten",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 2,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Sambudalstjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Voletjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Kutjern",
       "flyOnly": false,
-      "accessiblePier": true
+      "accessiblePier": true,
+      "access": "svært enkel",
+      "accessScore": 5,
+      "base": 82,
+      "big": 64,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing/Inatur",
+      "populationNote": "Rent ørretvann med forholdsvis mye ørret; fisk opp mot rundt 4 hg omtales.",
+      "abundance": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing beskriver Kutjern som rent ørretvann. Fiskebrygge for bevegelseshemmede.",
+      "mapAliases": [
+        "Kutjernet"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Vestre Andetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Østre Andetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Lille Sørrivesetertjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Sørrivesetertjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Riveputt",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 2,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Snesetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Laulunddalsdyvelen",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 2,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Sølvskutt-tjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Østre Brutjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Hestetjern (Kjelen)",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Vestre Brutjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Midtre Brutjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Øvre Laua",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "enkel",
+      "accessScore": 4,
+      "base": 85,
+      "big": 81,
+      "waterTone": "mixed",
+      "waterBody": "open_lake",
+      "troutBias": 6,
+      "perchBias": 3,
+      "size": 220,
+      "depth": 7,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "hiddenGem": true,
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing lokal omtale",
+      "populationNote": "Omtalt som mulig «skattekiste»/småvann med ørretutsetting i området. Smygfiske og lett utstyr anbefales.",
+      "trophyPotential": "high",
+      "sourceConfidence": "medium",
+      "sourceNote": "FishKing nevner vannet som mulig småvann-skattekiste; vis hensyn og ikke overbeskatt små bestander.",
+      "mapAliases": []
     },
     {
       "name": "Midtre Kampetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Østre Kampetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Andetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Rørmyrtjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 4,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Vestre Kampetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Laua",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 83,
+      "big": 76,
+      "waterTone": "mixed",
+      "waterBody": "open_lake",
+      "troutBias": 6,
+      "perchBias": 0,
+      "size": 180,
+      "depth": 7,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Rent ørretvann og omtalt som spennende.",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing omtaler Laua som et rent ørretvann.",
+      "mapAliases": [
+        "Lauva",
+        "Lauvå"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Holmtjern",
       "flyOnly": false,
-      "accessiblePier": true
+      "accessiblePier": true,
+      "access": "svært enkel",
+      "accessScore": 5,
+      "base": 84,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing/Inatur",
+      "populationNote": "Forholdsvis stor ørretbestand; fine steikefisker omtales.",
+      "abundance": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing omtaler god ørretbestand. Fiskebrygge for bevegelseshemmede.",
+      "mapAliases": [
+        "Holmetjern",
+        "Holmtjernet",
+        "Holmetjernet"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Nordre Skotjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 79,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Skotjerna omtales som gode ørretvann med kilosfiskmulighet.",
+      "trophyPotential": "high",
+      "sourceConfidence": "medium_high",
+      "sourceNote": "FishKing omtaler de tre Skotjerna samlet som gode ørretvann med mulighet for kilosfisk.",
+      "mapAliases": [
+        "Nordre Skotjenna"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Elgtjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/enkel",
+      "accessScore": 3,
+      "base": 81,
+      "big": 73,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 6,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Kun ørret; kan bli stor.",
+      "trophyPotential": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing omtaler Elgetjern/Elgtjern som rent ørretvann med storfiskmulighet.",
+      "mapAliases": [
+        "Elgetjern",
+        "Elgtjernet"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Hageputten",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 2,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Fyldengørvann",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 77,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "open_lake",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 180,
+      "depth": 7,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Nordre Hagetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Søndre Krokvann",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 85,
+      "big": 79,
+      "waterTone": "mixed",
+      "waterBody": "open_lake",
+      "troutBias": 6,
+      "perchBias": 8,
+      "size": 180,
+      "depth": 7,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Ørret kan oppnå anselig størrelse; abboren beskrives som trinn og fin.",
+      "trophyPotential": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing omtaler storfiskpotensial for begge arter.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Østre Krokvann",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 85,
+      "big": 79,
+      "waterTone": "mixed",
+      "waterBody": "open_lake",
+      "troutBias": 6,
+      "perchBias": 8,
+      "size": 180,
+      "depth": 7,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Sætertjern",
       "flyOnly": true,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "enkel",
+      "accessScore": 4,
+      "base": 79,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 6,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "flue"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing/Inatur",
+      "populationNote": "God ørretbestand, mulighet for stor fisk. Kun fluefiske.",
+      "trophyPotential": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing og Inatur omtaler dette som fluevann med god ørretbestand.",
+      "mapAliases": [
+        "Setertjernet",
+        "Setertjern"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Blekktjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 4,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Svarttjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "enkel",
+      "accessScore": 4,
+      "base": 85,
+      "big": 81,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 6,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 4,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Søndre Hagetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Trekanttjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Steenstjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Midtre Skotjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "enkel",
+      "accessScore": 4,
+      "base": 79,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Skotjerna omtales som gode ørretvann med kilosfiskmulighet.",
+      "trophyPotential": "high",
+      "sourceConfidence": "medium_high",
+      "sourceNote": "FishKing omtaler de tre Skotjerna samlet som gode ørretvann med mulighet for kilosfisk.",
+      "mapAliases": [
+        "Midtre Skotjenna"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Bjørktjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "enkel",
+      "accessScore": 4,
+      "base": 85,
+      "big": 81,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 6,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Bikkjetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Fiskeløs",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Haretjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Ormtjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Søndre Skotjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 79,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Skotjerna omtales som gode ørretvann med kilosfiskmulighet.",
+      "trophyPotential": "high",
+      "sourceConfidence": "medium_high",
+      "sourceNote": "FishKing omtaler de tre Skotjerna samlet som gode ørretvann med mulighet for kilosfisk.",
+      "mapAliases": [
+        "Søndre Skotjenna"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Vestre Ormtjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Ormetjerna omtales som gode ørretvann med kilosfiskmulighet.",
+      "trophyPotential": "high",
+      "sourceConfidence": "medium_high",
+      "sourceNote": "FishKing omtaler de tre Ormetjerna samlet som gode ørretvann med mulighet for kilosfisk.",
+      "mapAliases": [
+        "Vestre Ormetjern"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Fyldengsetertjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 70,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 8,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Midtre Ormtjern",
       "flyOnly": true,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "enkel",
+      "accessScore": 4,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 6,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "flue"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing/Inatur",
+      "populationNote": "Ørretvann med mulighet for stor fisk. Kun fluefiske.",
+      "trophyPotential": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing/Inatur bekrefter fluevann; FishKing omtaler Ormetjerna som vann med kilosfiskmulighet.",
+      "mapAliases": [
+        "Ormetjenna midtre",
+        "Midtre Ormetjern"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Vestre Abbortjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 76,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Brannskatt-tjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Skogtjern 2",
       "flyOnly": true,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "enkel",
+      "accessScore": 4,
+      "base": 77,
+      "big": 67,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "flue"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "Inatur/FishKing",
+      "populationNote": "God ørretbestand, mulighet for stor fisk. Kun fluefiske.",
+      "trophyPotential": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "Inatur/FishKing bekrefter dette som ett av fire fluevann.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Østre Ormtjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Ormetjerna omtales som gode ørretvann med kilosfiskmulighet.",
+      "trophyPotential": "high",
+      "sourceConfidence": "medium_high",
+      "sourceNote": "FishKing omtaler de tre Ormetjerna samlet som gode ørretvann med mulighet for kilosfisk.",
+      "mapAliases": [
+        "Østre Ormetjern"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Kvernetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Søndre Tretjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Tretjerna omtales med ørret og abbor, forholdsvis mye fisk og mulighet for fin ørret.",
+      "abundance": "high",
+      "trophyPotential": "medium_high",
+      "sourceConfidence": "medium_high",
+      "sourceNote": "FishKing omtaler Tretjerna samlet.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Nordre Tretjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Tretjerna omtales med ørret og abbor, forholdsvis mye fisk og mulighet for fin ørret.",
+      "abundance": "high",
+      "trophyPotential": "medium_high",
+      "sourceConfidence": "medium_high",
+      "sourceNote": "FishKing omtaler Tretjerna samlet.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Nordre Abbortjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 76,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Midtre Tretjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Tretjerna omtales med ørret og abbor, forholdsvis mye fisk og mulighet for fin ørret.",
+      "abundance": "high",
+      "trophyPotential": "medium_high",
+      "sourceConfidence": "medium_high",
+      "sourceNote": "FishKing omtaler Tretjerna samlet.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Abborputten",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 76,
+      "big": 66,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 28,
+      "depth": 2,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Langvanna",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 77,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "open_lake",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 180,
+      "depth": 7,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Stor abborbestand og variert ørretbestand fra noen hundre gram og oppover.",
+      "abundance": "high",
+      "trophyPotential": "high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing omtaler Langvannet med stor abborbestand og variert ørretbestand.",
+      "mapAliases": [
+        "Langvannet"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Blanktjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 84,
+      "big": 81,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 6,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Saulaua",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 77,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "open_lake",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 220,
+      "depth": 7,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Kavringtjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "hiddenGem": true,
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing lokal omtale",
+      "populationNote": "Omtalt som mulig «skattekiste»/småvann med ørretutsetting i området. Smygfiske og lett utstyr anbefales.",
+      "trophyPotential": "high",
+      "sourceConfidence": "medium",
+      "sourceNote": "FishKing nevner vannet som mulig småvann-skattekiste; vis hensyn og ikke overbeskatt små bestander.",
+      "mapAliases": []
     },
     {
       "name": "Langvannspølen",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels",
+      "accessScore": 3,
+      "base": 77,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "open_lake",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 180,
+      "depth": 7,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Slettbakktjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Ulvedalstjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Gretetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Furutjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Helvetstjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 4,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Mørktjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 4,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Tjåretjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Abbortjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 76,
+      "big": 66,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": -2,
+      "perchBias": 8,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Febertjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 4,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Mosetjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "dark",
+      "waterBody": "myr_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 4,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     },
     {
       "name": "Bukketjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 78,
+      "big": 70,
+      "waterTone": "mixed",
+      "waterBody": "forest_tjern",
+      "troutBias": 0,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": [
+        "orret"
+      ],
+      "speciesEvidence": "FishKing",
+      "populationNote": "Spennende ørretbestand; fisk opp mot og over 1 kg omtales.",
+      "trophyPotential": "very_high",
+      "sourceConfidence": "high",
+      "sourceNote": "FishKing fremhever Bukketjern for kilosørret og gode flueplasser.",
+      "mapAliases": [
+        "Bukketjernet"
+      ],
+      "hiddenGem": false
     },
     {
       "name": "Lindtjern",
       "flyOnly": false,
-      "accessiblePier": false
+      "accessiblePier": false,
+      "access": "middels/usikker",
+      "accessScore": 2,
+      "base": 80,
+      "big": 72,
+      "waterTone": "clear",
+      "waterBody": "forest_tjern",
+      "troutBias": 2,
+      "perchBias": 0,
+      "size": 28,
+      "depth": 3,
+      "methods": [
+        "sluk",
+        "spinner",
+        "mark"
+      ],
+      "species": null,
+      "speciesEvidence": null,
+      "populationNote": "Bestand er ikke dokumentert per vann i de åpne kildene som er lagt inn i appen.",
+      "sourceConfidence": "limited",
+      "sourceNote": "Vannet står i registeret, men bestandsdetaljer er ikke kildebekreftet i appen.",
+      "mapAliases": [],
+      "hiddenGem": false
     }
   ],
   "flyOnly": [
@@ -474,5 +2618,59 @@
   "accessible": [
     "Kutjern",
     "Holmtjern"
+  ],
+  "officialTotalWaterCount": 96,
+  "officialTroutWaterCount": 45,
+  "areaWideCulture": {
+    "limingSince": 1990,
+    "annualTroutStocking": true,
+    "waterSampling": "vår og høst",
+    "note": "Kalking og utsetting gjelder området generelt; appen merker ikke et enkelt vann som kalket/utsatt uten egen kilde."
+  },
+  "rules": {
+    "season": "1. januar–30. september",
+    "troutMinCm": 25,
+    "noLiveFishBait": true,
+    "noBoatCanoePackraftFishing": true,
+    "flyOnly": [
+      "Sætertjern",
+      "Midtre Ormtjern",
+      "Stubbetjern",
+      "Skogtjern 2"
+    ],
+    "accessiblePiers": [
+      "Kutjern",
+      "Holmtjern"
+    ]
+  },
+  "localHiddenGemWaters": [
+    "Øvre Svensketjern",
+    "Nedre Svensketjern",
+    "Vestre Blanketjern",
+    "Øvre Laua",
+    "Kavringtjern",
+    "Langevasshølen"
+  ],
+  "mapSources": [
+    {
+      "name": "Vestfjella-kart 2015",
+      "kind": "lokalt fiskekart",
+      "note": "Oppgis av Inatur å inneholde fiskebestand, areal, kultivering og fluefiske-egnethet. Selve kartdataene er ikke kopiert inn i appen."
+    },
+    {
+      "name": "Store Le (Aremark) 1:50 000",
+      "kind": "papirkart",
+      "note": "Nyttig for terreng, veier og orientering."
+    },
+    {
+      "name": "Finnfisk / NVE innsjøregister",
+      "kind": "offentlige innsjødata",
+      "note": "Brukes som støttekilde for navn, areal og vassdrag når data er tilgjengelig."
+    },
+    {
+      "name": "OpenStreetMap",
+      "kind": "kartgeometri",
+      "note": "Brukes for faktisk vannflate og plassering av soner."
+    }
   ]
 }

@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-title Vestfjella Fiske STABLE 1.0
+title Vestfjella Fiske STABLE 1.2
 cd /d "%~dp0"
 
 where node >nul 2>nul
@@ -16,7 +16,7 @@ if not exist "node_modules\pngjs\package.json" (
   )
 )
 
-echo Starter Vestfjella Fiske STABLE 1.0...
+echo Starter Vestfjella Fiske STABLE 1.2...
 start "Vestfjella Fiske-server" /min cmd /c "npm start"
 timeout /t 2 /nobreak >nul
 start "" http://localhost:3000

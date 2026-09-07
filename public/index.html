@@ -6,17 +6,17 @@
   <meta name="theme-color" content="#061713">
   <meta name="description" content="Vestfjella Fiske bruker den stabile Fiste-motoren til å finne anbefalte ferskvannssoner for ørret og abbor i Vestfjella/Aremark.">
   <title>Vestfjella Fiske</title>
-  <link rel="manifest" href="/manifest.webmanifest?v=1.0">
+  <link rel="manifest" href="/manifest.webmanifest?v=1.2">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="/style.css?v=1.0">
+  <link rel="stylesheet" href="/style.css?v=1.2">
 </head>
 <body>
 <a class="skip" href="#results">Hopp til resultater</a>
 <div class="app" id="appState" data-state="loading">
   <header>
-    <div class="brand"><span class="eyebrow" id="analysisMode">Ferskvann · Vestfjella · MET Norway · OSM</span><h1>Vestfjella Fiske <span id="revisionBadge">STABLE 1.0</span></h1><p id="status" role="status" aria-live="polite">Starter ferskvannsanalysen …</p></div>
+    <div class="brand"><span class="eyebrow" id="analysisMode">Ferskvann · Vestfjella · MET Norway · OSM</span><h1>Vestfjella Fiske <span id="revisionBadge">STABLE 1.2</span></h1><p id="status" role="status" aria-live="polite">Starter ferskvannsanalysen …</p></div>
     <div class="actions">
       <label class="fish-picker"><span>Fisketype</span><select id="fishType" aria-label="Velg fisketype"><option value="all">Ingen – vis ørret + abbor</option><option value="orret" selected>Ørret</option><option value="abbor">Abbor</option></select></label>
       <label class="fish-picker"><span>Mål</span><select id="fishGoal" aria-label="Velg fiskemål"><option value="numbers">Mest fisk</option><option value="big">STOR FISK</option></select></label>
@@ -49,7 +49,9 @@
       <section class="card hydrology-card" id="hydrologyCard"><div class="card-head"><div><span class="card-label">NVE live</span><h2>Vannstand, vannføring og vanntemperatur</h2></div><span class="source-dot">HydAPI</span></div><div id="hydrologyGrid" class="weather-grid"><p class="muted span-all">Sjekker nærmeste målestasjon …</p></div><p id="hydrologyCaveat" class="source-details"></p></section>
       <section class="card best-times-card"><div class="card-head"><div><span class="card-label">Planlegg turen</span><h2>Beste tidspunkt i dag</h2></div><span class="source-dot">Prognose</span></div><div id="bestTimes" aria-live="polite"><p class="muted">Beregner dagens tidsvinduer …</p></div></section>
 
-      <section class="card" id="waterDirectoryCard"><div class="card-head"><div><span class="card-label">Vestfjella-register</span><h2>Kjente vann</h2></div><span class="source-dot" id="waterDirectoryCount">Laster …</span></div><details><summary>Vis vannlisten</summary><div id="waterDirectory" class="catch-entries"><p class="muted">Laster register …</p></div></details><p class="source-details">Registeret er skilt fra kartplasseringen: navn kan være lokale og avvike fra offentlige kart. Anbefalingssoner tegnes bare når motoren har faktisk vanngeometri.</p></section>
+      <section class="card" id="waterKnowledgeCard"><div class="card-head"><div><span class="card-label">Kildebasert vannkunnskap</span><h2>Vestfjella – bestand, kultivering og kart</h2></div><span class="source-dot">Inatur · FishKing · NVE</span></div><div id="waterKnowledgeSummary"><p class="muted">Laster vannkunnskap …</p></div></section>
+
+      <section class="card" id="waterDirectoryCard"><div class="card-head"><div><span class="card-label">Vestfjella-register</span><h2>Kjente vann</h2></div><span class="source-dot" id="waterDirectoryCount">Laster …</span></div><div id="waterProfile" class="water-profile"><p class="muted">Trykk på et vann i listen. Da zoomer kartet til vannet og viser bestand, areal, regler/adkomst og kildegrad her.</p></div><details open><summary>Vis vannlisten</summary><div id="waterDirectory" class="catch-entries"><p class="muted">Laster register …</p></div></details><p class="source-details">Listen er sortert beste → dårligste. LIVE-score brukes når vannet finnes i gjeldende kartanalyse; ellers brukes kildejustert grunnrangering. Bestandsdata påvirker rangeringen bare når en åpen kilde faktisk dokumenterer arten.</p></section>
 
       <section class="card insights-card" id="insightsCard"><div class="card-head"><div><span class="card-label">Lær valgt art</span><h2>Artsguide og mine fangstmønstre</h2></div><span class="local-badge">Egne data lokalt</span></div><div id="speciesGuide" class="species-guide" aria-live="polite"></div><div class="insight-divider"></div><div id="catchInsights" class="catch-insights" aria-live="polite"></div><p class="source-details"><b>Kildeskille:</b> Artsguiden er generell, veiledende sportsfiskekunnskap. Fangstmønstrene beregnes bare fra dine egne lokalt lagrede turer.</p></section>
       <section class="card zones-card"><div class="card-head"><div><span class="card-label">Rangert etter forhold</span><h2>Anbefalte soner og dine agn</h2></div><span class="info" title="Scoren rangerer beregnede fiskeforhold. Datagrunnlag vises separat.">i</span></div><p id="scoreDisclaimer" class="score-disclaimer"><b>Fiskeforhold</b> rangeres fra 0–100. Sonene skal ligge i faktisk vannflate. <b>Datagrunnlag</b> viser hvor komplette kildene er.</p><div class="zone-columns" aria-hidden="true"><span>Område og forhold</span><span>Anbefalt agn</span><span>Score</span></div><div id="zones" aria-live="polite"><div class="skeleton"></div><div class="skeleton"></div></div></section>
@@ -63,7 +65,7 @@
 <dialog id="lureViewer" aria-labelledby="lureViewerCaption"><button id="closeLureViewer" type="button" aria-label="Lukk forstørret agnbilde">×</button><img id="lureViewerImage" alt=""><p id="lureViewerCaption"></p></dialog>
 <noscript>Appen krever JavaScript for kart og analyse.</noscript>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="/fishing-insights.js?v=1.0"></script>
-<script src="/app.js?v=1.0"></script>
+<script src="/fishing-insights.js?v=1.2"></script>
+<script src="/app.js?v=1.2"></script>
 </body>
 </html>

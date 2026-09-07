@@ -1,4 +1,4 @@
-const uiStateKey='vestfjella-fiske-ui-state-stable-1';
+const uiStateKey='vestfjella-fiske-ui-state-stable-1-2';
 function readUiState(){try{return JSON.parse(localStorage.getItem(uiStateKey)||'{}')||{};}catch{return {};}}
 function saveUiState(){try{const c=map.getCenter();localStorage.setItem(uiStateKey,JSON.stringify({fishType:$('fishType')?.value||'',fishGoal:$('fishGoal')?.value||'numbers',baseRadius:$('baseRadius')?.value||'500',mapStyle:$('mapStyle')?.value||'standard',center:[c.lat,c.lng],zoom:map.getZoom(),basePoint}));}catch{}}
 const savedUiState=readUiState();
@@ -23,6 +23,7 @@ const sourceSpotLayer = L.layerGroup().addTo(map);
 const restrictionLayer = L.layerGroup().addTo(map);
 const conditionLayer = L.layerGroup().addTo(map);
 const boatRampLayer = L.layerGroup().addTo(map);
+const waterFocusLayer = L.layerGroup().addTo(map);
 const mapContainerObserver = new ResizeObserver(() => map.invalidateSize({ pan: false }));
 mapContainerObserver.observe(document.querySelector('.map-wrap'));
 window.addEventListener('load', () => setTimeout(() => map.invalidateSize({ pan: false }), 0));
@@ -33,10 +34,13 @@ let baseMarker;
 let baseRadiusCircle;
 let basePoint=savedUiState.basePoint&&Number.isFinite(savedUiState.basePoint.lat)&&Number.isFinite(savedUiState.basePoint.lon)?savedUiState.basePoint:null;
 let latestZones=[];
+let waterDirectoryItems=[];
+let waterDirectoryMeta={};
+let selectedWaterDirectoryName=null;
 const labels = { vind:'Vind', skydekke:'Skydekke', kyst:'Kyst', vannkant:'Vannkant', eksponering:'Eksponering', temperatur:'Temperatur', lufttemperatur:'Lufttemperatur', tidspunkt:'Tidspunkt', dybde:'Dybde', storfisk:'Stor fisk', lufttrykk:'Lufttrykk', sjoetemperatur:'Sjøtemp', boelger:'Bølger', havstroem:'Havstrøm', tidevann:'Tidevann', maane:'Måne', personlig:'Mine fangster' };
 const freshwaterFishTypes = new Set(['orret','abbor']);
 const catchStorageKey='vestfjella-fiske-catch-log-v1';
-const analysisCacheKey='vestfjella-fiske-last-analysis-stable-1';
+const analysisCacheKey='vestfjella-fiske-last-analysis-stable-1-2';
 const fishLabels={all:'Ørret + abbor',orret:'Ørret',abbor:'Abbor'};
 const speciesColors={orret:'#ef4444',abbor:'#3b82f6'};
 let latestWeather=null;
@@ -528,7 +532,7 @@ function exportCatchGpx() {
   if(!entries.length){$('catchStatus').textContent='Ingen loggposter med kartposisjon å eksportere.';return;}
   const xmlEscape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
   const waypoints=entries.map(entry=>`<wpt lat="${entry.mapCenter.lat}" lon="${entry.mapCenter.lon}"><time>${xmlEscape(entry.time)}</time><name>${xmlEscape(entry.place||fishLabels[entry.fish]||'Fisketur')}</name><desc>${xmlEscape(`${entry.result==='fangst'?'Fangst':'Ingen fangst'} · ${fishLabels[entry.fish]||entry.fish}${entry.lure?' · '+entry.lure:''}`)}</desc><type>${entry.result==='fangst'?'catch':'session'}</type></wpt>`).join('');
-  downloadTextFile(`vestfjella-fiske-fangster-${new Date().toISOString().slice(0,10)}.gpx`,`<?xml version="1.0" encoding="UTF-8"?><gpx version="1.1" creator="Vestfjella Fiske STABLE 1.0" xmlns="http://www.topografix.com/GPX/1/1">${waypoints}</gpx>`,'application/gpx+xml');
+  downloadTextFile(`vestfjella-fiske-fangster-${new Date().toISOString().slice(0,10)}.gpx`,`<?xml version="1.0" encoding="UTF-8"?><gpx version="1.1" creator="Vestfjella Fiske STABLE 1.2" xmlns="http://www.topografix.com/GPX/1/1">${waypoints}</gpx>`,'application/gpx+xml');
   $('catchStatus').textContent=`Eksporterte ${entries.length} posisjoner som GPX.`;
 }
 function exportCatchJson() { const entries=readCatchEntries();downloadTextFile(`vestfjella-fiske-backup-${new Date().toISOString().slice(0,10)}.json`,JSON.stringify({version:1,exportedAt:new Date().toISOString(),entries},null,2),'application/json');$('catchStatus').textContent=`Backup med ${entries.length} loggposter er eksportert.`; }
@@ -557,6 +561,7 @@ function selectZone(zoneId,{scroll=false}={}) {
 function renderZones(zones) {
   zones=applyPersonalRanking(zones);
   latestZones=zones;
+  renderWaterDirectory();
   zoneLayer.clearLayers();
   renderBestNow(zones);
   drawNavigation(zones);
@@ -651,6 +656,7 @@ $('closeLureViewer').addEventListener('click', () => { lureViewer.close(); if(lu
 lureViewer.addEventListener('click', event => { if (event.target === lureViewer){ lureViewer.close(); if(lureViewerHistoryActive){lureViewerHistoryActive=false;history.back();} } });
 window.addEventListener('popstate',()=>{ if(lureViewer.open){lureViewerHistoryActive=false;lureViewer.close();} });
 document.addEventListener('click', event => { const image=event.target.closest?.('.zoomable-lure'); if (!image) return; event.preventDefault(); event.stopPropagation(); openLureViewer(image.currentSrc || image.src, image.alt); }, true);
+document.addEventListener('click', event => { const button=event.target.closest?.('[data-water-focus]'); if(!button) return; event.preventDefault(); selectedWaterDirectoryName=button.dataset.waterFocus; const item=waterDirectoryItems.find(w=>normalizeDirectoryName(w.name)===normalizeDirectoryName(selectedWaterDirectoryName)); if(item) renderWaterProfile(item); focusKnownWater(selectedWaterDirectoryName); });
 document.addEventListener('click', event => { const button=event.target.closest?.('.popup-details'); if(!button) return; event.preventDefault(); const zoneId=button.dataset.zone; map.closePopup(); selectZone(zoneId,{scroll:true}); });
 document.addEventListener('keydown', event => { const image=event.target.closest?.('.zoomable-lure'); if (image && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); openLureViewer(image.currentSrc || image.src, image.alt); } });
 map.on('locationfound', event => { if (locationMarker) locationMarker.remove(); locationMarker=L.circleMarker(event.latlng,{radius:7,color:'#fff',weight:2,fillColor:'#38d477',fillOpacity:1}).addTo(map).bindPopup('Din posisjon').openPopup(); setBasePoint(event.latlng,{label:'Base: din posisjon',focus:false}); $('setBase').textContent='✓ Base = GPS · fjern'; setState('ready','Posisjon funnet. Bruker den som base og oppdaterer soner …'); });
@@ -658,7 +664,7 @@ map.on('locationerror', () => setState('error','Kunne ikke hente posisjonen. Til
 window.addEventListener('online', () => loadZones({immediate:true}));
 window.addEventListener('offline', () => {const cached=readCachedAnalysis();setState(cached?'ready':'error',cached?'Du er offline. Siste lagrede analyse er tilgjengelig.':'Du er offline. Kartskallet virker; lagret analyse vises når den finnes.');});
 async function loadOwnedLureNames(){try{const response=await fetch('/data/user-lures.json',{cache:'force-cache'});const data=await response.json();$('ownedLures').innerHTML=(data.lures||[]).map(item=>`<option value="${escapeHtml(item.name||item.type||'')}"></option>`).join('');}catch{}}
-if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js?v=1.0', { updateViaCache: 'none' }).catch(() => {}));
+if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js?v=1.2', { updateViaCache: 'none' }).catch(() => {}));
 loadOwnedLureNames();
 if(savedUiState.fishType&&Object.hasOwn(fishLabels,savedUiState.fishType)) $('fishType').value=savedUiState.fishType;
 if(['numbers','big'].includes(savedUiState.fishGoal)) $('fishGoal').value=savedUiState.fishGoal;
@@ -672,6 +678,112 @@ updateWaterModeUI();
 loadWaterDirectory();
 loadReferenceLayers();
 loadZones({immediate:true});
+function normalizeDirectoryName(value=''){
+  return String(value||'').toLowerCase().replace(/æ/g,'ae').replace(/ø/g,'o').replace(/å/g,'a').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').replace(/tjernene\b/g,'tjern').replace(/tjernet\b/g,'tjern').replace(/vannet\b/g,'vann').replace(/vanna\b/g,'vann').replace(/vatnet\b/g,'vann').trim();
+}
+
+function confidenceLabel(value='limited'){
+  return ({high:'Høy',medium_high:'God',medium:'Middels',limited:'Begrenset'})[value]||'Begrenset';
+}
+function speciesLabelFromItem(item){
+  if(!Array.isArray(item?.species)||!item.species.length) return 'Ikke kildebekreftet per vann';
+  return item.species.map(v=>v==='orret'?'Ørret':v==='abbor'?'Abbor':v).join(' + ');
+}
+function formatWaterArea(item,located){
+  if(Number.isFinite(item?.areaKm2Official)) return `${item.areaKm2Official.toFixed(item.areaKm2Official<0.1?2:1)} km² (${Math.round(item.areaKm2Official*1000)} daa) · ${item.areaSource||'offisiell kilde'}`;
+  if(Number.isFinite(located?.areaDaaApprox)) return `ca. ${located.areaDaaApprox} daa · kartberegnet fra OSM-vannpolygon`;
+  return 'Ikke tilgjengelig i innlagte kilder';
+}
+function renderWaterKnowledgeSummary(){
+  const holder=$('waterKnowledgeSummary');
+  if(!holder||!waterDirectoryMeta) return;
+  const culture=waterDirectoryMeta.areaWideCulture||{};
+  const hidden=Array.isArray(waterDirectoryMeta.localHiddenGemWaters)?waterDirectoryMeta.localHiddenGemWaters:[];
+  holder.innerHTML=`<div class="water-knowledge-grid"><article><span>Området</span><b>${Number(waterDirectoryMeta.officialTotalWaterCount)||96} vann</b><small>${Number(waterDirectoryMeta.officialTroutWaterCount)||45} med ørret ifølge Inatur</small></article><article><span>Kultivering</span><b>Kalking siden ${culture.limingSince||1990}</b><small>Årlig ørretutsetting i området · vannprøver ${escapeHtml(culture.waterSampling||'')}</small></article><article><span>Spesialregler</span><b>4 fluevann · 2 fiskebrygger</b><small>Regler lagres som harde felt når de er kildebekreftet</small></article></div>${hidden.length?`<p class="source-details"><b>Lokalt omtalte småvann:</b> ${hidden.map(escapeHtml).join(', ')}. FishKing omtaler disse som mulige «skattekister»; det er ikke en garanti for dagens bestand.</p>`:''}<div class="map-source-links"><a href="https://www.inatur.no/fiske/5105163ce4b02d9c4217516b" target="_blank" rel="noopener">Inatur / Vestfjella</a><a href="https://fishking.no/blogs/anbefalte-fiskeomrader/vestfjella-et-orreteldorado-i-ostfold" target="_blank" rel="noopener">FishKing Vestfjella</a><a href="https://finnfisk.no/fiske/aremark" target="_blank" rel="noopener">Finnfisk / NVE</a><a href="https://fishking.no/collections/kart/products/store-le-aremark-1-50-000" target="_blank" rel="noopener">Store Le 1:50 000</a></div>`;
+}
+function renderWaterProfile(item,located=null,error=null){
+  const holder=$('waterProfile');
+  if(!holder||!item) return;
+  const fish=$('fishType')?.value||'orret';
+  const selectedScore=directoryScoreFor(item).score;
+  const species=speciesLabelFromItem(item);
+  const sourceConfidence=confidenceLabel(item.sourceConfidence);
+  const profileTags=[item.flyOnly?'KUN FLUE':null,item.accessiblePier?'♿ fiskebrygge':null,item.hiddenGem?'🎯 lokalt omtalt småvann':null].filter(Boolean);
+  const mismatch=Array.isArray(item.species)&&item.species.length&&fish!=='all'&&!item.species.includes(fish);
+  const cultivation=item.cultivationNote||(item.name==='Stubbetjern'?'Selvforsynt ørretbestand er omtalt; ingen utsetting antas i appen.':'Området kalkes og har årlig ørretutsetting, men status er ikke bekreftet for akkurat dette vannet.');
+  const ruleText=item.flyOnly?'Kun fluefiske':`Generelle Vestfjella-regler · sesong ${waterDirectoryMeta?.rules?.season||'1. jan.–30. sep.'}`;
+  holder.innerHTML=`<div class="water-profile-head"><div><span>Valgt vann</span><h3>${escapeHtml(item.name)}</h3></div><b>${Math.round(selectedScore)}/100</b></div>${profileTags.length?`<div class="water-profile-tags">${profileTags.map(t=>`<span>${escapeHtml(t)}</span>`).join('')}</div>`:''}<div class="water-profile-grid"><article><span>Bestand</span><b>${escapeHtml(species)}</b></article><article><span>Vannareal</span><b>${escapeHtml(formatWaterArea(item,located))}</b></article><article><span>Regler</span><b>${escapeHtml(ruleText)}</b></article><article><span>Kultivering</span><b>${escapeHtml(cultivation)}</b></article><article><span>Adkomst</span><b>${escapeHtml(item.access||'Ikke spesifisert')}${item.accessiblePier?' · fiskebrygge':''}</b></article><article><span>Kildegrad</span><b>${escapeHtml(sourceConfidence)}</b></article></div><p>${escapeHtml(item.populationNote||'')}</p>${item.sourceNote?`<p class="source-details"><b>Kildeinfo:</b> ${escapeHtml(item.sourceNote)}</p>`:''}${mismatch?`<p class="water-profile-warning">Valgt fisketype er ikke dokumentert i dette vannet i kildene som er lagt inn. Appen nedprioriterer derfor vannet for denne arten.</p>`:''}${error?`<p class="water-profile-warning">Kartplassering: ${escapeHtml(error)}</p>`:''}${located?.matchedAlias?`<p class="source-details">Kartnavn: ${escapeHtml(located.name)} · matchet via ${escapeHtml(located.matchedAlias)}</p>`:''}`;
+}
+function baselineDirectoryScore(item){
+  const fish=$('fishType')?.value||'orret',goal=$('fishGoal')?.value||'numbers';
+  let trout=Math.max(20,Math.min(99,Number(goal==='big'?item.big:item.base)||70)+(Number(item.troutBias)||0));
+  let perch=Math.max(20,Math.min(96,63+(Number(item.perchBias)||0)+((Number(item.accessScore)||3)-3)*2+(item.waterBody==='open_lake'?2:0)-(item.flyOnly?5:0)));
+  const species=Array.isArray(item.species)?item.species:[];
+  if(species.length){
+    trout += species.includes('orret')?4:-24;
+    perch += species.includes('abbor')?4:-24;
+  }
+  if(goal==='big'){
+    const trophy=item.trophyPotential==='very_high'?8:item.trophyPotential==='high'?5:item.trophyPotential==='medium_high'?3:0;
+    if(species.includes('orret')||!species.length) trout+=trophy;
+    if(species.includes('abbor')) perch+=trophy;
+    if(item.hiddenGem&&species.includes('orret')) trout+=2;
+  }else if(item.abundance==='high'){
+    if(species.includes('orret')||!species.length) trout+=4;
+    if(species.includes('abbor')) perch+=4;
+  }
+  trout=Math.max(15,Math.min(99,trout)); perch=Math.max(15,Math.min(99,perch));
+  if(fish==='abbor') return perch;
+  if(fish==='all') return Math.max(trout,perch);
+  return trout;
+}
+function directoryScoreFor(item){
+  const key=normalizeDirectoryName(item.name);
+  const matches=latestZones.filter(zone=>{
+    const z=normalizeDirectoryName(zone.waterName||'');
+    return z&&(z===key||z.includes(key)||key.includes(z));
+  });
+  if(matches.length) return {score:Math.max(...matches.map(zone=>Number(zone.score)||0)),live:true};
+  return {score:baselineDirectoryScore(item),live:false};
+}
+function renderWaterDirectory(){
+  const container=$('waterDirectory'),badge=$('waterDirectoryCount');
+  if(!container||!badge||!waterDirectoryItems.length) return;
+  const ranked=waterDirectoryItems.map(item=>{const scored=directoryScoreFor(item);return {...item,currentScore:scored.score,scoreLive:scored.live};}).sort((a,b)=>b.currentScore-a.currentScore||String(a.name).localeCompare(String(b.name),'no'));
+  const liveCount=ranked.filter(item=>item.scoreLive).length;
+  const officialTotal=Number(waterDirectoryMeta?.officialTotalWaterCount)||ranked.length;
+  badge.textContent=`${ranked.length} i register · ${officialTotal} totalt · beste først`;
+  container.innerHTML=ranked.map((item,index)=>`<button type="button" class="water-directory-row${selectedWaterDirectoryName===item.name?' selected':''}" data-water-focus="${escapeHtml(item.name)}" title="Vis ${escapeHtml(item.name)} på kartet"><span class="water-directory-rank">${index+1}</span><span class="water-directory-name"><b>${escapeHtml(item.name)}</b>${item.flyOnly?'<small>KUN FLUE</small>':''}${item.accessiblePier?'<small>♿ fiskebrygge</small>':''}${item.hiddenGem?'<small>🎯 SMÅVANN</small>':''}${Array.isArray(item.species)&&item.species.length?`<small>${escapeHtml(speciesLabelFromItem(item))}</small>`:''}<small>${item.scoreLive?'LIVE I KARTUTSNITT':'KILDEJUSTERT GRUNNRANGERING'}</small></span><span class="water-directory-score has-score">${Math.round(item.currentScore)}/100</span></button>`).join('');
+}
+async function focusKnownWater(name){
+  const item=waterDirectoryItems.find(w=>normalizeDirectoryName(w.name)===normalizeDirectoryName(name));
+  if(item) renderWaterProfile(item);
+  const key=normalizeDirectoryName(name);
+  const zone=latestZones.find(item=>{const z=normalizeDirectoryName(item.waterName||'');return z&&(z===key||z.includes(key)||key.includes(z));});
+  if(zone){
+    map.flyTo([zone.marker.lat,zone.marker.lon],15,{duration:.7});
+    selectZone(zone.id);
+    waterFocusLayer.clearLayers();
+    L.circleMarker([zone.marker.lat,zone.marker.lon],{radius:18,color:'#38d477',weight:3,fillColor:'#38d477',fillOpacity:.08}).bindTooltip(name,{permanent:false}).addTo(waterFocusLayer);
+    return;
+  }
+  setState('loading',`Finner ${name} på kartet …`);
+  try{
+    const response=await fetch(`/api/water-locate?name=${encodeURIComponent(name)}`,{cache:'no-store'});
+    const data=await response.json();
+    if(!response.ok) throw new Error(data.error||'Fant ikke vannet');
+    waterFocusLayer.clearLayers();
+    if(data.bounds&&[data.bounds.south,data.bounds.west,data.bounds.north,data.bounds.east].every(Number.isFinite)){
+      const bounds=L.latLngBounds([data.bounds.south,data.bounds.west],[data.bounds.north,data.bounds.east]);
+      map.fitBounds(bounds.pad(.45),{padding:[35,35],maxZoom:16});
+    } else map.flyTo([data.lat,data.lon],15,{duration:.7});
+    L.circleMarker([data.lat,data.lon],{radius:16,color:'#38d477',weight:3,fillColor:'#38d477',fillOpacity:.1}).bindTooltip(data.name||name,{permanent:false}).addTo(waterFocusLayer);
+    if(item) renderWaterProfile(item,data);
+    renderWaterDirectory();
+    setState('ready',`${data.name||name} vises på kartet. Oppdaterer anbefalte soner …`);
+    setTimeout(()=>loadZones({immediate:true}),150);
+  }catch(error){ if(item) renderWaterProfile(item,null,error.message); setState('error',`${name}: ${error.message}`);}
+}
 async function loadWaterDirectory(){
   const container=$('waterDirectory'),badge=$('waterDirectoryCount');
   if(!container||!badge) return;
@@ -679,8 +791,10 @@ async function loadWaterDirectory(){
     const response=await fetch('/api/water-directory',{cache:'no-store'});
     if(!response.ok) throw new Error('Vannregister utilgjengelig');
     const data=await response.json();
-    badge.textContent=`${data.count||data.waters?.length||0} vann`;
-    container.innerHTML=(data.waters||[]).map(item=>`<div class="catch-entry"><b>${escapeHtml(item.name)}</b>${item.flyOnly?' · <span style="color:#d8bfff">kun flue</span>':''}${item.accessiblePier?' · ♿ fiskebrygge':''}</div>`).join('');
+    waterDirectoryMeta=data||{};
+    waterDirectoryItems=Array.isArray(data.waters)?data.waters:[];
+    renderWaterKnowledgeSummary();
+    renderWaterDirectory();
   }catch(error){ badge.textContent='Register'; container.innerHTML='<p class="muted">Kunne ikke laste vannregisteret akkurat nå.</p>'; }
 }
 

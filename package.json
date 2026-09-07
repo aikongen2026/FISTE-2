@@ -1,8 +1,8 @@
 {
   "name": "vestfjella-fiske-stable",
-  "version": "1.0.0",
-  "appRevision": 1,
-  "description": "Vestfjella Fiske – ferskvannsversjon bygget på den stabile Fiste-motoren, med vannmaskekontroll, MET-vær og personlig slukboks.",
+  "version": "1.2.0",
+  "appRevision": 3,
+  "description": "Vestfjella Fiske – Fiste ferskvannsmotor med kildebasert vannregister, bestand/kultivering, MET-vær, NVE og personlig slukboks.",
   "main": "server.js",
   "scripts": {
     "start": "node scripts/verify-layout.js && node server.js",

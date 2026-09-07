@@ -6,16 +6,17 @@ const os = require('os');
 let PNG = null;
 function pngParser(){ if(!PNG) ({PNG}=require('pngjs')); return PNG; }
 const PACKAGE = require('./package.json');
-const APP_REVISION = 'STABLE 1.0';
+const APP_REVISION = 'STABLE 1.2';
 
 const PORT = Number(process.env.PORT || 3000);
 const NVE_API_KEY = String(process.env.NVE_API_KEY || '').trim();
-const MET_USER_AGENT = process.env.MET_USER_AGENT || 'vestfjella-fiske/1.0 (Fiste freshwater core)';
+const MET_USER_AGENT = process.env.MET_USER_AGENT || 'vestfjella-fiske/1.2 (Fiste freshwater core)';
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const OPEN_LURE_PHOTOS = JSON.parse(fs.readFileSync(path.join(PUBLIC_DIR,'lures','open','catalog.json'),'utf8')).photos;
 const OPEN_LURE_PHOTO_BY_ID = Object.freeze(Object.fromEntries(OPEN_LURE_PHOTOS.map(photo=>[photo.id,photo])));
 const USER_LURE_DATA = JSON.parse(fs.readFileSync(path.join(PUBLIC_DIR,'data','user-lures.json'),'utf8'));
 const VESTFJELLA_WATERS = JSON.parse(fs.readFileSync(path.join(PUBLIC_DIR,'data','vestfjella-waters.json'),'utf8'));
+const VESTFJELLA_BOUNDS = Object.freeze({west:11.5700,south:59.2370,east:11.6065,north:59.2915});
 const SOURCE_BACKED_LURE_DATA = JSON.parse(fs.readFileSync(path.join(PUBLIC_DIR,'data','source-backed-lures.json'),'utf8'));
 const SOURCE_BACKED_LURES = Object.freeze(SOURCE_BACKED_LURE_DATA.lures);
 const OFFICIAL_NO_FISHING_ZONES = JSON.parse(fs.readFileSync(path.join(PUBLIC_DIR,'data','fishing-restrictions-2024.json'),'utf8')).zones;
@@ -29,6 +30,137 @@ const FRESHWATER_FISH_TYPES = new Set(['orret','abbor','gjedde']);
 const VESTFJELLA_FLY_ONLY = new Set(['saetertjern','setertjern','midtre ormtjern','stubbetjern','skogtjern 2']);
 function normalizeWaterName(value=''){ return String(value||'').toLowerCase().replace(/æ/g,'ae').replace(/ø/g,'o').replace(/å/g,'a').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim(); }
 function isVestfjellaFlyOnly(name=''){ return VESTFJELLA_FLY_ONLY.has(normalizeWaterName(name)); }
+
+function normalizeWaterLookupName(value='') {
+  return normalizeWaterName(value)
+    .replace(/tjernene\b/g,'tjern')
+    .replace(/tjernet\b/g,'tjern')
+    .replace(/vannet\b/g,'vann')
+    .replace(/vanna\b/g,'vann')
+    .replace(/vatnet\b/g,'vann')
+    .replace(/\b(ovre|nedre|midtre|vestre|ostre|nordre|sondre)\b/g,match=>match)
+    .replace(/\s+/g,' ').trim();
+}
+function waterNameSimilarity(a='',b='') {
+  const x=normalizeWaterLookupName(a),y=normalizeWaterLookupName(b);
+  if(!x||!y) return 0;
+  if(x===y) return 100;
+  if(x.includes(y)||y.includes(x)) return 80-Math.min(20,Math.abs(x.length-y.length));
+  const xa=new Set(x.split(' ')),ya=new Set(y.split(' '));
+  const overlap=[...xa].filter(t=>ya.has(t)).length;
+  return overlap ? Math.round(50*overlap/Math.max(xa.size,ya.size)) : 0;
+}
+function freshwaterAreaBounds(area) {
+  const ring=area?.ring||[];
+  if(!ring.length) return null;
+  const lats=ring.map(p=>Number(p.lat)).filter(Number.isFinite),lons=ring.map(p=>Number(p.lon)).filter(Number.isFinite);
+  if(!lats.length||!lons.length) return null;
+  return {south:Math.min(...lats),north:Math.max(...lats),west:Math.min(...lons),east:Math.max(...lons)};
+}
+function freshwaterAreaFocus(area) {
+  const bounds=freshwaterAreaBounds(area);
+  if(!bounds) return null;
+  let lat=(bounds.south+bounds.north)/2,lon=(bounds.west+bounds.east)/2;
+  if(!pointIsInFreshwaterArea(lat,lon,area)) {
+    const candidates=freshwaterCandidateGrid([area],bounds);
+    if(candidates.length){lat=candidates[0].lat;lon=candidates[0].lon;}
+    else if(area.ring?.[0]){lat=area.ring[0].lat;lon=area.ring[0].lon;}
+  }
+  return {lat,lon,bounds};
+}
+function freshwaterAreaApproxM2(area) {
+  const ring=area?.ring||[];
+  if(ring.length<3) return null;
+  const lat0=ring.reduce((sum,p)=>sum+Number(p.lat||0),0)/ring.length*Math.PI/180;
+  const lon0=ring.reduce((sum,p)=>sum+Number(p.lon||0),0)/ring.length;
+  const latRef=ring.reduce((sum,p)=>sum+Number(p.lat||0),0)/ring.length;
+  const pts=ring.map(p=>({x:(Number(p.lon)-lon0)*111320*Math.cos(lat0),y:(Number(p.lat)-latRef)*110540}));
+  let sum=0;
+  for(let i=0,j=pts.length-1;i<pts.length;j=i++) sum+=pts[j].x*pts[i].y-pts[i].x*pts[j].y;
+  const polygonArea=Math.abs(sum)/2;
+  return Number.isFinite(polygonArea)&&polygonArea>0?Math.round(polygonArea):null;
+}
+function directoryWaterMatch(name='') {
+  let best=null,bestScore=0;
+  for(const item of VESTFJELLA_WATERS.waters||[]) {
+    const candidates=[item.name,...(Array.isArray(item.mapAliases)?item.mapAliases:[])];
+    for(const candidate of candidates){
+      const score=waterNameSimilarity(name,candidate);
+      if(score>bestScore){best=item;bestScore=score;}
+    }
+  }
+  return bestScore>=50?{item:best,score:bestScore}:null;
+}
+function sourceKnowledgeAdjustment(waterName,fishType,goal='numbers') {
+  const match=directoryWaterMatch(waterName);
+  if(!match) return {delta:0,profile:null,mismatch:false};
+  const item=match.item;
+  const species=Array.isArray(item.species)?item.species:[];
+  const hasEvidence=species.length>0;
+  const mismatch=hasEvidence&&!species.includes(fishType);
+  let delta=0;
+  if(hasEvidence){ delta += mismatch?-28:4; }
+  if(!mismatch&&goal==='big') {
+    if(item.trophyPotential==='very_high') delta+=8;
+    else if(item.trophyPotential==='high') delta+=5;
+    else if(item.trophyPotential==='medium_high') delta+=3;
+  }
+  if(!mismatch&&goal==='numbers'&&item.abundance==='high') delta+=4;
+  if(!mismatch&&item.hiddenGem&&goal==='big') delta+=2;
+  return {delta,profile:item,mismatch};
+}
+function matchFreshwaterAreaByName(name,areas=[]) {
+  let best=null,bestScore=0;
+  for(const area of areas){
+    if(!area?.name||area.name==='Navnløst vann') continue;
+    const score=waterNameSimilarity(name,area.name);
+    if(score>bestScore){best=area;bestScore=score;}
+  }
+  return bestScore>=50?{area:best,score:bestScore}:null;
+}
+async function searchNominatimWaterByName(name) {
+  const params=new URLSearchParams({format:'jsonv2',q:`${name}, Aremark, Norway`,limit:'8',addressdetails:'0',extratags:'1',bounded:'1',viewbox:`${VESTFJELLA_BOUNDS.west},${VESTFJELLA_BOUNDS.north},${VESTFJELLA_BOUNDS.east},${VESTFJELLA_BOUNDS.south}`});
+  const data=await getJsonHttps(`https://nominatim.openstreetmap.org/search?${params}`,10000);
+  if(!Array.isArray(data)) return null;
+  let best=null,bestScore=0;
+  for(const item of data){
+    const candidateName=item.name||String(item.display_name||'').split(',')[0];
+    const score=waterNameSimilarity(name,candidateName);
+    if(score>bestScore){best=item;bestScore=score;}
+  }
+  if(!best||bestScore<45) return null;
+  const bbox=Array.isArray(best.boundingbox)?best.boundingbox.map(Number):null;
+  const lat=Number(best.lat),lon=Number(best.lon);
+  if(!Number.isFinite(lat)||!Number.isFinite(lon)) return null;
+  const bounds=bbox&&bbox.length===4&&bbox.every(Number.isFinite)?{south:bbox[0],north:bbox[1],west:bbox[2],east:bbox[3]}:{south:lat-.001,north:lat+.001,west:lon-.001,east:lon+.001};
+  return {name:best.name||String(best.display_name||'').split(',')[0]||name,lat,lon,bounds,source:'OpenStreetMap Nominatim'};
+}
+async function locateVestfjellaWater(name) {
+  const directoryMatch=directoryWaterMatch(name);
+  const profile=directoryMatch?.item||null;
+  const candidates=[name,...(profile?.mapAliases||[])].filter(Boolean);
+  const key=`vestfjella-water-locate:${candidates.map(normalizeWaterLookupName).join('|')}`;
+  return cached(key,6*60*60*1000,async()=>{
+    try{
+      const areas=await fetchFreshwaterAreas(VESTFJELLA_BOUNDS);
+      let best=null;
+      for(const candidate of candidates){
+        const match=matchFreshwaterAreaByName(candidate,areas);
+        if(match&&(!best||match.score>best.score)) best={...match,candidate};
+      }
+      if(best){
+        const focus=freshwaterAreaFocus(best.area);
+        const areaM2=freshwaterAreaApproxM2(best.area);
+        if(focus) return {requestedName:name,name:best.area.name,lat:focus.lat,lon:focus.lon,bounds:focus.bounds,source:'OpenStreetMap vannpolygon',matchScore:best.score,matchedAlias:best.candidate!==name?best.candidate:null,areaM2Approx:areaM2,areaDaaApprox:Number.isFinite(areaM2)?Number((areaM2/1000).toFixed(1)):null};
+      }
+    }catch{}
+    for(const candidate of candidates){
+      const found=await searchNominatimWaterByName(candidate);
+      if(found) return {...found,requestedName:name,matchedAlias:candidate!==name?candidate:null};
+    }
+    return null;
+  });
+}
 
 function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
 function angularDistance(a, b) { return Math.abs((((a - b) % 360) + 540) % 360 - 180); }
@@ -1186,13 +1318,23 @@ async function generateZones({west,south,east,north,zoom}, currentWeather, selec
     const rescored=computeScore({...environment,coastQuality:zone._coast.quality,exposure:zone._exposure,hour:zone._hour,depthMeters:depth?.meters,fishType});
     zone.score=rescored.score; zone.breakdown=rescored.breakdown;
     if(goal==='big'){ const trophyBonus=fishType==='gjedde'?Math.round(zone._coast.quality*6 + (1-Math.abs(zone._exposure-.45))*4):Math.round(zone._coast.quality*4); zone.breakdown={...zone.breakdown,storfisk:trophyBonus}; zone.score=clamp(zone.score+trophyBonus,0,100); }
+    if(freshwater&&zone._freshwaterName){
+      const knowledge=sourceKnowledgeAdjustment(zone._freshwaterName,fishType,goal);
+      if(knowledge.profile){
+        zone.sourceKnowledge={name:knowledge.profile.name,species:knowledge.profile.species||null,confidence:knowledge.profile.sourceConfidence||'limited',populationNote:knowledge.profile.populationNote||null,hiddenGem:Boolean(knowledge.profile.hiddenGem)};
+        zone.breakdown={...zone.breakdown,kildekunnskap:knowledge.delta};
+        zone.score=clamp(zone.score+knowledge.delta,0,100);
+        zone._speciesMismatch=knowledge.mismatch;
+      }
+    }
     zone.name=zone.score>=82?'Svært høy':zone.score>=68?'Høy':'Moderat';
     zone.lure=recommendLure({...currentWeather,coastQuality:zone._coast.quality,exposure:zone._exposure,hour:zone._hour,lat:zone._point.lat,lon:zone._point.lon,depthMeters:depth?.meters,shallowRisk,fishType,goal});
     if(fishType==='orret'&&isVestfjellaFlyOnly(zone._freshwaterName||'')){ zone.lure=flyOnlyLureAdvice({hour:zone._hour,cloud:currentWeather?.cloud,wind:currentWeather?.wind,lat:zone._point.lat,lon:zone._point.lon}); zone.flyOnly=true; }
     const baseReason=formatReason({ score:zone.score, breakdown:zone.breakdown, weather:environment, coastQuality:zone._coast.quality, exposure:zone._exposure, waterType });
     const waterName=zone._freshwaterName?` i ${zone._freshwaterName}`:'';
     const fishReason=fishType==='makrell'?'Makrell: sonen gir kystnært, åpnere vann der stimer kan trekke forbi.':fishType==='sei'?(Number.isFinite(depth?.meters)&&depth.meters>=8?'Sei: sonen har estimert dybde og eksponering som gjør den aktuell.':Number.isFinite(depth?.meters)?'Sei: grunt kystområde; fisk sluken mot renner eller dypere vann utenfor sonen.':'Sei: dybden er ikke bekreftet; se etter renner og bratte kanter i sjøkartet.'):fishType==='orret'?(zone.flyOnly?`Ferskvannsørret${waterName}: registrert som fluevann; bruk kun flue og fisk vaksoner, odder og innløp.`:`Ferskvannsørret: registrert ferskvann${waterName}; prøv odder, innløp og vindpåvirket bredde.`):fishType==='abbor'?`Abbor: registrert ferskvann${waterName}; fisk av vannkanten og se etter siv, stein, brygger eller annen struktur.`:fishType==='gjedde'?`Gjedde: registrert ferskvann${waterName}; avfisk grunne kanter og vegetasjon; bruk større agn enn bildet dersom fisken er grov.`:'';
-    zone.reason=fishReason?`${fishReason} ${baseReason}`:baseReason;
+    const knowledgeReason=zone.sourceKnowledge?.populationNote?` Kildekunnskap: ${zone.sourceKnowledge.populationNote}`:'';
+    zone.reason=fishReason?`${fishReason} ${baseReason}${knowledgeReason}`:`${baseReason}${knowledgeReason}`;
     if(goal==='big') zone.reason=`Stor-fisk-modus prioriterer tydelig struktur og kantsoner. ${zone.reason}`;
     if(zone._freshwaterName) zone.waterName=zone._freshwaterName;
     delete zone._point; delete zone._coast; delete zone._exposure; delete zone._hour; delete zone._freshwaterName;
@@ -1202,7 +1344,7 @@ async function generateZones({west,south,east,north,zoom}, currentWeather, selec
   if(freshwater&&freshwaterRasterFallback&&!zones.length) freshwaterMaskError=maskError||'Ingen vannflater kunne bekreftes i valgt utsnitt.';
   const warning=[maskError&&!freshwaterRasterFallback?'Vannmasken svarte ikke; prøv igjen om litt.':null,freshwaterProviderWarning, freshwaterMaskError?'Ingen sikre ferskvannssoner kunne bekreftes i valgt utsnitt. Zoom litt nærmere eller prøv igjen.':null,restrictedWaters?'Vann merket med fiskeforbud eller adgangsforbud er filtrert bort.':null,depthError?'Dybdeestimat er midlertidig utilgjengelig for noen soner.':null].filter(Boolean).join(' ')||null;
   const source=freshwater?`${freshwaterLookup} + sikker vannkant + MET Norway`:`OSM vannmaske + Kartverket sjøkart + EMODnet dybdeestimat + MET Norway${marineConditions?' + Open-Meteo Marine':''}`;
-  return {zones:zones.sort((a,b)=>b.score-a.score),stats:{tested,rejected,goal,base,radiusM,strictLandmask:true,waterType,waterMaskAvailable:zones.length>0||(!maskError&&!freshwaterMaskError),freshwaterAreas:freshwater?freshwaterAreas.length:null,freshwaterLookup:freshwater?freshwaterLookup:null,rasterFallback:freshwater?freshwaterRasterFallback:false,restrictedWaters,depthAvailable:zones.filter(z=>Number.isFinite(z.depth?.meters)).length,depthResolutionM:freshwater?null:125,warning,generatedAt:new Date().toISOString(),source}};
+  return {zones:zones.filter(z=>!z._speciesMismatch).map(z=>{delete z._speciesMismatch;return z;}).sort((a,b)=>b.score-a.score),stats:{tested,rejected,goal,base,radiusM,strictLandmask:true,waterType,waterMaskAvailable:zones.length>0||(!maskError&&!freshwaterMaskError),freshwaterAreas:freshwater?freshwaterAreas.length:null,freshwaterLookup:freshwater?freshwaterLookup:null,rasterFallback:freshwater?freshwaterRasterFallback:false,restrictedWaters,depthAvailable:zones.filter(z=>Number.isFinite(z.depth?.meters)).length,depthResolutionM:freshwater?null:125,warning,generatedAt:new Date().toISOString(),source}};
 }
 
 async function boatRamps({west,south,east,north}) {
@@ -1229,8 +1371,9 @@ function send(res, code, data, type='application/json; charset=utf-8', extraHead
 }
 async function handleApi(req,res,url) {
   try {
-    if(url.pathname==='/api/health') return send(res,200,{ok:true,app:'Vestfjella Fiske',version:'stable-1.0',revision:APP_REVISION,engine:'Fiste REV26 freshwater core',waterDirectory:VESTFJELLA_WATERS.count,nveHydApiConfigured:Boolean(NVE_API_KEY)});
+    if(url.pathname==='/api/health') return send(res,200,{ok:true,app:'Vestfjella Fiske',version:'stable-1.2',revision:APP_REVISION,engine:'Fiste REV26 freshwater core',waterDirectory:VESTFJELLA_WATERS.count,nveHydApiConfigured:Boolean(NVE_API_KEY)});
     if(url.pathname==='/api/water-directory') return send(res,200,VESTFJELLA_WATERS);
+    if(url.pathname==='/api/water-locate') { const name=String(url.searchParams.get('name')||'').trim(); if(!name||name.length>100) return send(res,400,{error:'Ugyldig vannnavn'}); const located=await locateVestfjellaWater(name); if(!located) return send(res,404,{error:'Fant ikke sikker kartplassering for dette vannet'}); return send(res,200,located); }
     if(url.pathname==='/api/weather') {
       const lat=Number(url.searchParams.get('lat')),lon=Number(url.searchParams.get('lon'));
       if(!Number.isFinite(lat)||!Number.isFinite(lon)||lat<57||lat>72||lon<3||lon>32) return send(res,400,{error:'Ugyldig lat/lon for Norge'});
@@ -1297,4 +1440,4 @@ function createServer() {
 }
 function startServer(port=PORT) { const server=createServer(); return server.listen(port,()=>{ let ip='localhost'; for(const list of Object.values(os.networkInterfaces())) for(const item of list||[]) if(item.family==='IPv4'&&!item.internal) ip=item.address; console.log(`Vestfjella Fiske kjører på http://${ip}:${port}`); }); }
 if(require.main===module) startServer();
-module.exports={computeScore,environmentalScoreAdjustments,moonInfo,deriveMarineSummary,marine,hydrology,boatRamps,validateZoneRequest,createBoundedCache,windExposure,formatReason,recommendLure,lureCatalog,flyOnlyLureAdvice,isVestfjellaFlyOnly,parseDepthFeatureInfo,depthAtPoint,norwegianHour,buildDataQuality,normalizeFishType,normalizeFishSelection,searchBoundsForBase,isFreshwaterFish,isNearOfficialNoFishingZone,parseFreshwaterAreas,freshwaterAtPoint,freshwaterCandidateGrid,freshwaterCoastInfo,polygonMostlyInFreshwater,parseNominatimWater,fetchNominatimWater,fetchFreshwaterAreas,bestFishingTimes,MAX_ZONE_COUNT,MAX_ZONE_CANDIDATES,FISH_TYPES,VESTFJELLA_WATERS,createServer,startServer,weather,generateZones};
+module.exports={computeScore,environmentalScoreAdjustments,moonInfo,deriveMarineSummary,marine,hydrology,boatRamps,validateZoneRequest,createBoundedCache,windExposure,formatReason,recommendLure,lureCatalog,flyOnlyLureAdvice,isVestfjellaFlyOnly,parseDepthFeatureInfo,depthAtPoint,norwegianHour,buildDataQuality,normalizeFishType,normalizeFishSelection,searchBoundsForBase,isFreshwaterFish,isNearOfficialNoFishingZone,parseFreshwaterAreas,freshwaterAtPoint,freshwaterCandidateGrid,freshwaterCoastInfo,polygonMostlyInFreshwater,parseNominatimWater,fetchNominatimWater,fetchFreshwaterAreas,bestFishingTimes,MAX_ZONE_COUNT,MAX_ZONE_CANDIDATES,FISH_TYPES,VESTFJELLA_WATERS,VESTFJELLA_BOUNDS,normalizeWaterLookupName,waterNameSimilarity,matchFreshwaterAreaByName,createServer,startServer,weather,generateZones};

@@ -1,4 +1,14 @@
-# Vestfjella Fiske – STABLE 1.0
+
+## Nytt i STABLE 1.2
+- Kildebasert vannprofil i vannlisten: bestand, areal der det finnes sikre data, adkomst, spesialregler og kildegrad.
+- Bestandskunnskap fra Inatur/FishKing påvirker rangering bare når en åpen kilde faktisk dokumenterer arten.
+- Dokumenterte ørret-only-vann nedprioriteres i abbor-modus og omvendt.
+- FishKing-omtalte småvann markeres som lokale «skattekister», uten å late som dagens bestand er garantert.
+- Områdekunnskap: 96 vann totalt, 45 med ørret, kalking siden 1990, årlig utsetting, fire fluevann og to fiskebrygger.
+- Klikk på et vann forsøker kartmatch med lokale/offentlige navnealias og viser kartberegnet areal fra OSM-vannpolygon når tilgjengelig.
+- Kildelenker i appen til Inatur, FishKing, Finnfisk/NVE og Store Le-kartet.
+
+# Vestfjella Fiske – STABLE 1.2
 
 Dette er ferskvannsutgaven av den fungerende **Fiste REV26-motoren**, tilpasset Vestfjella/Aremark.
 
@@ -33,7 +43,7 @@ Den gamle løsningen brukte et separat koordinat-/verifiseringslag og kunne ende
 3. **Add file → Upload files**.
 4. Dra inn alt innholdet i denne mappen og commit til `main`.
 5. Render deployer automatisk. Hvis ikke: **Manual Deploy → Deploy latest commit**.
-6. Åpne `/api/health` på Render-adressen. Den skal vise `Vestfjella Fiske` og `stable-1.0`.
+6. Åpne `/api/health` på Render-adressen. Den skal vise `Vestfjella Fiske` og `stable-1.2`.
 
 Det er under 100 filer i pakken, så den kan lastes opp i én omgang via GitHub-nettsiden.
 

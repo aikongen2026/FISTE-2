@@ -9,14 +9,14 @@ const root=path.join(__dirname,'..','public');
 test('stable app is built on Fiste freshwater core',()=>{
   for(const name of ['computeScore','environmentalScoreAdjustments','validateZoneRequest','freshwaterCandidateGrid','freshwaterAtPoint','recommendLure','createServer']) assert.equal(typeof app[name],'function',name);
   assert.equal(pkg.name,'vestfjella-fiske-stable');
-  assert.equal(pkg.version,'1.0.0');
+  assert.equal(pkg.version,'1.2.0');
 });
 
 test('Vestfjella UI starts in the correct area and contains only freshwater choices',()=>{
   const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
   const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
   assert.match(html,/Vestfjella Fiske/);
-  assert.match(html,/STABLE 1\.0/);
+  assert.match(html,/STABLE 1\.2/);
   assert.match(html,/value="orret" selected/);
   assert.match(html,/value="abbor"/);
   assert.match(html,/Ingen – vis ørret \+ abbor/);
@@ -96,7 +96,7 @@ test('health and water-directory endpoints identify the stable freshwater build'
   const health=await fetch(`http://127.0.0.1:${port}/api/health`).then(r=>r.json());
   assert.equal(health.ok,true);
   assert.equal(health.app,'Vestfjella Fiske');
-  assert.equal(health.version,'stable-1.0');
+  assert.equal(health.version,'stable-1.2');
   assert.equal(health.waterDirectory,92);
   const dir=await fetch(`http://127.0.0.1:${port}/api/water-directory`).then(r=>r.json());
   assert.equal(dir.count,92);
@@ -111,8 +111,60 @@ test('all mode is freshwater trout plus perch, not the old sea multi-mode',()=>{
 
 test('service worker caches the stable shell and real cropped lure images',()=>{
   const sw=fs.readFileSync(path.join(root,'sw.js'),'utf8');
-  assert.match(sw,/vestfjella-fiste-stable-1/);
+  assert.match(sw,/vestfjella-fiste-stable-1-2/);
   assert.match(sw,/\/lures\/vestfjella\/rosa-solv-prikket\.jpg/);
   assert.match(sw,/\/data\/vestfjella-waters\.json/);
   assert.doesNotMatch(sw,/\/lures\/user\//);
+});
+
+
+test('water directory is clickable and sorts by current zone score',()=>{
+  const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
+  const css=fs.readFileSync(path.join(root,'style.css'),'utf8');
+  assert.match(js,/data-water-focus/);
+  assert.match(js,/focusKnownWater/);
+  assert.match(js,/directoryScoreFor/);
+  assert.match(js,/currentScore/);
+  assert.match(css,/water-directory-row/);
+});
+
+test('water-name matching accepts common tjern name variants',()=>{
+  assert.equal(app.normalizeWaterLookupName('Botiltjernet'),app.normalizeWaterLookupName('Botiltjern'));
+  const area={name:'Midtre Brutjern',ring:[{lat:59.26,lon:11.58},{lat:59.26,lon:11.59},{lat:59.27,lon:11.59},{lat:59.27,lon:11.58},{lat:59.26,lon:11.58}]};
+  const match=app.matchFreshwaterAreaByName('Midtre Brutjern',[area]);
+  assert.equal(match.area,area);
+  assert.ok(match.score>=50);
+});
+
+
+test('source-backed water profiles keep species claims explicit and conservative',()=>{
+  const data=JSON.parse(fs.readFileSync(path.join(root,'data','vestfjella-waters.json'),'utf8'));
+  assert.equal(data.officialTotalWaterCount,96);
+  assert.equal(data.officialTroutWaterCount,45);
+  const kutjern=data.waters.find(w=>w.name==='Kutjern');
+  const skibu=data.waters.find(w=>w.name==='Skibuvannet');
+  const botilt=data.waters.find(w=>w.name==='Botiltjernet');
+  assert.deepEqual(kutjern.species,['orret']);
+  assert.deepEqual(skibu.species,['orret','abbor']);
+  assert.equal(botilt.areaKm2Official,0.01);
+  assert.ok(data.waters.some(w=>w.hiddenGem===true));
+  assert.ok(data.waters.filter(w=>Array.isArray(w.species)&&w.species.length).length>=15);
+});
+
+test('water profile UI exposes source confidence, area and source links',()=>{
+  const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+  const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
+  assert.match(html,/waterKnowledgeSummary/);
+  assert.match(html,/waterProfile/);
+  assert.match(js,/renderWaterProfile/);
+  assert.match(js,/formatWaterArea/);
+  assert.match(js,/FishKing Vestfjella/);
+  assert.match(js,/Finnfisk \/ NVE/);
+});
+
+test('server includes source knowledge adjustment and map aliases',()=>{
+  const source=fs.readFileSync(path.join(__dirname,'..','server.js'),'utf8');
+  assert.match(source,/sourceKnowledgeAdjustment/);
+  assert.match(source,/mapAliases/);
+  assert.match(source,/areaDaaApprox/);
 });
