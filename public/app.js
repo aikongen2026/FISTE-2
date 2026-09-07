@@ -30,7 +30,10 @@ function renderWeather(w) {
 function bestHtml(w) {
   if (!w) return '<p class="muted">Ingen vann matcher filteret.</p>';
   const l = w.lure;
-  return `<div class="hero-score"><div class="score-big">${w.score}<small>/100</small></div><div><span class="card-label">${esc(fishName(w.targetFish))} · ${esc(w.bestMethod)}</span><h3>${esc(w.name)}</h3><p class="muted">${esc(w.character)}</p></div></div><div class="hero-grid"><article><span>TILKOMST</span><b>${esc(w.access)}</b></article><article><span>BESTE TID</span><b>${esc(w.best || 'Morgen / kveld')}</b></article><article><span>LOVLIG METODE</span><b>${esc(w.flyOnly ? 'Kun flue' : w.methods.join(' / '))}</b></article></div><div class="lure-box"><img class="zoom-lure" src="${l.image}" alt="${esc(l.name)}"><div><span class="card-label">SETT PÅ NÅ</span><b>${esc(l.name)}</b><small>${esc(l.why)}<br><strong>${esc(l.presentation)}</strong></small></div></div><div style="display:flex;gap:6px;margin-top:9px"><button data-show="${w.id}">VIS PÅ KART</button><button class="secondary" data-nav="${w.lat},${w.lon}">NAVIGER</button><button class="secondary" data-source="${esc(w.source)}">VANNINFO</button></div>`;
+  const mapActions = w.mapVerified
+    ? `<button data-show="${w.id}">VIS PÅ KART</button><button class="secondary" data-nav="${w.lat},${w.lon}">NAVIGER</button>`
+    : `<span class="tag">KARTPOSISJON UVERIFISERT</span>`;
+  return `<div class="hero-score"><div class="score-big">${w.score}<small>/100</small></div><div><span class="card-label">${esc(fishName(w.targetFish))} · ${esc(w.bestMethod)}</span><h3>${esc(w.name)}</h3><p class="muted">${esc(w.character)}</p></div></div><div class="hero-grid"><article><span>TILKOMST</span><b>${esc(w.access)}</b></article><article><span>BESTE TID</span><b>${esc(w.best || 'Morgen / kveld')}</b></article><article><span>LOVLIG METODE</span><b>${esc(w.flyOnly ? 'Kun flue' : w.methods.join(' / '))}</b></article></div><div class="lure-box"><img class="zoom-lure" src="${l.image}" alt="${esc(l.name)}"><div><span class="card-label">SETT PÅ NÅ</span><b>${esc(l.name)}</b><small>${esc(l.why)}<br><strong>${esc(l.presentation)}</strong></small></div></div><div style="display:flex;gap:6px;margin-top:9px;align-items:center;flex-wrap:wrap">${mapActions}<button class="secondary" data-source="${esc(w.source)}">VANNINFO</button></div>`;
 }
 
 function popup(w, i) { return `<b>${i + 1}. ${esc(w.name)}</b><br>Score ${w.score}/100 · ${esc(fishName(w.targetFish))}<br>${w.flyOnly ? '<b style="color:#d8bfff">Kun fluefiske</b><br>' : ''}${esc(w.character)}<hr><b>${esc(w.lure.name)}</b><br>${esc(w.lure.presentation)}`; }
@@ -38,7 +41,7 @@ function markerIcon(w) { const c = scoreColor(w.score); return L.divIcon({ class
 
 function renderMarkers(rows) {
   markerLayer.clearLayers();
-  rows.forEach((w, i) => {
+  rows.filter(w => w.mapVerified).forEach((w, i) => {
     const m = L.marker([w.lat, w.lon], { icon: markerIcon(w), title: w.name }).bindPopup(popup(w, i));
     m.on('click', () => selectWater(w.id));
     m.addTo(markerLayer);
@@ -46,8 +49,14 @@ function renderMarkers(rows) {
 }
 
 function renderList(rows) {
-  $('waterCount').textContent = `${rows.length} vann`;
-  $('waterList').innerHTML = rows.map((w, i) => `<article class="water-row ${selectedId === w.id ? 'selected-water' : ''}" data-water="${w.id}"><div class="rank">${i + 1}</div><div><div class="water-title"><b>${esc(w.name)}</b><span class="tag">${esc(w.access)}</span>${w.flyOnly ? '<span class="tag flyonly">KUN FLUE</span>' : ''}<span class="tag">${esc(fishName(w.targetFish))}</span></div><p>${esc(w.tips)}</p><button data-show="${w.id}">Vis kart</button> <button class="secondary" data-nav="${w.lat},${w.lon}">Naviger</button></div><div class="mini-lure"><img class="zoom-lure" src="${w.lure.image}" alt="${esc(w.lure.name)}"></div><div class="score-pill" style="color:${scoreColor(w.score)}">${w.score}</div></article>`).join('');
+  const verified = rows.filter(w => w.mapVerified).length;
+  $('waterCount').textContent = `${rows.length} vann · ${verified} kartverifisert`;
+  $('waterList').innerHTML = rows.map((w, i) => {
+    const mapButtons = w.mapVerified
+      ? `<button data-show="${w.id}">Vis kart</button> <button class="secondary" data-nav="${w.lat},${w.lon}">Naviger</button>`
+      : `<span class="tag" title="Appen skjuler usikre koordinater i stedet for å vise dem på land">POSISJON UVERIFISERT</span>`;
+    return `<article class="water-row ${selectedId === w.id ? 'selected-water' : ''}" data-water="${w.id}"><div class="rank">${i + 1}</div><div><div class="water-title"><b>${esc(w.name)}</b><span class="tag">${esc(w.access)}</span>${w.flyOnly ? '<span class="tag flyonly">KUN FLUE</span>' : ''}<span class="tag">${esc(fishName(w.targetFish))}</span></div><p>${esc(w.tips)}</p>${mapButtons}</div><div class="mini-lure"><img class="zoom-lure" src="${w.lure.image}" alt="${esc(w.lure.name)}"></div><div class="score-pill" style="color:${scoreColor(w.score)}">${w.score}</div></article>`;
+  }).join('');
 }
 
 function renderTimeHint() {
@@ -61,12 +70,14 @@ function render(data) {
   rules(data.rules);
   renderWeather(data.weather);
   $('goalBadge').textContent = `${fishName(data.fish)} · ${data.revision}`;
-  $('bestNow').innerHTML = bestHtml(data.waters[0]);
+  const bestVerified = data.waters.find(w => w.mapVerified) || data.waters[0];
+  $('bestNow').innerHTML = bestHtml(bestVerified);
   renderMarkers(data.waters);
   renderList(data.waters);
   renderTimeHint();
   populateCatch(data.waters);
-  setState(`Oppdatert ${new Date().toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit' })} · ${data.waters.length} vann rangert`);
+  const p = data.positioning || {};
+  setState(`Oppdatert ${new Date().toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit' })} · ${data.waters.length} vann rangert · ${p.verified ?? 0} kartverifisert`);
 }
 
 async function load() {
@@ -96,7 +107,7 @@ function selectWater(id) {
   selectedId = id;
   const w = latest?.waters.find(x => x.id === id);
   if (!w) return;
-  map.flyTo([w.lat, w.lon], 14);
+  if (w.mapVerified) map.flyTo([w.lat, w.lon], 14);
   $('bestNow').innerHTML = bestHtml(w);
   renderList(latest.waters);
   $('catchWater').value = id;

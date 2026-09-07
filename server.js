@@ -9,6 +9,99 @@ const waters = JSON.parse(fs.readFileSync(path.join(PUBLIC, 'data', 'waters.json
 const UA = process.env.MET_USER_AGENT || 'vestfjella-fiske/1.0 contact: local-app';
 const cache = new Map();
 
+const WATER_BBOX = { south: 59.235, west: 11.565, north: 59.295, east: 11.607 };
+let waterPositionPromise = null;
+
+function normalizeWaterName(value = '') {
+  return String(value).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/æ/g, 'ae').replace(/ø/g, 'o').replace(/å/g, 'a')
+    .replace(/tjernet|tjern|vannet|vatnet|vann|putten|polen|pølen/g, '')
+    .replace(/[^a-z0-9]/g, '');
+}
+function haversineKm(aLat, aLon, bLat, bLon) {
+  const R = 6371, toRad = x => x * Math.PI / 180;
+  const dLat = toRad(bLat - aLat), dLon = toRad(bLon - aLon);
+  const q = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(aLat)) * Math.cos(toRad(bLat)) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(q));
+}
+async function fetchText(url, options = {}) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
+  try {
+    const response = await fetch(url, { ...options, signal: controller.signal, headers: { 'User-Agent': UA, 'Accept': 'application/json', ...(options.headers || {}) } });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.text();
+  } finally { clearTimeout(timeout); }
+}
+async function overpassWaterFeatures() {
+  const b = WATER_BBOX;
+  const query = `[out:json][timeout:20];(way["natural"="water"](${b.south},${b.west},${b.north},${b.east});relation["natural"="water"](${b.south},${b.west},${b.north},${b.east});way["water"](${b.south},${b.west},${b.north},${b.east});relation["water"](${b.south},${b.west},${b.north},${b.east}););out tags center;`;
+  const endpoints = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
+  let lastError;
+  for (const endpoint of endpoints) {
+    try {
+      const body = new URLSearchParams({ data: query }).toString();
+      const text = await fetchText(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body });
+      const json = JSON.parse(text);
+      const seen = new Set(), out = [];
+      for (const e of json.elements || []) {
+        const lat = Number(e.center?.lat ?? e.lat), lon = Number(e.center?.lon ?? e.lon);
+        if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+        const key = `${lat.toFixed(6)},${lon.toFixed(6)}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        out.push({ lat, lon, name: e.tags?.name || '', osmId: `${e.type}/${e.id}`, norm: normalizeWaterName(e.tags?.name || '') });
+      }
+      if (out.length) return out;
+    } catch (e) { lastError = e; }
+  }
+  throw lastError || new Error('Ingen vannflater fra Overpass');
+}
+function assignWaterPositions(features) {
+  const used = new Set(), result = new Map(), byName = new Map();
+  features.forEach((f, i) => { if (f.norm) { if (!byName.has(f.norm)) byName.set(f.norm, []); byName.get(f.norm).push({ ...f, idx: i }); } });
+  for (const w of waters.waters) {
+    const candidates = byName.get(normalizeWaterName(w.name)) || [];
+    let best = null, bestDist = Infinity;
+    for (const f of candidates) {
+      if (used.has(f.idx)) continue;
+      const d = haversineKm(w.lat, w.lon, f.lat, f.lon);
+      if (d < bestDist) { best = f; bestDist = d; }
+    }
+    if (best && bestDist <= 3.0) {
+      used.add(best.idx);
+      result.set(w.id, { lat: best.lat, lon: best.lon, mapVerified: true, positionSource: 'OSM-navn', positionDistanceM: Math.round(bestDist * 1000) });
+    }
+  }
+  for (const w of waters.waters.filter(w => !result.has(w.id))) {
+    let best = null, bestDist = Infinity, bestIdx = -1;
+    features.forEach((f, idx) => {
+      if (used.has(idx)) return;
+      const d = haversineKm(w.lat, w.lon, f.lat, f.lon);
+      if (d < bestDist) { best = f; bestDist = d; bestIdx = idx; }
+    });
+    if (best && bestDist <= 0.75) {
+      used.add(bestIdx);
+      result.set(w.id, { lat: best.lat, lon: best.lon, mapVerified: true, positionSource: best.name ? `OSM-vannflate (${best.name})` : 'OSM-vannflate', positionDistanceM: Math.round(bestDist * 1000) });
+    } else {
+      result.set(w.id, { lat: w.lat, lon: w.lon, mapVerified: false, positionSource: 'Uverifisert posisjon', positionDistanceM: null });
+    }
+  }
+  return result;
+}
+async function waterPositions() {
+  if (!waterPositionPromise) waterPositionPromise = (async () => {
+    try {
+      const features = await overpassWaterFeatures();
+      return { positions: assignWaterPositions(features), source: 'OpenStreetMap vannflater', featureCount: features.length, ok: true };
+    } catch (e) {
+      const positions = new Map(waters.waters.map(w => [w.id, { lat: w.lat, lon: w.lon, mapVerified: false, positionSource: 'Kun estimert – skjult på kart', positionDistanceM: null }]));
+      return { positions, source: 'Ingen live verifisering', featureCount: 0, ok: false, error: e.message };
+    }
+  })();
+  return waterPositionPromise;
+}
+
 function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
 function hashKey(str = '') { let h = 0; for (let i = 0; i < str.length; i++) { h = ((h << 5) - h) + str.charCodeAt(i); h |= 0; } return Math.abs(h); }
 function pickFromPool(pool, key, offset = 0) { return pool[(hashKey(key) + offset) % pool.length]; }
@@ -257,6 +350,12 @@ function lurePool(w, wth, fish = 'orret') {
   });
 }
 
+function lureAdvice(w, wth, fish = 'orret') {
+  const pool = lurePool(w, wth, fish);
+  const key = `${w.id || 'water'}-${fish}-${new Date(wth.time).getHours()}-${Math.round(wth.cloud || 0)}-${Math.round(wth.wind || 0)}-${w.waterTone || 'mixed'}`;
+  return pickFromPool(pool, key, 0);
+}
+
 function diversifyLures(rows, wth) {
   const recentImages = [];
   const topBlockImages = new Set();
@@ -298,11 +397,13 @@ async function analysis(query) {
 
   const target = targetDate(mode);
   const center = { lat: 59.2700, lon: 11.5890 };
-  const series = await forecast(center.lat, center.lon);
+  const [series, posInfo] = await Promise.all([forecast(center.lat, center.lon), waterPositions()]);
   const wth = nearest(series, target);
   wth.pressureTrend = pressureTrend(series, wth);
 
-  let rows = waters.waters.map(w => {
+  let rows = waters.waters.map(raw => {
+    const fixed = posInfo.positions.get(raw.id) || { lat: raw.lat, lon: raw.lon, mapVerified: false, positionSource: 'Uverifisert posisjon' };
+    const w = { ...raw, ...fixed };
     let score = fish === 'abbor' ? perchScore(w, wth, { goal, method }) : troutScore(w, wth, { goal, method });
     if (fish === 'all') {
       const ts = troutScore(w, wth, { goal, method });
@@ -319,17 +420,12 @@ async function analysis(query) {
   if (access !== 'all') rows = rows.filter(w => access === 'easy' ? w.accessScore >= 4 : w.accessScore <= 3);
   rows.sort((a, b) => b.score - a.score || b.accessScore - a.accessScore || a.name.localeCompare(b.name, 'no'));
   rows = diversifyLures(rows, wth);
+  const verifiedCount = rows.filter(w => w.mapVerified).length;
 
   return {
-    revision: 'REV 3',
-    generatedAt: new Date().toISOString(),
-    targetTime: wth.time,
-    weather: wth,
-    fish,
-    goal,
-    method,
-    access,
-    rules: waters.official,
+    revision: 'REV 4', generatedAt: new Date().toISOString(), targetTime: wth.time, weather: wth,
+    fish, goal, method, access, rules: waters.official,
+    positioning: { ok: posInfo.ok, source: posInfo.source, verified: verifiedCount, total: rows.length, featureCount: posInfo.featureCount },
     waters: rows
   };
 }
@@ -368,7 +464,7 @@ const server = http.createServer(async (req, res) => {
     const u = new URL(req.url, 'http://localhost');
     if (u.pathname === '/api/health') {
       res.writeHead(200, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify({ ok: true, app: 'Vestfjella Fiske', revision: 'REV 3', waters: waters.waters.length }));
+      return res.end(JSON.stringify({ ok: true, app: 'Vestfjella Fiske', revision: 'REV 4', waters: waters.waters.length }));
     }
     if (u.pathname === '/api/analysis') {
       const data = await analysis(u.searchParams);
@@ -382,5 +478,5 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-if (require.main === module) server.listen(PORT, '0.0.0.0', () => console.log(`Vestfjella Fiske REV 3 på http://0.0.0.0:${PORT}`));
-module.exports = { server, analysis, targetDate, troutScore, diversifyLures };
+if (require.main === module) server.listen(PORT, '0.0.0.0', () => console.log(`Vestfjella Fiske REV 4 på http://0.0.0.0:${PORT}`));
+module.exports = { server, analysis, targetDate, troutScore, lureAdvice, diversifyLures, assignWaterPositions, haversineKm };
