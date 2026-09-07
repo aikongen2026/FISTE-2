@@ -1,0 +1,592 @@
+{
+  "name": "Fiste guiden – Christians fotograferte sluker",
+  "updated": "2026-09-05",
+  "source": "Christian Faye Lund OneDrive / Fiske/Sluker",
+  "method": "Kun sluker fra Christians egen fotograferte samling kan anbefales. Hvert forslag viser ett konkret enkeltagn fra brukerens eget foto; eksterne og generiske slukvalg er deaktivert.",
+  "imageCount": 14,
+  "lures": [
+    {
+      "id": "own01",
+      "slug": "natural-minnow-wobblers",
+      "name": "Egne naturfargede wobblere",
+      "family": "Minnow- og småfiskwobblere",
+      "color": "Sølv, blå, grønn og rød/hvit",
+      "species": [
+        "sjoorret",
+        "orret",
+        "abbor",
+        "gjedde",
+        "makrell",
+        "sei"
+      ],
+      "waterTypes": [
+        "saltwater",
+        "freshwater"
+      ],
+      "tags": [
+        "minnow",
+        "wobbler",
+        "natural",
+        "silver",
+        "blue",
+        "contrast",
+        "shallow"
+      ],
+      "count": "5 wobblere",
+      "image": "/lures/single/own01.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "0482a5b5-ab28-4d64-af26-ad62c220d872.jpeg",
+      "sourceSha256": "83acf51f70bb32adb36747028ce45e080ad6e9c53029f7d2d76514e0acff7ad0",
+      "webSha256": "a8151277aef127576af79ae4e8b686426fc3e4cb22cbfce30b3dfec7faced332",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 1400,
+        "height": 647
+      },
+      "originalPixelSize": {
+        "width": 2048,
+        "height": 946
+      },
+      "webBytes": 187089
+    },
+    {
+      "id": "own02",
+      "slug": "bombarda-fly-set",
+      "name": "Eget bombarda- og fluesett",
+      "family": "Bombarda med streamer/våtflue",
+      "color": "Hvit bombarda med mørk/rosa flue",
+      "species": [
+        "sjoorret",
+        "orret"
+      ],
+      "waterTypes": [
+        "saltwater",
+        "freshwater"
+      ],
+      "tags": [
+        "bombarda",
+        "fly",
+        "shallow",
+        "low-wind",
+        "contrast",
+        "pink"
+      ],
+      "count": "25 g bombarda-sett med minst én flue",
+      "image": "/lures/single/own02.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "1071b037-33c6-466c-bb75-5a9d97452695.jpeg",
+      "sourceSha256": "c05535f35564d227db6a51c60375c1f01b92be72d8fbaae8b49edada63bef9c8",
+      "webSha256": "5a8fee62a6a6c08cad682620d5c20e3795eecfa6225d518cda1b31abf3fe773c",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 155070
+    },
+    {
+      "id": "own03",
+      "slug": "freshwater-spinners",
+      "name": "Egne små spinnere",
+      "family": "Inline-spinnere",
+      "color": "Sølv, grønn, gul, rosa og rødprikket",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spinner",
+        "freshwater",
+        "small",
+        "compact",
+        "silver",
+        "warm",
+        "contrast",
+        "shallow",
+        "freshwater-specialist"
+      ],
+      "count": "5 spinnere",
+      "image": "/lures/single/own03.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "1747d1eb-bcfc-484d-8e13-3f5439356da8.jpeg",
+      "sourceSha256": "01e00613e5c025bce9e9693145aa65b4227badcd8f578a9447ee7604d7c4ba57",
+      "webSha256": "5fb0470e7304c9a4e33a17a6d77afda4a664ea86755caa4651d7633a97e9bd38",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 157028
+    },
+    {
+      "id": "own04",
+      "slug": "crankbait-wobblers",
+      "name": "Egne kompakte wobblere",
+      "family": "Crankbait- og småfiskwobblere",
+      "color": "Naturfarger og sterke gul/grønn/oransje kontraster",
+      "species": [
+        "orret",
+        "abbor",
+        "gjedde"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "wobbler",
+        "crankbait",
+        "freshwater",
+        "compact",
+        "contrast",
+        "natural",
+        "warm",
+        "structure",
+        "freshwater-specialist"
+      ],
+      "count": "9 wobblere",
+      "image": "/lures/single/own04.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "372ad43a-0f0e-42d6-9d4a-41e99944deb0.jpeg",
+      "sourceSha256": "d975b92ed9c41d7821b86b21b62dadd4aa3e322d37f3021db12941938fbbef1a",
+      "webSha256": "92e463b583d392a93dabf95352623e93007c44338100317febfa4bafaa143d04",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 174658
+    },
+    {
+      "id": "own05",
+      "slug": "sea-metal-spoons",
+      "name": "Egne blanke sjøsluker",
+      "family": "Slanke skje- og metallsluker",
+      "color": "Sølv, blå/sølv og grønn/holografisk",
+      "species": [
+        "sjoorret",
+        "makrell",
+        "sei"
+      ],
+      "waterTypes": [
+        "saltwater"
+      ],
+      "tags": [
+        "spoon",
+        "sea-metal",
+        "saltwater",
+        "casting",
+        "silver",
+        "blue",
+        "natural",
+        "slim",
+        "deep",
+        "saltwater-specialist"
+      ],
+      "count": "10 metallsluker",
+      "image": "/lures/single/own05.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "482bb468-f335-4fc4-b3ef-af6b4b7a1d09.jpeg",
+      "sourceSha256": "cdbe024056463660d518b682a132d555335d76d84599bd4467733f5854bc5632",
+      "webSha256": "08df946159ff63ec71595c0ba95a5c86e3aafd30b63decc8d3be7f3e63327498",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 1400,
+        "height": 647
+      },
+      "originalPixelSize": {
+        "width": 2048,
+        "height": 946
+      },
+      "webBytes": 169685
+    },
+    {
+      "id": "own06",
+      "slug": "flies-streamers",
+      "name": "Egne streamere og våtfluer",
+      "family": "Fluer og streamere",
+      "color": "Hvit/sølv, rosa, brun, gull og oransje",
+      "species": [
+        "sjoorret",
+        "orret"
+      ],
+      "waterTypes": [
+        "saltwater",
+        "freshwater"
+      ],
+      "tags": [
+        "fly",
+        "streamer",
+        "bombarda",
+        "low-wind",
+        "warm",
+        "silver",
+        "pink",
+        "contrast"
+      ],
+      "count": "minst 8 fluer, blant annet FLADEN",
+      "image": "/lures/single/own06.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "64326546-6641-4f6c-8fa4-e34ddff648f2.jpeg",
+      "sourceSha256": "2c995b4ce531f73daaa1bc0f029bd65701ef614478afc3870894d378ef4f84df",
+      "webSha256": "3c771421612433b974d5d32eabae2a257de1d796107b38c7ee060cee3f0da4e9",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 187360
+    },
+    {
+      "id": "own07",
+      "slug": "dressed-contrast-spoons",
+      "name": "Egne kontrastsluker med dressing",
+      "family": "Kompakte skjesluker med krokdressing",
+      "color": "Rød, sølv, gull, grønn og blå med prikker",
+      "species": [
+        "sjoorret",
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "saltwater",
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "compact",
+        "dressed",
+        "contrast",
+        "warm",
+        "silver",
+        "shallow"
+      ],
+      "count": "6 metallsluker",
+      "image": "/lures/single/own07.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "6d3adece-a6eb-49d4-a5e5-e59290932148.jpeg",
+      "sourceSha256": "e292af731f32d0826d93b19c8c6bf23e9ac662d85f2ef4170a0cfea3e94c2fe3",
+      "webSha256": "fc90cc9d7335c294090f918cccb7a53b5924917dbe16cca6b5652701eb4813b8",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 170402
+    },
+    {
+      "id": "own08",
+      "slug": "small-freshwater-spoons",
+      "name": "Egne små ferskvannssluker",
+      "family": "Små kompakte skjesluker",
+      "color": "Sølv, gull og naturfarger med prikker",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "freshwater",
+        "small",
+        "compact",
+        "natural",
+        "silver",
+        "warm",
+        "shallow",
+        "freshwater-specialist"
+      ],
+      "count": "7 skjesluker",
+      "image": "/lures/single/own08.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "8638c412-9f68-4e76-a232-b0fa406122a4.jpeg",
+      "sourceSha256": "1f1e19e648f77d0e48f954cc01d625b73cf0f2b8e805f16d7913d326dd5b5e9a",
+      "webSha256": "a76040d8f7220b9f8f4c3dbd1e20e8f6ec29c1871c96c0c85cd9134a49860149",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 169850
+    },
+    {
+      "id": "own09",
+      "slug": "micro-spoons",
+      "name": "Egne mikro- og kontrastsluker",
+      "family": "Små fiskelignende metallsluker",
+      "color": "Oransje, sort, blå/turkis, sølv/grønn og gulprikket",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "micro",
+        "freshwater",
+        "compact",
+        "contrast",
+        "warm",
+        "blue",
+        "shallow",
+        "freshwater-specialist"
+      ],
+      "count": "5 små metallsluker",
+      "image": "/lures/single/own09.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "8fe915a9-2e2b-454c-9b8d-50c05edebcc9.jpeg",
+      "sourceSha256": "ef12d3925210df27adadbd23854a953fca07755c4c70d53737bf9c7f053736ab",
+      "webSha256": "f1166d8250df9539c87775fc24149cbf780b4d333e0f1db913496c262398cee1",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 128982
+    },
+    {
+      "id": "own10",
+      "slug": "shad-spinnerbait",
+      "name": "Egen shad og spinnerbait",
+      "family": "Myk shad og skjørtkledd spinnerbait",
+      "color": "Mørk blå/sort og gulgrønn/hvit",
+      "species": [
+        "abbor",
+        "gjedde"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "shad",
+        "spinnerbait",
+        "freshwater",
+        "vegetation",
+        "contrast",
+        "dark",
+        "structure",
+        "freshwater-specialist"
+      ],
+      "count": "2 agn",
+      "image": "/lures/single/own10.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "92eccaea-92fa-44d4-8340-782fa120d630.jpeg",
+      "sourceSha256": "09f23670c460942a366254a35fd7a1e40eeba54428eff3eca49002a07ef76170",
+      "webSha256": "e0c91bc62d0217fade481a3671230ac22bb5afc9f543c9c0db12f9d7648e0b1f",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 163161
+    },
+    {
+      "id": "own11",
+      "slug": "mixed-allround-lures",
+      "name": "Egne allroundagn",
+      "family": "Spinner, shad og slanke metallsluker",
+      "color": "Sølv/blå, gulgrønn, rosa og sort/gull",
+      "species": [
+        "sjoorret",
+        "makrell",
+        "sei",
+        "orret",
+        "abbor",
+        "gjedde"
+      ],
+      "waterTypes": [
+        "saltwater",
+        "freshwater"
+      ],
+      "tags": [
+        "mixed",
+        "spoon",
+        "spinner",
+        "shad",
+        "casting",
+        "silver",
+        "blue",
+        "contrast",
+        "natural"
+      ],
+      "count": "6 agn",
+      "image": "/lures/single/own11.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "d6bb3333-bdcc-4394-ba86-c1ac18c9de90.jpeg",
+      "sourceSha256": "e2f15618c764abea7f79b323f1dfbeff918ee5fc41fff49ca30c169aba1ab9e3",
+      "webSha256": "3c0c385a06a91d3396c76d88fc59773eee0982bcd0fc78f0c6d033bbe7c6e7a2",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 161798
+    },
+    {
+      "id": "own12",
+      "slug": "inline-spinners",
+      "name": "Egne prikkede spinnere",
+      "family": "Inline-spinnere med og uten dressing",
+      "color": "Sølv, gull, blå og mørke kontrastfarger",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spinner",
+        "freshwater",
+        "small",
+        "compact",
+        "silver",
+        "warm",
+        "contrast",
+        "shallow",
+        "freshwater-specialist"
+      ],
+      "count": "8 spinnere",
+      "image": "/lures/single/own12.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "efca4b1b-8558-4f76-a041-a636a1aab7f6.jpeg",
+      "sourceSha256": "7e4b889a1ecdda48cbcccfd642f040cde233d5e8f5818ed9c62599529085485d",
+      "webSha256": "0b7d8d03dbba1dd07391ee5a7d503ab8f075e077165956e05c8cb4acb26714fc",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 156425
+    },
+    {
+      "id": "own13",
+      "slug": "red-gold-spoons",
+      "name": "Egne røde og metalliske skjesluker",
+      "family": "Små og mellomstore skjesluker",
+      "color": "Rød/rosa over gull, kobber og sølv",
+      "species": [
+        "sjoorret",
+        "orret",
+        "abbor",
+        "gjedde"
+      ],
+      "waterTypes": [
+        "saltwater",
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "warm",
+        "pink",
+        "copper",
+        "contrast",
+        "broad",
+        "shallow"
+      ],
+      "count": "8 skjesluker; to har mulig 18-merking uten bekreftet enhet",
+      "image": "/lures/single/own13.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "f15e8836-11af-4b14-9af8-644ff43dac55.jpeg",
+      "sourceSha256": "faf1684e6de87b2cc0f7dd681d7b225a9256beaec317894ac5d896ba26834cc1",
+      "webSha256": "916e3b32b8d8259c4bcf9aa3a20c087eda46e38a3500305b9e5a53fee94f9570",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 161412
+    },
+    {
+      "id": "own14",
+      "slug": "spotted-trout-spoons",
+      "name": "Egne prikkede ørretsluker",
+      "family": "Avlange skjesluker",
+      "color": "Rosa, rød og gul/oransje med sorte prikker",
+      "species": [
+        "sjoorret",
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "saltwater",
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "trout",
+        "pink",
+        "warm",
+        "contrast",
+        "slim",
+        "shallow"
+      ],
+      "count": "4 skjesluker",
+      "image": "/lures/single/own14.jpg",
+      "inventoryNote": "Valgt enkeltagn fra ditt eget foto",
+      "sourceFile": "f19b0ef2-b084-49e9-9eeb-03d395ea8072.jpeg",
+      "sourceSha256": "d68fa94cfd6c2a724dc42b6af08a77ccd1d02cbf24d7431e4982e728d1dce3df",
+      "webSha256": "fd7bfe04d8b754b42b8b8dbc72449a12814e7747138dedf6f97874336a95ae77",
+      "modelIdentification": "Ikke fastslått der merke/modell ikke er tydelig lesbar i foto.",
+      "pixelSize": {
+        "width": 647,
+        "height": 1400
+      },
+      "originalPixelSize": {
+        "width": 946,
+        "height": 2048
+      },
+      "webBytes": 148198
+    }
+  ]
+}

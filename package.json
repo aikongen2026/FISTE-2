@@ -1,11 +1,18 @@
 {
-  "name": "vestfjella-fiske",
+  "name": "vestfjella-fiske-stable",
   "version": "1.0.0",
-  "private": true,
-  "description": "Vestfjella Fiske - ferskvannsapp for Aremark/Marker",
+  "appRevision": 1,
+  "description": "Vestfjella Fiske – ferskvannsversjon bygget på den stabile Fiste-motoren, med vannmaskekontroll, MET-vær og personlig slukboks.",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "node --test test/server.test.js"
+    "start": "node scripts/verify-layout.js && node server.js",
+    "test": "node --test test/*.test.js",
+    "verify": "node scripts/verify-layout.js"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "pngjs": "^7.0.0"
+  }
 }

@@ -1,1 +1,13 @@
-{"name":"Vestfjella Fiske","short_name":"Vestfjella","start_url":"/","display":"standalone","background_color":"#03100d","theme_color":"#061713","icons":[{"src":"/icon.svg","sizes":"any","type":"image/svg+xml"}]}
+{
+  "name": "Vestfjella Fiske",
+  "short_name": "Vestfjella Fiske",
+  "description": "Ferskvannsapp for Vestfjella/Aremark bygget på Fiste-motorens vannmaske, vær- og slukanalyse.",
+  "lang": "no",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#061713",
+  "theme_color": "#061713",
+  "icons": [{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

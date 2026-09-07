@@ -1,0 +1,395 @@
+{
+  "source": {
+    "title": "Sjøørret plasser Kirkøy – Hvaler – Østfold",
+    "url": "https://www.rosareke.no/sjoorret-plasser-kirkoy-hvaler-ostfold/",
+    "author": "Bjørn Tore Kjølholt",
+    "publishedAt": "2016-03-15",
+    "modifiedAt": "2024-02-10",
+    "retrievedAt": "2026-08-02",
+    "evidenceType": "erfaringsomtale",
+    "interpretation": "Korte parafraser av forfatterens erfaringer. Koordinatene er kontrollert mot Kartverkets stedsnavn; sirklene er omtrentlige områdeindikatorer og gjengir ikke de håndtegnede grønne feltene som eksakte grenser."
+  },
+  "spots": [
+    {
+      "id": "paradisbukta-revtangen",
+      "name": "Paradisbukta og Revtangen",
+      "lat": 59.096285,
+      "lon": 11.032725,
+      "radiusM": 350,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        2,
+        3
+      ],
+      "summary": "Store strand- og nesområder som kilden omtaler som lune i sørvestlig vind og aktuelle gjennom en hel fiskedag.",
+      "features": [
+        "le for sørvest",
+        "stort område"
+      ],
+      "safety": "Adkomst og parkering må kontrolleres lokalt.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "odegardskilen",
+      "name": "Ødegårdskilen",
+      "lat": 59.08794,
+      "lon": 11.04218,
+      "radiusM": 350,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        4,
+        5
+      ],
+      "summary": "Kilen omtales som aktuell både fra land og med båt, bellyboat eller pontong, også mot Saltholmen.",
+      "features": [
+        "vik",
+        "land og småbåt"
+      ],
+      "safety": "Bruk flyteutstyr og redningsvest ved fiske fra vannet.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "stavsengkilen-botnekilen",
+      "name": "Stavsengkilen og Botnekilen",
+      "lat": 59.076505,
+      "lon": 11.055605,
+      "radiusM": 650,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        6,
+        7
+      ],
+      "summary": "To kiler som omtales som brukbare fra land og særlig interessante fra båt eller annet egnet flyteutstyr.",
+      "features": [
+        "kiler",
+        "land og småbåt"
+      ],
+      "safety": "Omtrentlig gruppesone mellom to navngitte kiler.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske.",
+      "legalNote": "Den omtrentlige gruppesonen ligger nær Lerebekkens helårsforbud. Bruk den røde Lovdata-grensen og hold deg utenfor området fra bekkemunningen til yttergrensen."
+    },
+    {
+      "id": "rosholmen",
+      "name": "Røsholmen",
+      "lat": 59.08253,
+      "lon": 11.05855,
+      "radiusM": 300,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        8,
+        9
+      ],
+      "summary": "Holmeområdet trekkes frem som del av et større sammenhengende fiskeområde rundt Stavsengkilen og Saltholmen.",
+      "features": [
+        "holmer",
+        "åpent vann"
+      ],
+      "safety": "Krever trygg og lovlig tilgang; kilden foreslår flyteutstyr.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "soldatersundet",
+      "name": "Soldatersundet",
+      "lat": 59.08001,
+      "lon": 11.08779,
+      "radiusM": 300,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        10,
+        11
+      ],
+      "summary": "To delområder i sundet omtales som aktuelle når vinden kommer fra vest.",
+      "features": [
+        "sund",
+        "vestavind"
+      ],
+      "safety": "Vurder strøm, båttrafikk og trygg standplass.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "ed-edsholmen",
+      "name": "Ed ved Edsholmen",
+      "lat": 59.07197,
+      "lon": 11.09196,
+      "radiusM": 300,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        12,
+        13
+      ],
+      "summary": "Sundet omtales som tidevannspåvirket med aktivitet inne i vika.",
+      "features": [
+        "tidevannsstrøm",
+        "vik"
+      ],
+      "safety": "Kilden advarer om et farlig grunt skjær; naviger og vad forsiktig.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "sildebukta",
+      "name": "Sildebukta",
+      "lat": 59.06797,
+      "lon": 11.08758,
+      "radiusM": 250,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        14,
+        15
+      ],
+      "summary": "Grunt bukteområde der kilden beskriver fisk som kan trekke helt inn på grunna på gode dager.",
+      "features": [
+        "grunn vik",
+        "vakaktivitet"
+      ],
+      "safety": "Grunt vann og skjær krever varsom vading.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "koltorpneset-hellekilen",
+      "name": "Koltorpneset og Hellekilen",
+      "lat": 59.043265,
+      "lon": 11.05813,
+      "radiusM": 500,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        16,
+        17
+      ],
+      "summary": "Et kjent nes- og kileområde; kilden vurderer også holmene på utsiden som interessante.",
+      "features": [
+        "nes",
+        "vik og ytre holmer"
+      ],
+      "safety": "Omtrentlig gruppesone; vær og bølger øker mot utsiden.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "rennvika",
+      "name": "Rennvika",
+      "lat": 59.0345,
+      "lon": 11.05993,
+      "radiusM": 350,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        18,
+        19
+      ],
+      "summary": "Sund, strender og bratte marbakker omtales som sentrale strukturer.",
+      "features": [
+        "sund",
+        "strand",
+        "bratt marbakke"
+      ],
+      "safety": "Bratte kanter og eksponert kyst krever forsiktighet.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "skarsnesbukta",
+      "name": "Skårsnesbukta",
+      "lat": 59.02888,
+      "lon": 11.05334,
+      "radiusM": 350,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        20,
+        21
+      ],
+      "summary": "Strandbukta og rullesteinsbeltet på østsiden omtales som to aktuelle delområder.",
+      "features": [
+        "strand",
+        "rullestein"
+      ],
+      "safety": "Deler av området ligger i eller nær Ytre Hvaler nasjonalpark.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "dovika-homlungen",
+      "name": "Døvika og Homlungen",
+      "lat": 59.01805,
+      "lon": 11.02199,
+      "radiusM": 450,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        22,
+        23
+      ],
+      "summary": "Kystområdet omtales med mulighet for større fisk og kan kombineres med Storesand og Ørekroken.",
+      "features": [
+        "åpen kyst",
+        "vik og holmer"
+      ],
+      "safety": "Kontroller camping-, ferdsels- og nasjonalparkregler; enkel tilgang er historisk omtale, ikke garanti.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "storesand-orekroken",
+      "name": "Storesand og Ørekroken",
+      "lat": 59.02772,
+      "lon": 11.01405,
+      "radiusM": 700,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        24,
+        25
+      ],
+      "summary": "Store områder der kilden særlig nevner børstemark, rullestein og blåskjellbanker som relevant habitat.",
+      "features": [
+        "strand",
+        "rullestein",
+        "blåskjell",
+        "børstemark"
+      ],
+      "safety": "Stor omtrentlig gruppesone i Ytre Hvaler nasjonalpark.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "lille-rodshue",
+      "name": "Lille Rødshue",
+      "lat": 59.03815,
+      "lon": 10.98779,
+      "radiusM": 350,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        26,
+        27
+      ],
+      "summary": "Nesområdet omtales som et kystparti med flere mulige standplasser.",
+      "features": [
+        "nes",
+        "åpen kyst"
+      ],
+      "safety": "Eksponert kyst; kontroller vind, bølger og vernebestemmelser.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "rorvik",
+      "name": "Rørvik",
+      "lat": 59.04413,
+      "lon": 10.98941,
+      "radiusM": 350,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        28,
+        29
+      ],
+      "summary": "Innsiden av skjærene og selve vika omtales som særlig aktuell ved østlig vind.",
+      "features": [
+        "skjærgård",
+        "vik",
+        "østavind"
+      ],
+      "safety": "Skjær og skiftende bølgeforhold krever forsiktighet.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "bolingshavn",
+      "name": "Bølingshavn",
+      "lat": 59.05917,
+      "lon": 11.0035,
+      "radiusM": 350,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        30,
+        31
+      ],
+      "summary": "Havna og nærområdene beskrives svært positivt av forfatteren, basert på egne fangster.",
+      "features": [
+        "havn",
+        "vik"
+      ],
+      "safety": "Sterk personlig erfaring i kilden; ikke uavhengig fangststatistikk.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske."
+    },
+    {
+      "id": "verpet",
+      "name": "Verpet",
+      "lat": 59.06734,
+      "lon": 11.0,
+      "radiusM": 300,
+      "status": "potential",
+      "recommend": true,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        32,
+        33
+      ],
+      "summary": "Området omtales som en typisk plass for synlig vakaktivitet.",
+      "features": [
+        "vik/nærkyst",
+        "vakaktivitet"
+      ],
+      "safety": "Observasjonen er historisk og forholdsavhengig.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske.",
+      "legalNote": "Området ligger nær Korshavnbekkens helårsforbud. Bruk den røde Lovdata-grensen og hold deg utenfor området fra bekkemunningen til yttergrensen."
+    },
+    {
+      "id": "korshavn",
+      "name": "Korshavn",
+      "lat": 59.07333,
+      "lon": 10.99752,
+      "radiusM": 300,
+      "status": "restricted",
+      "recommend": false,
+      "coordinateSource": "Kartverket stedsnavn",
+      "coordinateSourceUrl": "https://ws.geonorge.no/stedsnavn/v1/",
+      "sourceImageIndexes": [
+        34,
+        35
+      ],
+      "summary": "Kilden omtaler vika som gyteområde. Gjeldende forskrift har helårsforbud ved Korshavnbekken.",
+      "features": [
+        "gytebekk",
+        "vik"
+      ],
+      "safety": "Ikke vis som vanlig anbefaling. Bruk det røde Lovdata-laget og kontroller ajourført grense. Alt fiske er forbudt hele året fra grense elv–sjø til koordinatfestet yttergrense.",
+      "disclaimer": "Kildebasert erfaringsomtale, ikke fangstgaranti. Kontroller fredning, nasjonalparkregler, adkomst og lokale forhold før fiske.",
+      "legalNote": "Ikke vis som vanlig anbefaling. Bruk det røde Lovdata-laget og kontroller ajourført grense. Alt fiske er forbudt hele året fra grense elv–sjø til koordinatfestet yttergrense."
+    }
+  ]
+}

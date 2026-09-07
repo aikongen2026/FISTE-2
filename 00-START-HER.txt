@@ -1,2 +1,15 @@
-LOKALT: dobbeltklikk START-HER.bat.
-GITHUB/RENDER: last opp ALLE filene og mappene i denne mappen til et nytt repo, opprett Web Service i Render, og bruk npm install / npm start.
+VESTFJELLA FISKE – STABLE 1.0
+
+ENKLEST PUBLISERING:
+1. Pakk ut hele ZIP-filen.
+2. GitHub -> repoet Render bruker -> Add file -> Upload files.
+3. Dra inn ALT innholdet i mappen.
+4. Commit changes til main.
+5. Vent på Render-deploy.
+6. Sjekk https://DIN-APP.onrender.com/api/health
+
+Forventet:
+"app":"Vestfjella Fiske"
+"version":"stable-1.0"
+
+Dette er ikke en ny lapp på REV4. Det er ferskvannsappen bygget på den fungerende Fiste REV26-kjernen.

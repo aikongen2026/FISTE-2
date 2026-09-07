@@ -1,0 +1,643 @@
+{
+  "regulation": {
+    "id": "FOR-2024-05-23-829",
+    "title": "Forskrift om fiske ved utløp av vassdrag med anadrome laksefisk i Østfold, Buskerud, Oslo og Akershus",
+    "adopted": "2024-05-23",
+    "effectiveFrom": "2024-06-01",
+    "url": "https://lovdata.no/dokument/LFO/forskrift/2024-05-23-829",
+    "originalVersion": "https://lovdata.no/dokument/LTII/forskrift/2024-05-23-829",
+    "publisher": "Statsforvalteren i Oslo og Viken",
+    "retrievedAt": "2026-08-02",
+    "scopeNote": "Kartlaget viser den koordinatfestede yttergrensen. Det forbudte området ligger fra grense elv–sjø og ut til denne grensen. Kontroller alltid ajourført Lovdata."
+  },
+  "zones": [
+    {
+      "id": "hjelmungbekken",
+      "number": 1,
+      "name": "Hjelmungbekken",
+      "municipality": "Sarpsborg/Halden",
+      "watercourseNumber": "002.111Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 1",
+      "lengthM": 350,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 284008,
+          "northing": 6560732
+        },
+        {
+          "easting": 284071,
+          "northing": 6560670
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.130837,
+          "lon": 11.224879
+        },
+        {
+          "lat": 59.1303134,
+          "lon": 11.2260386
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "ingedalsbekken-bjonnengbekken",
+      "number": 2,
+      "name": "Ingedalsbekken og Bjønnengbekken",
+      "municipality": "Sarpsborg",
+      "watercourseNumber": "002.113Z og 002.112Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 2",
+      "lengthM": 160,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 282767,
+          "northing": 6562735
+        },
+        {
+          "easting": 283396,
+          "northing": 6562477
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.1481537,
+          "lon": 11.2012535
+        },
+        {
+          "lat": 59.1461627,
+          "lon": 11.2124807
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "skjebergbekken",
+      "number": 3,
+      "name": "Skjebergbekken",
+      "municipality": "Sarpsborg",
+      "watercourseNumber": "002.11Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 3",
+      "lengthM": 550,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 282123,
+          "northing": 6567552
+        },
+        {
+          "easting": 281924,
+          "northing": 6567576
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.1909872,
+          "lon": 11.1852101
+        },
+        {
+          "lat": 59.1911001,
+          "lon": 11.1817107
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "stordiket-hornnesbekken",
+      "number": 4,
+      "name": "Stordiket og Hornnesbekken",
+      "municipality": "Sarpsborg",
+      "watercourseNumber": "002.114",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 4",
+      "lengthM": 700,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 280052,
+          "northing": 6567764
+        },
+        {
+          "easting": 280287,
+          "northing": 6567948
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.1918189,
+          "lon": 11.1488295
+        },
+        {
+          "lat": 59.1935893,
+          "lon": 11.1527478
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "hunnebekken",
+      "number": 5,
+      "name": "Hunnebekken",
+      "municipality": "Fredrikstad",
+      "watercourseNumber": "002.115Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 5",
+      "lengthM": 340,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 275217,
+          "northing": 6570514
+        },
+        {
+          "easting": 275561,
+          "northing": 6570610
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.2139245,
+          "lon": 11.0615605
+        },
+        {
+          "lat": 59.2149667,
+          "lon": 11.0674722
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "fjellebekken",
+      "number": 6,
+      "name": "Fjellebekken",
+      "municipality": "Fredrikstad",
+      "watercourseNumber": "002.22Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 6",
+      "lengthM": 650,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 263452,
+          "northing": 6567677
+        },
+        {
+          "easting": 263686,
+          "northing": 6567659
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.1821173,
+          "lon": 10.8591153
+        },
+        {
+          "lat": 59.1820863,
+          "lon": 10.8632187
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "slevikbekken",
+      "number": 7,
+      "name": "Slevikbekken",
+      "municipality": "Fredrikstad",
+      "watercourseNumber": "002.3Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 7",
+      "lengthM": 200,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 260833,
+          "northing": 6569231
+        },
+        {
+          "easting": 260867,
+          "northing": 6569013
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.194569,
+          "lon": 10.8117038
+        },
+        {
+          "lat": 59.1926357,
+          "lon": 10.8125367
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "husebybekken",
+      "number": 8,
+      "name": "Husebybekken",
+      "municipality": "Fredrikstad",
+      "watercourseNumber": "002.32Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 8",
+      "lengthM": 520,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 259835,
+          "northing": 6576769
+        },
+        {
+          "easting": 259948,
+          "northing": 6576572
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.2615166,
+          "lon": 10.7859505
+        },
+        {
+          "lat": 59.2598164,
+          "lon": 10.7881451
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "kallerodbekken-engabekken",
+      "number": 9,
+      "name": "Kallerødbekken og Engabekken",
+      "municipality": "Fredrikstad",
+      "watercourseNumber": "003",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 9",
+      "lengthM": 500,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 257244,
+          "northing": 6577265
+        },
+        {
+          "easting": 257521,
+          "northing": 6577260
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.2644811,
+          "lon": 10.7400769
+        },
+        {
+          "lat": 59.264595,
+          "lon": 10.7449278
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "langekilsbekken-lerdalsbekken",
+      "number": 10,
+      "name": "Langekilsbekken og Lerdalsbekken",
+      "municipality": "Hvaler",
+      "watercourseNumber": "002.44",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 10",
+      "lengthM": 550,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 265284,
+          "northing": 6560264
+        },
+        {
+          "easting": 265517,
+          "northing": 6560259
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.1167325,
+          "lon": 10.8990535
+        },
+        {
+          "lat": 59.1168161,
+          "lon": 10.9031178
+        }
+      ],
+      "renderBoundary": false,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen.",
+      "coordinateIssue": "Lovdata/XML oppgir punkt B med østverdi 2653388, som ligger utenfor gyldig UTM-sone og fremstår som en kildefeil. Yttergrensen rendres ikke før rettelse er publisert."
+    },
+    {
+      "id": "spjaerbekken",
+      "number": 11,
+      "name": "Spjærbekken",
+      "municipality": "Hvaler",
+      "watercourseNumber": "002.43",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 11",
+      "lengthM": 630,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 265328,
+          "northing": 6554645
+        },
+        {
+          "easting": 265348,
+          "northing": 6554631
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.0664243,
+          "lon": 10.9058315
+        },
+        {
+          "lat": 59.0663099,
+          "lon": 10.9061944
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "korshavnbekken",
+      "number": 12,
+      "name": "Korshavnbekken",
+      "municipality": "Hvaler",
+      "watercourseNumber": "002.41",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 12",
+      "lengthM": 375,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 270508,
+          "northing": 6555061
+        },
+        {
+          "easting": 270557,
+          "northing": 6554972
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.0729687,
+          "lon": 10.9955108
+        },
+        {
+          "lat": 59.0721977,
+          "lon": 10.9964563
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "lerebekken",
+      "number": 13,
+      "name": "Lerebekken",
+      "municipality": "Hvaler",
+      "watercourseNumber": "002.41",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 13",
+      "lengthM": 800,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 273131,
+          "northing": 6555024
+        },
+        {
+          "easting": 273234,
+          "northing": 6555002
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.0740403,
+          "lon": 11.0411915
+        },
+        {
+          "lat": 59.073898,
+          "lon": 11.0430066
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "holtekilbekken",
+      "number": 14,
+      "name": "Holtekilbekken (Svanekilbekken)",
+      "municipality": "Hvaler",
+      "watercourseNumber": "002.41",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 14",
+      "lengthM": 300,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 272975,
+          "northing": 6551476
+        },
+        {
+          "easting": 273075,
+          "northing": 6551666
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.0421704,
+          "lon": 11.0421407
+        },
+        {
+          "lat": 59.0439258,
+          "lon": 11.0436833
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "mollebekken",
+      "number": 15,
+      "name": "Møllebekken",
+      "municipality": "Råde",
+      "watercourseNumber": "003.12Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 15",
+      "lengthM": 1800,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 260215,
+          "northing": 6583275
+        },
+        {
+          "easting": 260465,
+          "northing": 6583016
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.3199996,
+          "lon": 10.7853871
+        },
+        {
+          "lat": 59.3178219,
+          "lon": 10.7900548
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "stotvikbekken",
+      "number": 16,
+      "name": "Støtvikbekken",
+      "municipality": "Moss",
+      "watercourseNumber": "003.15Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 16",
+      "lengthM": 300,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 254284,
+          "northing": 6584067
+        },
+        {
+          "easting": 254400,
+          "northing": 6583983
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.3236839,
+          "lon": 10.680578
+        },
+        {
+          "lat": 59.3229992,
+          "lon": 10.682706
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "evjeaa",
+      "number": 17,
+      "name": "Evjeåa",
+      "municipality": "Moss",
+      "watercourseNumber": "003.16Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 17",
+      "lengthM": 530,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 253814,
+          "northing": 6588201
+        },
+        {
+          "easting": 254135,
+          "northing": 6588062
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.3604283,
+          "lon": 10.667623
+        },
+        {
+          "lat": 59.3593708,
+          "lon": 10.673412
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "gunnarsbybekken",
+      "number": 18,
+      "name": "Gunnarsbybekken",
+      "municipality": "Moss",
+      "watercourseNumber": "003.17Z",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 18",
+      "lengthM": 300,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 253380,
+          "northing": 6590167
+        },
+        {
+          "easting": 253592,
+          "northing": 6590141
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.377779,
+          "lon": 10.6577579
+        },
+        {
+          "lat": 59.3776702,
+          "lon": 10.6615079
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    },
+    {
+      "id": "kambobekken",
+      "number": 19,
+      "name": "Kambobekken",
+      "municipality": "Moss",
+      "watercourseNumber": "003",
+      "status": "no-fishing-all-year",
+      "sourceRef": "§ 3 tabell 1 nr. 19",
+      "lengthM": 240,
+      "utmCrs": "ETRS89 / UTM 33N (EPSG:25833)",
+      "utmBoundary": [
+        {
+          "easting": 255728,
+          "northing": 6601022
+        },
+        {
+          "easting": 255760,
+          "northing": 6600941
+        }
+      ],
+      "outerBoundary": [
+        {
+          "lat": 59.4763493,
+          "lon": 10.686592
+        },
+        {
+          "lat": 59.4756426,
+          "lon": 10.6872478
+        }
+      ],
+      "renderBoundary": true,
+      "legalText": "Alt fiske er forbudt hele året fra grense elv–sjø og ut til den koordinatfestede yttergrensen."
+    }
+  ]
+}

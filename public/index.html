@@ -1,42 +1,69 @@
 <!doctype html>
 <html lang="no">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#061713"><meta name="description" content="Vestfjella Fiske – live ferskvannsguide for Aremark.">
-<title>Vestfjella Fiske</title>
-<link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://unpkg.com"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="/style.css?v=4.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#061713">
+  <meta name="description" content="Vestfjella Fiske bruker den stabile Fiste-motoren til å finne anbefalte ferskvannssoner for ørret og abbor i Vestfjella/Aremark.">
+  <title>Vestfjella Fiske</title>
+  <link rel="manifest" href="/manifest.webmanifest?v=1.0">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/style.css?v=1.0">
 </head>
 <body>
+<a class="skip" href="#results">Hopp til resultater</a>
 <div class="app" id="appState" data-state="loading">
-<header>
-  <div class="brand"><span class="eyebrow">FERSKVANN · VESTFJELLA · AREMARK</span><h1>Vestfjella Fiske <span>REV 4</span></h1><p id="status">Starter liveanalysen …</p></div>
-  <div class="actions">
-    <label><span>FISKETYPE</span><select id="fishType"><option value="orret">Ørret</option><option value="abbor">Abbor</option><option value="all">Alle ferskvannsarter</option></select></label>
-    <label><span>MÅL</span><select id="goal"><option value="numbers">Mest fisk</option><option value="big">Størst fisk</option></select></label>
-    <label><span>METODE</span><select id="method"><option value="all">Alle lovlige</option><option value="sluk">Sluk</option><option value="spinner">Spinner</option><option value="mark">Mark/dupp</option><option value="flue">Flue</option></select></label>
-    <label><span>TILKOMST</span><select id="access"><option value="all">Alle</option><option value="easy">Enkel</option><option value="wild">Mer naturpreg</option></select></label>
-    <label><span>TID</span><select id="timeMode"><option value="now">Nå</option><option value="+3">Om 3 timer</option><option value="+6">Om 6 timer</option><option value="evening">Neste kveld</option><option value="tomorrow">I morgen tidlig</option></select></label>
-    <label><span>KARTTYPE</span><select id="mapStyle"><option value="standard">Standardkart</option><option value="satellite">Satellittkart</option><option value="depth">NVE dybdekart</option></select></label>
-    <button id="allWaters" class="secondary">Vis alle vann</button><button id="locate">◎ Finn meg</button>
-  </div>
-</header>
-<main>
-  <section class="map-wrap"><div id="map"></div><div class="legend"><span><i class="excellent"></i> svært god</span><span><i class="good"></i> god</span><span><i class="fair"></i> brukbar</span><span><i class="fly"></i> kun flue</span></div></section>
-  <aside id="results">
-    <section class="card rules"><div class="card-head"><div><span class="card-label">VESTFJELLA-REGLER</span><h2>Fisk lovlig</h2></div><span class="source-dot">Inatur</span></div><div id="rulesGrid"></div></section>
-    <section class="card hero"><div class="card-head"><div><span class="card-label">FISK NÅ</span><h2>Beste vann akkurat nå</h2></div><span id="goalBadge" class="source-dot">Ørret</span></div><div id="bestNow"><p class="muted">Analyserer …</p></div></section>
-    <section class="card"><div class="card-head"><div><span class="card-label">FORHOLD</span><h2>Vær over Vestfjella</h2></div><span class="source-dot">MET</span></div><div id="weatherGrid" class="weather-grid"></div><p id="thermalNote" class="caveat"></p></section>
-    <section class="card timeline"><div class="card-head"><div><span class="card-label">PLANLEGG</span><h2>Når bør du fiske?</h2></div><span class="source-dot">Live</span></div><div id="timeHint"></div></section>
-    <section class="card waters-card"><div class="card-head"><div><span class="card-label">RANGERT NÅ</span><h2>Vann og anbefalinger</h2></div><span id="waterCount" class="source-dot">10 vann</span></div><div id="waterList"></div></section>
-    <section class="card catch-card"><div class="card-head"><div><span class="card-label">MIN HISTORIKK</span><h2>Fangstlogg</h2></div><span class="source-dot">Lokalt</span></div>
-      <form id="catchForm"><div class="form-grid"><label><span>Vann</span><select id="catchWater" name="water"></select></label><label><span>Resultat</span><select name="result"><option value="fangst">Fangst</option><option value="ingen">Ingen fangst</option></select></label><label><span>Lengde cm</span><input name="length" type="number" min="1" max="120" step="0.5"></label><label><span>Agn</span><input id="catchLure" name="lure" placeholder="Sluk/flue/mark"></label><label class="span-two"><span>Notat</span><textarea name="note" rows="2" maxlength="300"></textarea></label></div><button type="submit">Lagre tur</button></form><div id="catchEntries"></div>
-    </section>
-    <section class="card sources"><span class="card-label">KILDER OG METODE</span><p>Scoren er en veiledende beslutningsstøtte som kombinerer vær, tidspunkt, vannets profil, lovlig metode og kuraterte Vestfjella-råd. Lufttemperatur brukes ikke som om den var vanntemperatur.</p></section>
-  </aside>
-</main>
+  <header>
+    <div class="brand"><span class="eyebrow" id="analysisMode">Ferskvann · Vestfjella · MET Norway · OSM</span><h1>Vestfjella Fiske <span id="revisionBadge">STABLE 1.0</span></h1><p id="status" role="status" aria-live="polite">Starter ferskvannsanalysen …</p></div>
+    <div class="actions">
+      <label class="fish-picker"><span>Fisketype</span><select id="fishType" aria-label="Velg fisketype"><option value="all">Ingen – vis ørret + abbor</option><option value="orret" selected>Ørret</option><option value="abbor">Abbor</option></select></label>
+      <label class="fish-picker"><span>Mål</span><select id="fishGoal" aria-label="Velg fiskemål"><option value="numbers">Mest fisk</option><option value="big">STOR FISK</option></select></label>
+      <label class="fish-picker"><span>Maks avstand</span><select id="baseRadius" aria-label="Maks avstand fra base"><option value="0" selected>Ingen grense</option><option value="250">250 m</option><option value="500">500 m</option><option value="1000">1 km</option><option value="2000">2 km</option></select></label>
+      <button id="setBase" class="secondary" type="button" title="Bruk kartets sentrum som startsted">⌖ Sett base</button>
+      <label class="fish-picker"><span>Karttype</span><select id="mapStyle" aria-label="Velg karttype"><option value="standard">Standardkart</option><option value="satellite">Satellittkart</option><option value="hybrid">Hybridkart</option></select></label>
+      <button id="nveDepthToggle" class="secondary" type="button" aria-pressed="false" title="Vis NVE-dybdekart der data finnes">NVE dybdekart</button>
+      <button id="retry" class="secondary" hidden>Prøv igjen</button>
+      <button id="sourceSpotToggle" class="secondary" type="button" hidden>Kirkøy-steder</button>
+      <button id="restrictionToggle" class="secondary" type="button" hidden>Fredningsgrenser</button>
+      <button id="conditionToggle" class="secondary" type="button" hidden>Vind/strøm</button>
+      <button id="boatRampToggle" class="secondary" type="button" hidden>Båtramper</button>
+      <button id="locate">◎ Finn meg</button>
+    </div>
+  </header>
+  <main>
+    <section class="map-wrap" aria-label="Kart over anbefalte fiskesoner"><div id="map"></div><div class="legend" id="mapLegend"><span><i class="best"></i> svært høy</span><span><i class="high"></i> høy</span><span><i class="moderate"></i> moderat</span></div></section>
+    <aside id="results">
+      <section class="card mask-card"><div><span class="card-label">Vannmaske</span><b id="mask">Kontrollerer faktisk vannflate og vannkant …</b></div><span class="pulse" aria-hidden="true"></span></section>
+
+      <section class="card"><div class="card-head"><div><span class="card-label">Vestfjella-regler</span><h2>Fisk lovlig</h2></div><span class="source-dot">Inatur</span></div><div class="weather-grid"><div class="weather-item"><span>Sesong</span><b>1. jan.–30. sep.</b></div><div class="weather-item"><span>Minstemål ørret</span><b>25 cm</b></div><div class="weather-item"><span>Ikke tillatt</span><b>Levende fisk som agn</b></div><div class="weather-item"><span>Fra vannet</span><b>Ingen båt/kano/packraft til fiske</b></div><div class="weather-item"><span>Området</span><b>96 vann · 45 kjent med ørret</b></div><div class="weather-item"><span>Fluevann</span><b>4 vann kun flue</b></div></div><p class="source-details">Kartmarkører beregnes kun fra faktisk registrert vanngeometri. Appen bruker ikke de gamle estimerte koordinatene som ga markører på land.</p></section>
+
+      <section class="card multi-species-card" id="multiSpeciesCard" hidden><div class="card-head"><div><span class="card-label">Alle ferskvannsarter</span><h2>Hva er best akkurat nå?</h2></div><span class="source-dot">2 arter</span></div><div class="multi-species-guide"><article><i class="species-dot species-orret"></i><div><b>Ørret</b><span>Røde soner · odder, innløp, vindpåvirkede bredder og aktive kantsoner.</span></div></article><article><i class="species-dot species-abbor"></i><div><b>Abbor</b><span>Blå soner · siv, stein, lune bukter, odder og annen struktur.</span></div></article></div><p class="source-details">Velger du Ørret eller Abbor igjen, forsvinner flerartsvisningen automatisk.</p></section>
+
+      <section class="card now-card" id="bestNowCard"><div class="card-head"><div><span class="card-label">FISTE-MOTOR · FERSKVANN</span><h2>🔥 Beste plass akkurat nå</h2></div><span class="source-dot" id="goalBadge">Mest fisk</span></div><div id="bestNow"><p class="muted">Analyserer faktiske vannflater i kartutsnittet.</p></div></section>
+      <p id="warnings" class="warning" aria-live="polite"></p>
+
+      <section class="card"><div class="card-head"><div><span class="card-label">Forhold nå</span><h2>Værmodell ved kartets sentrum</h2></div><span class="source-dot">MET</span></div><div id="weatherGrid" class="weather-grid"><p class="muted span-all">Laster vær …</p></div><p id="analysisSources" class="source-details">Kilder og oppdateringstid lastes …</p></section>
+      <section class="card marine-card" id="marineCard" hidden><div id="marineGrid"></div><p id="marineCaveat"></p></section>
+      <section class="card hydrology-card" id="hydrologyCard"><div class="card-head"><div><span class="card-label">NVE live</span><h2>Vannstand, vannføring og vanntemperatur</h2></div><span class="source-dot">HydAPI</span></div><div id="hydrologyGrid" class="weather-grid"><p class="muted span-all">Sjekker nærmeste målestasjon …</p></div><p id="hydrologyCaveat" class="source-details"></p></section>
+      <section class="card best-times-card"><div class="card-head"><div><span class="card-label">Planlegg turen</span><h2>Beste tidspunkt i dag</h2></div><span class="source-dot">Prognose</span></div><div id="bestTimes" aria-live="polite"><p class="muted">Beregner dagens tidsvinduer …</p></div></section>
+
+      <section class="card" id="waterDirectoryCard"><div class="card-head"><div><span class="card-label">Vestfjella-register</span><h2>Kjente vann</h2></div><span class="source-dot" id="waterDirectoryCount">Laster …</span></div><details><summary>Vis vannlisten</summary><div id="waterDirectory" class="catch-entries"><p class="muted">Laster register …</p></div></details><p class="source-details">Registeret er skilt fra kartplasseringen: navn kan være lokale og avvike fra offentlige kart. Anbefalingssoner tegnes bare når motoren har faktisk vanngeometri.</p></section>
+
+      <section class="card insights-card" id="insightsCard"><div class="card-head"><div><span class="card-label">Lær valgt art</span><h2>Artsguide og mine fangstmønstre</h2></div><span class="local-badge">Egne data lokalt</span></div><div id="speciesGuide" class="species-guide" aria-live="polite"></div><div class="insight-divider"></div><div id="catchInsights" class="catch-insights" aria-live="polite"></div><p class="source-details"><b>Kildeskille:</b> Artsguiden er generell, veiledende sportsfiskekunnskap. Fangstmønstrene beregnes bare fra dine egne lokalt lagrede turer.</p></section>
+      <section class="card zones-card"><div class="card-head"><div><span class="card-label">Rangert etter forhold</span><h2>Anbefalte soner og dine agn</h2></div><span class="info" title="Scoren rangerer beregnede fiskeforhold. Datagrunnlag vises separat.">i</span></div><p id="scoreDisclaimer" class="score-disclaimer"><b>Fiskeforhold</b> rangeres fra 0–100. Sonene skal ligge i faktisk vannflate. <b>Datagrunnlag</b> viser hvor komplette kildene er.</p><div class="zone-columns" aria-hidden="true"><span>Område og forhold</span><span>Anbefalt agn</span><span>Score</span></div><div id="zones" aria-live="polite"><div class="skeleton"></div><div class="skeleton"></div></div></section>
+
+      <section class="card catch-log-card"><div class="card-head"><div><span class="card-label">Min historikk</span><h2>Fangstlogg</h2></div><span class="local-badge">Kun denne enheten</span></div><p class="catch-privacy">Loggen lagres lokalt i nettleseren.</p><form id="catchForm" class="catch-form"><label><span>Resultat</span><select name="result" required><option value="fangst">Fangst</option><option value="ingen-fangst">Ingen fangst</option></select></label><label><span>Dato og tid</span><input id="catchTime" name="time" type="datetime-local" required></label><label><span>Fisketype</span><select id="catchFish" name="fish" required><option value="orret">Ørret</option><option value="abbor">Abbor</option></select></label><label><span>Sted</span><input id="catchPlace" name="place" type="text" maxlength="100" placeholder="Fylles fra valgt sone"></label><label><span>Lengde (cm)</span><input name="length" type="number" min="1" max="150" step="0.1" inputmode="decimal" placeholder="Valgfritt"></label><label><span>Vekt (kg)</span><input name="weight" type="number" min="0.01" max="30" step="0.01" inputmode="decimal" placeholder="Valgfritt"></label><label class="span-two"><span>Sluk/agn</span><input id="catchLure" name="lure" type="text" maxlength="120" list="ownedLures" placeholder="Velges automatisk når du åpner en sone"><datalist id="ownedLures"></datalist></label><label class="span-two"><span>Notat</span><textarea name="note" maxlength="500" rows="3" placeholder="Forhold, følgefisk eller annet du vil huske"></textarea></label><button type="submit" class="span-two">Lagre i fangstloggen</button></form><div class="catch-export"><button id="exportGpx" type="button" class="secondary">Eksporter GPX</button><button id="exportJson" type="button" class="secondary">Backup JSON</button></div><p id="catchStatus" class="catch-status" role="status" aria-live="polite"></p><div id="catchEntries" class="catch-entries" aria-live="polite"></div></section>
+      <section class="card tip"><b>Tips på mobil</b><span>Åpne i Chrome → meny ⋮ → «Legg til på startskjerm». Appskallet og siste analyse kan brukes offline.</span></section>
+    </aside>
+  </main>
+  <footer>Veiledende analyse – kontroller alltid lokale regler, fiskekort, vær og sikkerhet før fiske.</footer>
 </div>
-<dialog id="imageDialog"><button id="closeImage">×</button><img id="dialogImage" alt=""><p id="dialogCaption"></p></dialog>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="/app.js?v=4.0"></script>
-</body></html>
+<dialog id="lureViewer" aria-labelledby="lureViewerCaption"><button id="closeLureViewer" type="button" aria-label="Lukk forstørret agnbilde">×</button><img id="lureViewerImage" alt=""><p id="lureViewerCaption"></p></dialog>
+<noscript>Appen krever JavaScript for kart og analyse.</noscript>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/fishing-insights.js?v=1.0"></script>
+<script src="/app.js?v=1.0"></script>
+</body>
+</html>

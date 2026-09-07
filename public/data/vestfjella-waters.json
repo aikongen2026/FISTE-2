@@ -1,0 +1,478 @@
+{
+  "title": "Vestfjella Utmarkslag – kjent vannliste",
+  "source": "Perfish/Vestfjella Utmarkslag og Inatur",
+  "note": "Vannlisten er et register. Kartsoner tegnes bare fra faktisk vanngeometri fra OpenStreetMap; gamle estimerte koordinater brukes ikke.",
+  "count": 92,
+  "waters": [
+    {
+      "name": "Botiltjernet",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Bastianvanna",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Revolvertjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Knuttjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Lille Berggrøttjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Berggrøttjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Skibuvannet",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Øvre Svensketjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Loppetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Stubbetjerndyveln",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Tystbasttjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Nedre Svensketjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Vesle Blanketjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Blanketjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Sjølja",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Helgetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Kroktjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Stubbetjern",
+      "flyOnly": true,
+      "accessiblePier": false
+    },
+    {
+      "name": "Skarpsnoputten",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Sambudalstjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Voletjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Kutjern",
+      "flyOnly": false,
+      "accessiblePier": true
+    },
+    {
+      "name": "Vestre Andetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Østre Andetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Lille Sørrivesetertjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Sørrivesetertjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Riveputt",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Snesetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Laulunddalsdyvelen",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Sølvskutt-tjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Østre Brutjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Hestetjern (Kjelen)",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Vestre Brutjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Midtre Brutjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Øvre Laua",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Midtre Kampetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Østre Kampetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Andetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Rørmyrtjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Vestre Kampetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Laua",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Holmtjern",
+      "flyOnly": false,
+      "accessiblePier": true
+    },
+    {
+      "name": "Nordre Skotjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Elgtjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Hageputten",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Fyldengørvann",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Nordre Hagetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Søndre Krokvann",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Østre Krokvann",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Sætertjern",
+      "flyOnly": true,
+      "accessiblePier": false
+    },
+    {
+      "name": "Blekktjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Svarttjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Søndre Hagetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Trekanttjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Steenstjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Midtre Skotjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Bjørktjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Bikkjetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Fiskeløs",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Haretjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Ormtjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Søndre Skotjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Vestre Ormtjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Fyldengsetertjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Midtre Ormtjern",
+      "flyOnly": true,
+      "accessiblePier": false
+    },
+    {
+      "name": "Vestre Abbortjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Brannskatt-tjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Skogtjern 2",
+      "flyOnly": true,
+      "accessiblePier": false
+    },
+    {
+      "name": "Østre Ormtjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Kvernetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Søndre Tretjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Nordre Tretjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Nordre Abbortjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Midtre Tretjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Abborputten",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Langvanna",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Blanktjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Saulaua",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Kavringtjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Langvannspølen",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Slettbakktjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Ulvedalstjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Gretetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Furutjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Helvetstjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Mørktjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Tjåretjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Abbortjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Febertjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Mosetjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Bukketjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    },
+    {
+      "name": "Lindtjern",
+      "flyOnly": false,
+      "accessiblePier": false
+    }
+  ],
+  "flyOnly": [
+    "Sætertjern",
+    "Midtre Ormtjern",
+    "Stubbetjern",
+    "Skogtjern 2"
+  ],
+  "accessible": [
+    "Kutjern",
+    "Holmtjern"
+  ]
+}

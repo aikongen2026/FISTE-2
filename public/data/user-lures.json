@@ -1,0 +1,854 @@
+{
+  "name": "Vestfjella – dine ferskvannsagn",
+  "updated": "2026-09-07",
+  "source": "Brukerens egne fotografier",
+  "method": "Hvert anbefalt agn vises som eget utklipp",
+  "groupCount": 29,
+  "imageCount": 29,
+  "lures": [
+    {
+      "id": "vf01",
+      "slug": "vf01",
+      "name": "Rosa/sølv prikket skjesluk",
+      "family": "Rosa/sølv prikket skjesluk",
+      "color": "Rosa/sølv",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "pink",
+        "silver",
+        "contrast",
+        "casting",
+        "freshwater-specialist",
+        "shallow"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/rosa-solv-prikket.jpg",
+      "groupId": "vf01",
+      "groupName": "Rosa/sølv prikket skjesluk",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf02",
+      "slug": "vf02",
+      "name": "Rød bred prikket skjesluk",
+      "family": "Rød bred prikket skjesluk",
+      "color": "Rød/sort",
+      "species": [
+        "orret"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "warm",
+        "contrast",
+        "broad",
+        "freshwater-specialist",
+        "shallow"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/rod-bred-prikket.jpg",
+      "groupId": "vf02",
+      "groupName": "Rød bred prikket skjesluk",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf03",
+      "slug": "vf03",
+      "name": "Rød smal prikket skjesluk",
+      "family": "Rød smal prikket skjesluk",
+      "color": "Rød/sort",
+      "species": [
+        "orret"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "warm",
+        "contrast",
+        "slim",
+        "freshwater-specialist",
+        "shallow"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/rod-smal-prikket.jpg",
+      "groupId": "vf03",
+      "groupName": "Rød smal prikket skjesluk",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf04",
+      "slug": "vf04",
+      "name": "Gul/oransje prikket skjesluk",
+      "family": "Gul/oransje prikket skjesluk",
+      "color": "Gul/oransje/sort",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "warm",
+        "contrast",
+        "casting",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/gul-oransje-prikket.jpg",
+      "groupId": "vf04",
+      "groupName": "Gul/oransje prikket skjesluk",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf05",
+      "slug": "vf05",
+      "name": "Sølv/blå skjesluk",
+      "family": "Sølv/blå skjesluk",
+      "color": "Sølv/blå",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "silver",
+        "blue",
+        "natural",
+        "casting",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/solv-bla.jpg",
+      "groupId": "vf05",
+      "groupName": "Sølv/blå skjesluk",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf06",
+      "slug": "vf06",
+      "name": "Sølv med sorte prikker",
+      "family": "Sølv med sorte prikker",
+      "color": "Sølv/sort",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "silver",
+        "contrast",
+        "compact",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/solv-sorte-prikker.jpg",
+      "groupId": "vf06",
+      "groupName": "Sølv med sorte prikker",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf07",
+      "slug": "vf07",
+      "name": "Oransje skjesluk",
+      "family": "Oransje skjesluk",
+      "color": "Oransje/kobber",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "warm",
+        "compact",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/oransje-skje.jpg",
+      "groupId": "vf07",
+      "groupName": "Oransje skjesluk",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf08",
+      "slug": "vf08",
+      "name": "Grønn/svart skjesluk",
+      "family": "Grønn/svart skjesluk",
+      "color": "Grønn/svart",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "natural",
+        "contrast",
+        "compact",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/gronn-svart.jpg",
+      "groupId": "vf08",
+      "groupName": "Grønn/svart skjesluk",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf09",
+      "slug": "vf09",
+      "name": "Svart/gul prikket skjesluk",
+      "family": "Svart/gul prikket skjesluk",
+      "color": "Svart/gul",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "contrast",
+        "compact",
+        "warm",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/svart-gule-prikker.jpg",
+      "groupId": "vf09",
+      "groupName": "Svart/gul prikket skjesluk",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf10",
+      "slug": "vf10",
+      "name": "Sølv/rød prikket skjesluk",
+      "family": "Sølv/rød prikket skjesluk",
+      "color": "Sølv/rød",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "silver",
+        "warm",
+        "contrast",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_spoon_solv_rod_dots.jpg",
+      "groupId": "vf10",
+      "groupName": "Sølv/rød prikket skjesluk",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf11",
+      "slug": "vf11",
+      "name": "Sølv/rød prikket med fjær",
+      "family": "Sølv/rød prikket med fjær",
+      "color": "Sølv/rød",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "silver",
+        "warm",
+        "contrast",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_spoon_solv_rod_dots_fjaer.jpg",
+      "groupId": "vf11",
+      "groupName": "Sølv/rød prikket med fjær",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf12",
+      "slug": "vf12",
+      "name": "Gull/rød skjesluk",
+      "family": "Gull/rød skjesluk",
+      "color": "Gull/rød",
+      "species": [
+        "orret"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "warm",
+        "contrast",
+        "casting",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_spoon_gull_rod_18.jpg",
+      "groupId": "vf12",
+      "groupName": "Gull/rød skjesluk",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf13",
+      "slug": "vf13",
+      "name": "Mepps gull/rød spinner",
+      "family": "Mepps gull/rød spinner",
+      "color": "Gull/rød",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spinner",
+        "warm",
+        "contrast",
+        "micro",
+        "freshwater-specialist",
+        "structure"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_spinner_mepps_gull_rod.jpg",
+      "groupId": "vf13",
+      "groupName": "Mepps gull/rød spinner",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf14",
+      "slug": "vf14",
+      "name": "Mepps hvit/rød spinner",
+      "family": "Mepps hvit/rød spinner",
+      "color": "Hvit/rød",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spinner",
+        "silver",
+        "contrast",
+        "micro",
+        "freshwater-specialist",
+        "structure"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_spinner_mepps_hvit_rod.jpg",
+      "groupId": "vf14",
+      "groupName": "Mepps hvit/rød spinner",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf15",
+      "slug": "vf15",
+      "name": "Sort/rød spinner med fjær",
+      "family": "Sort/rød spinner med fjær",
+      "color": "Sort/rød",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spinner",
+        "contrast",
+        "warm",
+        "freshwater-specialist",
+        "structure"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_spinner_svart_rod_fjaer.jpg",
+      "groupId": "vf15",
+      "groupName": "Sort/rød spinner med fjær",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf16",
+      "slug": "vf16",
+      "name": "Sølv/blå holografisk spinner",
+      "family": "Sølv/blå holografisk spinner",
+      "color": "Sølv/blå",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spinner",
+        "silver",
+        "blue",
+        "bright",
+        "micro",
+        "freshwater-specialist",
+        "structure"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_spinner_holo_bla_hvit.jpg",
+      "groupId": "vf16",
+      "groupName": "Sølv/blå holografisk spinner",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf17",
+      "slug": "vf17",
+      "name": "Liten ørretmønstret wobbler",
+      "family": "Liten ørretmønstret wobbler",
+      "color": "Ørret/natur",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "wobbler",
+        "minnow",
+        "natural",
+        "shallow",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_wobbler_orretpattern.jpg",
+      "groupId": "vf17",
+      "groupName": "Liten ørretmønstret wobbler",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf18",
+      "slug": "vf18",
+      "name": "Liten brunørret-wobbler",
+      "family": "Liten brunørret-wobbler",
+      "color": "Brun/gull/natur",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "wobbler",
+        "minnow",
+        "natural",
+        "warm",
+        "shallow",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_wobbler_brunorret.jpg",
+      "groupId": "vf18",
+      "groupName": "Liten brunørret-wobbler",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf19",
+      "slug": "vf19",
+      "name": "Liten regnbuewobbler",
+      "family": "Liten regnbuewobbler",
+      "color": "Sølv/rosa/blå",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "wobbler",
+        "minnow",
+        "silver",
+        "pink",
+        "blue",
+        "shallow",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_wobbler_regnbue.jpg",
+      "groupId": "vf19",
+      "groupName": "Liten regnbuewobbler",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf20",
+      "slug": "vf20",
+      "name": "Liten gullwobbler",
+      "family": "Liten gullwobbler",
+      "color": "Gull/natur",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "wobbler",
+        "crankbait",
+        "natural",
+        "warm",
+        "compact",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_wobbler_gull.jpg",
+      "groupId": "vf20",
+      "groupName": "Liten gullwobbler",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf21",
+      "slug": "vf21",
+      "name": "Langsluk sølv/rosa",
+      "family": "Langsluk sølv/rosa",
+      "color": "Sølv/rosa",
+      "species": [
+        "orret"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "silver",
+        "pink",
+        "casting",
+        "slim",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_langsluk_solv_rosa.jpg",
+      "groupId": "vf21",
+      "groupName": "Langsluk sølv/rosa",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf22",
+      "slug": "vf22",
+      "name": "Langsluk gul",
+      "family": "Langsluk gul",
+      "color": "Gul/sølv",
+      "species": [
+        "orret"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spoon",
+        "warm",
+        "casting",
+        "slim",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/trout_langsluk_gul.jpg",
+      "groupId": "vf22",
+      "groupName": "Langsluk gul",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf23",
+      "slug": "vf23",
+      "name": "Blå softbait/jigg",
+      "family": "Blå softbait/jigg",
+      "color": "Mørk blå",
+      "species": [
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "shad",
+        "softbait",
+        "natural",
+        "deep",
+        "freshwater-specialist",
+        "structure"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/perch_softbait_bla.jpg",
+      "groupId": "vf23",
+      "groupName": "Blå softbait/jigg",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf24",
+      "slug": "vf24",
+      "name": "Frog-lure",
+      "family": "Frog-lure",
+      "color": "Gul/sort",
+      "species": [
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "topwater",
+        "frog",
+        "contrast",
+        "shallow",
+        "freshwater-specialist",
+        "structure"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/perch_frog_gul.jpg",
+      "groupId": "vf24",
+      "groupName": "Frog-lure",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf25",
+      "slug": "vf25",
+      "name": "Oransje spinnerbait",
+      "family": "Oransje spinnerbait",
+      "color": "Oransje/hvit/grønn",
+      "species": [
+        "abbor"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "spinnerbait",
+        "contrast",
+        "warm",
+        "shallow",
+        "freshwater-specialist",
+        "structure"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/perch_spinnerbait_oransje.jpg",
+      "groupId": "vf25",
+      "groupName": "Oransje spinnerbait",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf26",
+      "slug": "vf26",
+      "name": "Hvit baitfish-flue",
+      "family": "Hvit baitfish-flue",
+      "color": "Hvit/sølv",
+      "species": [
+        "orret"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "fly",
+        "natural",
+        "silver",
+        "shallow",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/fly_hvit_baitfish.jpg",
+      "groupId": "vf26",
+      "groupName": "Hvit baitfish-flue",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf27",
+      "slug": "vf27",
+      "name": "Lys zonker/streamer",
+      "family": "Lys zonker/streamer",
+      "color": "Hvit/natur",
+      "species": [
+        "orret"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "fly",
+        "natural",
+        "shallow",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/fly_hvit_zonker.jpg",
+      "groupId": "vf27",
+      "groupName": "Lys zonker/streamer",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf28",
+      "slug": "vf28",
+      "name": "Mørk nymfe/våtflue",
+      "family": "Mørk nymfe/våtflue",
+      "color": "Kobber/mørk",
+      "species": [
+        "orret"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "fly",
+        "natural",
+        "warm",
+        "contrast",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/fly_kobber_streamer.jpg",
+      "groupId": "vf28",
+      "groupName": "Mørk nymfe/våtflue",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    },
+    {
+      "id": "vf29",
+      "slug": "vf29",
+      "name": "Rosa bugger/triggerflue",
+      "family": "Rosa bugger/triggerflue",
+      "color": "Rosa/kobber",
+      "species": [
+        "orret"
+      ],
+      "waterTypes": [
+        "freshwater"
+      ],
+      "tags": [
+        "fly",
+        "pink",
+        "contrast",
+        "freshwater-specialist"
+      ],
+      "count": "1 enkeltagn",
+      "inventoryNote": "Enkelt utklipp fra ditt eget foto",
+      "image": "/lures/vestfjella/fly_rosa_bugger.jpg",
+      "groupId": "vf29",
+      "groupName": "Rosa bugger/triggerflue",
+      "variantIndex": 1,
+      "variantCount": 1,
+      "modelIdentification": "Merke/modell er ikke fastslått med mindre det er tydelig lesbart i bildet."
+    }
+  ],
+  "delivery": "freshwater"
+}

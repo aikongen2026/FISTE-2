@@ -1,0 +1,111 @@
+{
+  "name": "Fiste guiden – åpne referansefoto av sluker",
+  "updated": "2026-08-02",
+  "source": "Wikimedia Commons",
+  "photos": [
+    {
+      "id": "inline-spinner",
+      "type": "Inline-spinner",
+      "commonsFile": "Spinner (Köder).jpg",
+      "file": "inline-spinner.jpg",
+      "creator": "Frank-Christian Baum",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Spinner_(K%C3%B6der).jpg",
+      "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Spinner_(K%C3%B6der).jpg?width=640",
+      "localPath": "/lures/open/inline-spinner.jpg",
+      "usageNote": "Referansefoto for agntype og form; anbefalt størrelse, vekt og farge står i kortet og kan avvike fra bildet."
+    },
+    {
+      "id": "spinnerbait",
+      "type": "Spinnerbait",
+      "commonsFile": "Spinner bait.jpg",
+      "file": "spinnerbait.jpg",
+      "creator": "Musky",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Spinner_bait.jpg",
+      "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Spinner_bait.jpg?width=640",
+      "localPath": "/lures/open/spinnerbait.jpg",
+      "usageNote": "Referansefoto for agntype og form; anbefalt størrelse, vekt og farge står i kortet og kan avvike fra bildet."
+    },
+    {
+      "id": "spoon",
+      "type": "Skjesluk",
+      "commonsFile": "A Rang Dynamic 18G spoon lure 19 gr.jpg",
+      "file": "spoon.jpg",
+      "creator": "R. Henrik Nilsson",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:A_Rang_Dynamic_18G_spoon_lure_19_gr.jpg",
+      "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/A_Rang_Dynamic_18G_spoon_lure_19_gr.jpg?width=640",
+      "localPath": "/lures/open/spoon.jpg",
+      "usageNote": "Referansefoto for agntype og form; anbefalt størrelse, vekt og farge står i kortet og kan avvike fra bildet."
+    },
+    {
+      "id": "weedless-spoon",
+      "type": "Kystsluk / weedless skjesluk",
+      "commonsFile": "Weedless spoon lure BETE Nixdraget 24 gr.jpg",
+      "file": "weedless-spoon.jpg",
+      "creator": "R. Henrik Nilsson",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Weedless_spoon_lure_BETE_Nixdraget_24_gr.jpg",
+      "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Weedless_spoon_lure_BETE_Nixdraget_24_gr.jpg?width=640",
+      "localPath": "/lures/open/weedless-spoon.jpg",
+      "usageNote": "Referansefoto for agntype og form; anbefalt størrelse, vekt og farge står i kortet og kan avvike fra bildet."
+    },
+    {
+      "id": "soft-shad",
+      "type": "Soft shad / jig",
+      "commonsFile": "Bluefox Vibrotail jig fishing lure 29 gr.jpg",
+      "file": "soft-shad.jpg",
+      "creator": "R. Henrik Nilsson",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Bluefox_Vibrotail_jig_fishing_lure_29_gr.jpg",
+      "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bluefox_Vibrotail_jig_fishing_lure_29_gr.jpg?width=640",
+      "localPath": "/lures/open/soft-shad.jpg",
+      "usageNote": "Referansefoto for agntype og form; anbefalt størrelse, vekt og farge står i kortet og kan avvike fra bildet."
+    },
+    {
+      "id": "micro-jig",
+      "type": "Mikrojigg / twister",
+      "commonsFile": "Jig-Twister lure 2009 G1.jpg",
+      "file": "micro-jig.jpg",
+      "creator": "George Chernilevsky",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Jig-Twister_lure_2009_G1.jpg",
+      "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jig-Twister_lure_2009_G1.jpg?width=640",
+      "localPath": "/lures/open/micro-jig.jpg",
+      "usageNote": "Referansefoto for agntype og form; anbefalt størrelse, vekt og farge står i kortet og kan avvike fra bildet."
+    },
+    {
+      "id": "wobbler",
+      "type": "Wobbler / minnow",
+      "commonsFile": "Rapala fishing plug SSR 9 made in Finland.jpg",
+      "file": "wobbler.jpg",
+      "creator": "R. Henrik Nilsson",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Rapala_fishing_plug_SSR_9_made_in_Finland.jpg",
+      "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Rapala_fishing_plug_SSR_9_made_in_Finland.jpg?width=640",
+      "localPath": "/lures/open/wobbler.jpg",
+      "usageNote": "Referansefoto for agntype og form; anbefalt størrelse, vekt og farge står i kortet og kan avvike fra bildet."
+    },
+    {
+      "id": "lure-reference",
+      "type": "Jigg, skjesluk, plug og spinnerbait",
+      "commonsFile": "4 hooked fishing bait lures viz jig spoonlure plug spinnerbait.jpg",
+      "file": "lure-reference.jpg",
+      "creator": "R. Henrik Nilsson",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:4_hooked_fishing_bait_lures_viz_jig_spoonlure_plug_spinnerbait.jpg",
+      "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/4_hooked_fishing_bait_lures_viz_jig_spoonlure_plug_spinnerbait.jpg?width=640",
+      "localPath": "/lures/open/lure-reference.jpg",
+      "usageNote": "Referansefoto for agntype og form; anbefalt størrelse, vekt og farge står i kortet og kan avvike fra bildet."
+    }
+  ]
+}

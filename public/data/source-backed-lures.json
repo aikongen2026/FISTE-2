@@ -1,0 +1,326 @@
+{
+  "name": "Fiste guiden – kildekontrollerte eksempelmodeller",
+  "updated": "2026-08-07",
+  "method": "Modellspesifikasjoner og bruksområde er kontrollert mot produsentens produktside. Norsk tilgjengelighet er kontrollert mot aktive produktsider i norske butikkataloger. Match mot tidspunkt, vær, dybde og sted er en konservativ app-tommelfingerregel, ikke dokumentert fangsteffekt.",
+  "guidanceSources": {
+    "sjoorret": {
+      "label": "NJFF – Sjøørret",
+      "url": "https://www.njff.no/fiske/fiske-i-saltvann/sjoorret",
+      "kind": "Erfaringsbasert sportsfiskeguide"
+    },
+    "orret": {
+      "label": "NJFF – råd om ørretsluk",
+      "url": "https://www.njff.no/fiske/fiske-i-saltvann/sjoorret",
+      "kind": "Erfaringsbasert sportsfiskeguide"
+    },
+    "abbor": {
+      "label": "NJFF – Abbor",
+      "url": "https://www.njff.no/fiske/fiske-i-ferskvann/abbor",
+      "kind": "Erfaringsbasert sportsfiskeguide"
+    },
+    "gjedde": {
+      "label": "NJFF – Gjedde",
+      "url": "https://www.njff.no/fiske/fiske-i-ferskvann/gjedde",
+      "kind": "Erfaringsbasert sportsfiskeguide"
+    },
+    "makrell": {
+      "label": "Havforskningsinstituttet – Makrell",
+      "url": "https://www.hi.no/hi/temasider/arter/makrell",
+      "kind": "Artsbiologi – ikke sluktest"
+    },
+    "sei": {
+      "label": "Havforskningsinstituttet – Sei",
+      "url": "https://www.hi.no/hi/temasider/arter/sei-i-nordsjoen",
+      "kind": "Artsbiologi – ikke sluktest"
+    }
+  },
+  "lures": [
+    {
+      "id": "abu-toby",
+      "name": "Toby Spoon",
+      "maker": "Abu Garcia",
+      "family": "Skjesluk",
+      "species": [
+        "sjoorret",
+        "orret"
+      ],
+      "documentedRange": "7–60 g",
+      "documented": "Produsenten oppgir at Toby-serien finnes fra 7 til 60 g.",
+      "sourceLabel": "Abu Garcia – Toby Spoon",
+      "sourceUrl": "https://www.abugarcia-fishing.eu/products/toby-spoon-1409356",
+      "photoId": "spoon",
+      "tags": [
+        "spoon",
+        "casting",
+        "shallow",
+        "silver",
+        "warm"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Jaktia, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Jaktia – Abu Garcia Toby",
+      "norwayRetailUrl": "https://www.jaktia.no/abu-garcia-toby-lf-blue-glitter"
+    },
+    {
+      "id": "abu-droppen",
+      "name": "Droppen Spinner",
+      "maker": "Abu Garcia",
+      "family": "Inline-spinner",
+      "species": [
+        "orret",
+        "abbor",
+        "gjedde"
+      ],
+      "documentedRange": "4, 6, 8 og 12 g",
+      "documented": "Produsenten beskriver en lavt balansert spinner for små elver og vann, og nevner abbor, gjedde og ørret.",
+      "sourceLabel": "Abu Garcia – Droppen Spinners",
+      "sourceUrl": "https://www.abugarcia-fishing.eu/products/droppen-spinners-1379256",
+      "photoId": "inline-spinner",
+      "tags": [
+        "spinner",
+        "freshwater",
+        "small-water",
+        "shallow",
+        "warm",
+        "silver"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Jaktia, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Jaktia – Abu Garcia Droppen",
+      "norwayRetailUrl": "https://www.jaktia.no/abu-garcia-droppen-lf-sardine"
+    },
+    {
+      "id": "abu-atom",
+      "name": "Atom Spoon",
+      "maker": "Abu Garcia",
+      "family": "Bred skjesluk",
+      "species": [
+        "gjedde"
+      ],
+      "documentedRange": "20, 25, 35 og 55 g",
+      "documented": "Produsenten omtaler Atom som en gjeddesluk og anbefaler rolig, jevn innsveiving.",
+      "sourceLabel": "Abu Garcia – Atom Spoon",
+      "sourceUrl": "https://www.abugarcia-fishing.eu/products/atom-spoon-1367593",
+      "photoId": "spoon",
+      "tags": [
+        "spoon",
+        "pike",
+        "deep",
+        "slow",
+        "warm",
+        "silver"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Jaktia, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Jaktia – Abu Garcia Atom",
+      "norwayRetailUrl": "https://www.jaktia.no/abu-garcia-atom-g-green-flash"
+    },
+    {
+      "id": "rapala-countdown",
+      "name": "CountDown",
+      "maker": "Rapala",
+      "family": "Synkende minnowvobbler",
+      "species": [
+        "orret",
+        "abbor"
+      ],
+      "documentedRange": "Synker ca. 30 cm per sekund",
+      "documented": "Produsenten oppgir omtrent én fot synk per sekund for repeterbar dybdekontroll ved vegetasjon, frie vannlag og bunnstruktur.",
+      "sourceLabel": "Rapala – CountDown",
+      "sourceUrl": "https://www.rapala.com/us_en/countdown",
+      "photoId": "wobbler",
+      "tags": [
+        "minnow",
+        "sinking",
+        "depth-control",
+        "structure",
+        "natural"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Jaktia, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Jaktia – Rapala CountDown",
+      "norwayRetailUrl": "https://www.jaktia.no/rapala--countdown"
+    },
+    {
+      "id": "savage-cannibal-shad",
+      "name": "Cannibal Shad",
+      "maker": "Savage Gear",
+      "family": "Myk paddle-tail shad",
+      "species": [
+        "orret",
+        "abbor",
+        "gjedde"
+      ],
+      "documentedRange": "2,5–5 tommer",
+      "documented": "Produsenten oppgir livlig gange både under synk og innsveiving, og nevner blant annet abbor, ørret og gjedde.",
+      "sourceLabel": "Savage Gear – Cannibal Shad",
+      "sourceUrl": "https://www.savagegear.com/products/cannibal-shad",
+      "photoId": "soft-shad",
+      "tags": [
+        "shad",
+        "sinking",
+        "drop",
+        "retrieve",
+        "freshwater",
+        "natural",
+        "contrast"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Skitt Fiske, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Skitt Fiske – Cannibal Shad",
+      "norwayRetailUrl": "https://www.skittfiske.no/merker/savage-gear/savage-gear-savage-gear-cannibal-shad-white-flash-FS631964"
+    },
+    {
+      "id": "savage-sandeel",
+      "name": "Sandeel",
+      "maker": "Savage Gear",
+      "family": "Tobisformet shad/jigg",
+      "species": [
+        "makrell",
+        "sei"
+      ],
+      "documentedRange": "5–8 tommer",
+      "documented": "Produsenten oppgir flere størrelser og to festepunkter som gir ulike presentasjoner av det tobisformede agnet.",
+      "sourceLabel": "Savage Gear – Sandeel",
+      "sourceUrl": "https://www.savagegear.com/products/sandeel",
+      "photoId": "soft-shad",
+      "tags": [
+        "shad",
+        "sandeel",
+        "saltwater",
+        "sinking",
+        "depth-control",
+        "natural"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Skitt Fiske, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Skitt Fiske – Savage Gear Sandeel V2",
+      "norwayRetailUrl": "https://www.skittfiske.no/merker/savage-gear/savage-gear-savage-gear-sandeel-v2-lemon-back-FS631847"
+    },
+    {
+      "id": "solvkroken-bris",
+      "name": "BRIS",
+      "maker": "Sølvkroken",
+      "family": "Inlinesluk for sjøørret",
+      "species": [
+        "sjoorret"
+      ],
+      "documentedRange": "15 og 25 g",
+      "documented": "Produsenten oppgir 15 og 25 g og anbefaler tempoendringer, korte spinnstopp og gradvis søk fra grunt vann til lengre kast.",
+      "sourceLabel": "Sølvkroken – BRIS",
+      "sourceUrl": "https://solvkroken.no/bris/",
+      "photoId": "spoon",
+      "tags": [
+        "spoon",
+        "inline",
+        "saltwater",
+        "casting",
+        "contrast",
+        "pause"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Skitt Fiske, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Skitt Fiske – Sølvkroken Bris Inline",
+      "norwayRetailUrl": "https://www.skittfiske.no/merker/solvkroken/solvkroken-bris-inline-FS692567"
+    },
+    {
+      "id": "solvkroken-morild-inline",
+      "name": "Morild Inline",
+      "maker": "Sølvkroken",
+      "family": "Tobisimiterende inlinesluk",
+      "species": [
+        "sjoorret"
+      ],
+      "documentedRange": "15 og 22 g",
+      "documented": "Produsenten oppgir 15 og 22 g, tobisimitasjon og vibrerende, sideveis synk under spinnstopp.",
+      "sourceLabel": "Sølvkroken – Morild Inline",
+      "sourceUrl": "https://solvkroken.no/morild-inline/",
+      "photoId": "spoon",
+      "tags": [
+        "spoon",
+        "inline",
+        "saltwater",
+        "casting",
+        "sinking",
+        "natural",
+        "sandeel",
+        "pause"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Skitt Fiske, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Skitt Fiske – Sølvkroken Morild Inline",
+      "norwayRetailUrl": "https://www.skittfiske.no/merker/solvkroken/solvkroken-morild-inline-FS692608"
+    },
+    {
+      "id": "solvkroken-spesial-classic-uv",
+      "name": "Spesial Classic med UV",
+      "maker": "Sølvkroken",
+      "family": "Skjesluk for ferskvannsørret",
+      "species": [
+        "orret"
+      ],
+      "documentedRange": "4, 7, 10, 12 og 18 g",
+      "documented": "Produsenten oppgir fem vekter fra 4 til 18 g for ørret/ferskvann og anbefaler variert fart med pauser.",
+      "sourceLabel": "Sølvkroken – Spesial Classic med UV",
+      "sourceUrl": "https://solvkroken.no/spesial-classic-med-uv/",
+      "photoId": "spoon",
+      "tags": [
+        "spoon",
+        "freshwater",
+        "contrast",
+        "slow",
+        "pause"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Skitt Fiske, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Skitt Fiske – Sølvkroken Classic UV",
+      "norwayRetailUrl": "https://www.skittfiske.no/merker/solvkroken/solvkroken-spesial-classic-uv-FS654380"
+    },
+    {
+      "id": "solvkroken-uro",
+      "name": "URO",
+      "maker": "Sølvkroken",
+      "family": "Synkende, leppeløs wobbler",
+      "species": [
+        "orret",
+        "abbor",
+        "gjedde"
+      ],
+      "documentedRange": "4,6 cm / 6 g og 6 cm / 10 g",
+      "documented": "Produsenten oppgir bruk til ørret, abbor og gjedde, to størrelser samt synketid, stopp, jevn innsveiving og vertikal presentasjon.",
+      "sourceLabel": "Sølvkroken – URO",
+      "sourceUrl": "https://solvkroken.no/uro/",
+      "photoId": "wobbler",
+      "tags": [
+        "wobbler",
+        "freshwater",
+        "sinking",
+        "contrast",
+        "pause",
+        "shallow"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Magasinet, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Magasinet – Sølvkroken URO",
+      "norwayRetailUrl": "https://www.magasinet.no/solvkroken-uro-wobbler-6-cm-10-gram-pac"
+    },
+    {
+      "id": "solvkroken-stingsilda",
+      "name": "Stingsilda",
+      "maker": "Sølvkroken",
+      "family": "Slank sildesluk",
+      "species": [
+        "sjoorret",
+        "makrell",
+        "sei"
+      ],
+      "documentedRange": "18–75 g",
+      "documented": "Produsenten oppgir sjøfiske etter blant annet sjøørret, sei og makrell, og vekter fra 18 til 75 g.",
+      "sourceLabel": "Sølvkroken – Stingsilda",
+      "sourceUrl": "https://solvkroken.no/stingsilda/",
+      "photoId": "spoon",
+      "tags": [
+        "spoon",
+        "saltwater",
+        "casting",
+        "heavy",
+        "deep",
+        "silver",
+        "natural"
+      ],
+      "norwayAvailability": "Oppført i norsk produktkatalog hos Jaktia, kontrollert 7. august 2026.",
+      "norwayRetailLabel": "Jaktia – Sølvkroken Stingsilda",
+      "norwayRetailUrl": "https://www.jaktia.no/solvkroken-stingsilda-s-b"
+    }
+  ]
+}

@@ -3,6 +3,12 @@ services:
     name: vestfjella-fiske
     runtime: node
     plan: free
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: "npm install"
+    startCommand: "npm start"
     healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: MET_USER_AGENT
+        value: "vestfjella-fiske/1.0"
+# Valgfritt: legg NVE_API_KEY inn manuelt i Render Environment for live HydAPI-data.
