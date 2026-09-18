@@ -9,14 +9,14 @@ const root=path.join(__dirname,'..','public');
 test('stable app is built on Fiste freshwater core',()=>{
   for(const name of ['computeScore','environmentalScoreAdjustments','validateZoneRequest','freshwaterCandidateGrid','freshwaterAtPoint','recommendLure','createServer']) assert.equal(typeof app[name],'function',name);
   assert.equal(pkg.name,'vestfjella-fiske-stable');
-  assert.equal(pkg.version,'1.2.0');
+  assert.equal(pkg.version,'1.5.0');
 });
 
 test('Vestfjella UI starts in the correct area and contains only freshwater choices',()=>{
   const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
   const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
   assert.match(html,/Vestfjella Fiske/);
-  assert.match(html,/STABLE 1\.3/);
+  assert.match(html,/STABLE 1\.5/);
   assert.match(html,/value="orret" selected/);
   assert.match(html,/value="abbor"/);
   assert.match(html,/Ingen – vis ørret \+ abbor/);
@@ -96,7 +96,7 @@ test('health and water-directory endpoints identify the stable freshwater build'
   const health=await fetch(`http://127.0.0.1:${port}/api/health`).then(r=>r.json());
   assert.equal(health.ok,true);
   assert.equal(health.app,'Vestfjella Fiske');
-  assert.equal(health.version,'stable-1.2');
+  assert.equal(health.version,'stable-1.5');
   assert.equal(health.waterDirectory,92);
   const dir=await fetch(`http://127.0.0.1:${port}/api/water-directory`).then(r=>r.json());
   assert.equal(dir.count,92);
@@ -111,7 +111,7 @@ test('all mode is freshwater trout plus perch, not the old sea multi-mode',()=>{
 
 test('service worker caches the stable shell and real cropped lure images',()=>{
   const sw=fs.readFileSync(path.join(root,'sw.js'),'utf8');
-  assert.match(sw,/vestfjella-fiste-stable-1-3/);
+  assert.match(sw,/vestfjella-fiste-stable-1-5/);
   assert.match(sw,/\/lures\/vestfjella\/rosa-solv-prikket\.jpg/);
   assert.match(sw,/\/data\/vestfjella-waters\.json/);
   assert.doesNotMatch(sw,/\/lures\/user\//);
@@ -179,4 +179,22 @@ test('access filter is restored and filters the water directory and zones',()=>{
   assert.match(app,/function accessMatchesItem/);
   assert.match(app,/filterZonesByAccess/);
   assert.match(app,/Tilkomst:/);
+});
+
+
+test('LIVE GPS mode follows position continuously and refreshes the moving fishing area',()=>{
+  const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+  const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
+  const css=fs.readFileSync(path.join(root,'style.css'),'utf8');
+  assert.match(html,/id="live"/);
+  assert.match(html,/id="liveHud"/);
+  assert.match(js,/navigator\.geolocation\.watchPosition/);
+  assert.match(js,/navigator\.geolocation\.clearWatch/);
+  assert.match(js,/map\.panTo\(latlng/);
+  assert.match(js,/currentAnalysisBase/);
+  assert.match(js,/now-liveLastAnalysisAt>=20000/);
+  assert.match(js,/movedSinceAnalysis>=60/);
+  assert.match(js,/wakeLock\.request\('screen'\)/);
+  assert.match(css,/live-toggle\.live-active/);
+  assert.match(css,/live-hud/);
 });

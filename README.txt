@@ -1,4 +1,4 @@
-# Vestfjella Fiske – STABLE 1.3
+# Vestfjella Fiske – STABLE 1.5
 
 Dette er ferskvannsutgaven av den fungerende **Fiste REV26-motoren**, tilpasset Vestfjella/Aremark.
 
@@ -33,7 +33,7 @@ Den gamle løsningen brukte et separat koordinat-/verifiseringslag og kunne ende
 3. **Add file → Upload files**.
 4. Dra inn alt innholdet i denne mappen og commit til `main`.
 5. Render deployer automatisk. Hvis ikke: **Manual Deploy → Deploy latest commit**.
-6. Åpne `/api/health` på Render-adressen. Den skal vise `Vestfjella Fiske` og `stable-1.2`.
+6. Åpne `/api/health` på Render-adressen. Den skal vise `Vestfjella Fiske` og `stable-1.5`.
 
 Det er under 100 filer i pakken, så den kan lastes opp i én omgang via GitHub-nettsiden.
 
@@ -52,3 +52,5 @@ npm start
 ## Viktig
 
 De 92 navnene er et områderegister og brukes ikke som fiktive kartkoordinater. Lokale navn kan avvike fra navn i OpenStreetMap/offentlige kart. Soner tegnes bare der Fiste-motoren kan bekrefte en vannflate.
+
+NYTT I STABLE 1.5: LIVE GPS følger posisjonen kontinuerlig under dorging, viser spor/fart/nøyaktighet og oppdaterer fiskesonene underveis.

@@ -6,11 +6,11 @@ const os = require('os');
 let PNG = null;
 function pngParser(){ if(!PNG) ({PNG}=require('pngjs')); return PNG; }
 const PACKAGE = require('./package.json');
-const APP_REVISION = 'STABLE 1.3';
+const APP_REVISION = 'STABLE 1.5';
 
 const PORT = Number(process.env.PORT || 3000);
 const NVE_API_KEY = String(process.env.NVE_API_KEY || '').trim();
-const MET_USER_AGENT = process.env.MET_USER_AGENT || 'vestfjella-fiske/1.2 (Fiste freshwater core)';
+const MET_USER_AGENT = process.env.MET_USER_AGENT || 'vestfjella-fiske/1.5 (Fiste freshwater core)';
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const OPEN_LURE_PHOTOS = JSON.parse(fs.readFileSync(path.join(PUBLIC_DIR,'lures','open','catalog.json'),'utf8')).photos;
 const OPEN_LURE_PHOTO_BY_ID = Object.freeze(Object.fromEntries(OPEN_LURE_PHOTOS.map(photo=>[photo.id,photo])));
@@ -21,7 +21,7 @@ const SOURCE_BACKED_LURE_DATA = JSON.parse(fs.readFileSync(path.join(PUBLIC_DIR,
 const SOURCE_BACKED_LURES = Object.freeze(SOURCE_BACKED_LURE_DATA.lures);
 const OFFICIAL_NO_FISHING_ZONES = JSON.parse(fs.readFileSync(path.join(PUBLIC_DIR,'data','fishing-restrictions-2024.json'),'utf8')).zones;
 const MAX_ZONE_COUNT = 12;
-const MAX_ZONE_CANDIDATES = 180;
+const MAX_ZONE_CANDIDATES = 120;
 const FISH_TYPES = Object.freeze({
   sjoorret:'Sjøørret', makrell:'Makrell', sei:'Sei',
   orret:'Ørret (ferskvann)', abbor:'Abbor', gjedde:'Gjedde'
@@ -1371,7 +1371,7 @@ function send(res, code, data, type='application/json; charset=utf-8', extraHead
 }
 async function handleApi(req,res,url) {
   try {
-    if(url.pathname==='/api/health') return send(res,200,{ok:true,app:'Vestfjella Fiske',version:'stable-1.2',revision:APP_REVISION,engine:'Fiste REV26 freshwater core',waterDirectory:VESTFJELLA_WATERS.count,nveHydApiConfigured:Boolean(NVE_API_KEY)});
+    if(url.pathname==='/api/health') return send(res,200,{ok:true,app:'Vestfjella Fiske',version:'stable-1.5',revision:APP_REVISION,engine:'Fiste REV26 freshwater core',waterDirectory:VESTFJELLA_WATERS.count,nveHydApiConfigured:Boolean(NVE_API_KEY)});
     if(url.pathname==='/api/water-directory') return send(res,200,VESTFJELLA_WATERS);
     if(url.pathname==='/api/water-locate') { const name=String(url.searchParams.get('name')||'').trim(); if(!name||name.length>100) return send(res,400,{error:'Ugyldig vannnavn'}); const located=await locateVestfjellaWater(name); if(!located) return send(res,404,{error:'Fant ikke sikker kartplassering for dette vannet'}); return send(res,200,located); }
     if(url.pathname==='/api/weather') {

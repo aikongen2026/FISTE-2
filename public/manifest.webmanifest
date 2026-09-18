@@ -1,7 +1,7 @@
 {
   "name": "Vestfjella Fiske",
   "short_name": "Vestfjella Fiske",
-  "description": "Kildebasert ferskvannsapp for Vestfjella/Aremark med Fiste-motor, vannregister, bestand/kultivering, MET-vær, NVE og personlig slukboks.",
+  "description": "Kildebasert ferskvannsapp for Vestfjella/Aremark med Fiste-motor, LIVE GPS for dorging, vannregister, MET-vær, NVE og personlig slukboks.",
   "lang": "no",
   "start_url": "/",
   "scope": "/",

@@ -1,4 +1,4 @@
-Vestfjella Fiske – STABLE 1.3
+Vestfjella Fiske – STABLE 1.5
 
 Build command: npm install
 Start command: npm start
@@ -9,3 +9,5 @@ Valgfritt miljøfelt:
 NVE_API_KEY = NVE HydAPI-nøkkel for live vannstand/vannføring/vanntemperatur.
 
 MET_USER_AGENT kan settes, men appen har en standardverdi.
+
+NYTT I STABLE 1.5: LIVE GPS følger posisjonen kontinuerlig under dorging, viser spor/fart/nøyaktighet og oppdaterer fiskesonene underveis.
