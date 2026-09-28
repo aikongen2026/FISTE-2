@@ -1,12 +1,13 @@
 {
   "name": "vestfjella-fiske-stable",
-  "version": "1.5.0",
-  "appRevision": 5,
-  "description": "Vestfjella Fiske STABLE 1.5 – Mistra-inspirert sømløs kartmodus med valgt sone først, topp 10, vannregister, Live GPS og kompakt høyrepanel.",
+  "version": "1.7.0",
+  "appRevision": 17,
+  "description": "Fiste 2 / Vestfjella Fiske STABLE 1.7 – mobilfokus, automatisk NVE-dybdekart/3D, BiteGuide og egen Vestfjella-logikk med auto-deploy til FISTE-2.",
   "main": "server.js",
   "scripts": {
     "start": "node scripts/verify-layout.js && node server.js",
     "test": "node --test test/*.test.js",
+    "revision:next": "node scripts/bump-revision.js",
     "verify": "node scripts/verify-layout.js"
   },
   "engines": {

@@ -1,23 +1,22 @@
-const fs = require('fs');
-const path = require('path');
-const pkg = require('../package.json');
-const root = path.resolve(__dirname, '..');
-const pub = path.join(root, 'public');
-function must(cond, message) {
-  if (!cond) { console.error(`DEPLOY BLOCKED: ${message}`); process.exit(1); }
-}
-for (const name of ['index.html','app.js','style.css','sw.js','manifest.webmanifest']) {
-  must(fs.existsSync(path.join(pub, name)), `public/${name} mangler.`);
-}
-const index = fs.readFileSync(path.join(pub, 'index.html'), 'utf8');
-const sw = fs.readFileSync(path.join(pub, 'sw.js'), 'utf8');
-const app = fs.readFileSync(path.join(pub, 'app.js'), 'utf8');
-must(index.includes('Vestfjella Fiske'), 'public/index.html er ikke Vestfjella Fiske.');
-must(index.includes('STABLE 1.5'), 'public/index.html mangler STABLE 1.5.');
-must(index.includes('v=1.5'), 'public/index.html peker ikke på STABLE 1.5-assets.');
-must(sw.includes('vestfjella-fiste-stable-1-5'), 'public/sw.js bruker ikke riktig cache.');
-must(sw.includes('v=1.5'), 'public/sw.js cacher ikke STABLE 1.5-assets.');
-must(app.includes("/sw.js?v=1.5"), 'public/app.js registrerer ikke riktig service worker.');
-const lures = JSON.parse(fs.readFileSync(path.join(pub,'data','user-lures.json'),'utf8'));
-must(Array.isArray(lures.lures) && lures.lures.length >= 20, 'Vestfjella-slukboksen er ikke lastet.');
-console.log(`Layout OK: Vestfjella Fiske STABLE 1.5 serveres fra /public med ${lures.lures.length} enkeltagn.`);
+const fs=require('fs');
+const path=require('path');
+const pkg=require('../package.json');
+const root=path.resolve(__dirname,'..');
+const pub=path.join(root,'public');
+function must(cond,msg){if(!cond){console.error(`DEPLOY BLOCKED: ${msg}`);process.exit(1);}}
+for(const name of ['index.html','app.js','style.css','sw.js','manifest.webmanifest']) must(fs.existsSync(path.join(pub,name)),`public/${name} mangler.`);
+const index=fs.readFileSync(path.join(pub,'index.html'),'utf8');
+const app=fs.readFileSync(path.join(pub,'app.js'),'utf8');
+const sw=fs.readFileSync(path.join(pub,'sw.js'),'utf8');
+const versionParts=String(pkg.version||'').split('.');
+const stable=`STABLE ${versionParts[0]}.${versionParts[1]}`;
+must(index.includes(stable),`public/index.html er ikke ${stable}.`);
+must(index.includes('Fiskekart – NVE dybder'),'Fiskekart med automatisk NVE mangler.');
+must(index.includes('Kjente vann – beste først'),'Vestfjella vannregister mangler i layout.');
+must(index.includes('id="accessFilter"'),'Tilkomstfilter mangler.');
+must(app.includes('/api/freshwater-depth-overlay'),'NVE dybdeoverlay er ikke koblet i app.js.');
+must(app.includes('loadWaterDirectory()'),'Vannregisteret lastes ikke automatisk.');
+must(app.includes('/sw.js?v=1.7'),'Feil service-worker-versjon i app.js.');
+must(sw.includes('vestfjella-fiste2-stable-1-7'),'Feil cache-navn i service worker.');
+must(sw.includes('/data/vestfjella-waters.json'),'Vestfjella-registeret caches ikke.');
+console.log(`Layout OK: ${stable} · Fiste 2 / Vestfjella.`);

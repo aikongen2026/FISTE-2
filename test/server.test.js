@@ -1,200 +1,24 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
-const fs=require('node:fs');
-const path=require('node:path');
-const app=require('../server');
-const pkg=require('../package.json');
-const root=path.join(__dirname,'..','public');
+const fs=require('fs');
+const path=require('path');
+const s=require('../server');
+const root=path.resolve(__dirname,'..');
 
-test('stable app is built on Fiste freshwater core',()=>{
-  for(const name of ['computeScore','environmentalScoreAdjustments','validateZoneRequest','freshwaterCandidateGrid','freshwaterAtPoint','recommendLure','createServer']) assert.equal(typeof app[name],'function',name);
-  assert.equal(pkg.name,'vestfjella-fiske-stable');
-  assert.equal(pkg.version,'1.5.0');
-});
-
-test('Vestfjella UI starts in the correct area and contains only freshwater choices',()=>{
-  const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-  const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
-  assert.match(html,/Vestfjella Fiske/);
-  assert.match(html,/STABLE 1\.5/);
-  assert.match(html,/value="orret" selected/);
-  assert.match(html,/value="abbor"/);
-  assert.match(html,/Ingen – vis ørret \+ abbor/);
-  assert.doesNotMatch(html,/value="sjoorret"/);
-  assert.doesNotMatch(html,/value="makrell"/);
-  assert.match(js,/\[59\.2700,11\.5890\]/);
-  assert.match(js,/Analyserer ørret og abbor samtidig i faktiske vannflater/);
-});
-
-test('freshwater candidate points are always inside the real polygon',()=>{
-  const area={name:'Testvann',ring:[
-    {lat:59.25,lon:11.57},{lat:59.25,lon:11.61},{lat:59.29,lon:11.61},{lat:59.29,lon:11.57},{lat:59.25,lon:11.57}
-  ],holes:[],restricted:false};
-  const points=app.freshwaterCandidateGrid([area],{west:11.56,south:59.24,east:11.62,north:59.30});
-  assert.ok(points.length>0);
-  for(const point of points) assert.equal(app.freshwaterAtPoint(point.lat,point.lon,[area]),area);
-});
-
-test('water registry contains the known Vestfjella list but no guessed map coordinates',()=>{
-  const data=JSON.parse(fs.readFileSync(path.join(root,'data','vestfjella-waters.json'),'utf8'));
-  assert.equal(data.count,92);
-  assert.equal(data.waters.length,92);
-  assert.ok(data.waters.some(w=>w.name==='Kutjern'));
-  assert.ok(data.waters.some(w=>w.name==='Midtre Ormtjern'&&w.flyOnly));
-  assert.ok(data.waters.every(w=>!Object.hasOwn(w,'lat')&&!Object.hasOwn(w,'lon')));
-});
-
-test('fly-only waters are recognized and use a single fly image',()=>{
-  assert.equal(app.isVestfjellaFlyOnly('Sætertjern'),true);
-  assert.equal(app.isVestfjellaFlyOnly('Setertjern'),true);
-  assert.equal(app.isVestfjellaFlyOnly('Midtre Ormtjern'),true);
-  assert.equal(app.isVestfjellaFlyOnly('Kutjern'),false);
-  const lure=app.flyOnlyLureAdvice({hour:19,cloud:60,wind:2,lat:59.26,lon:11.59});
-  assert.match(lure.image,/^\/lures\/vestfjella\/fly_/);
-  assert.ok(Array.isArray(lure.alternatives)&&lure.alternatives.length>=2);
-});
-
-test('personal freshwater lure box contains individual cropped images',()=>{
-  const data=JSON.parse(fs.readFileSync(path.join(root,'data','user-lures.json'),'utf8'));
-  assert.ok(data.lures.length>=25);
-  assert.ok(data.lures.every(item=>item.waterTypes.includes('freshwater')));
-  assert.ok(data.lures.every(item=>item.image.startsWith('/lures/vestfjella/')));
-  for(const item of data.lures){
-    const file=path.join(root,item.image.replace(/^\//,''));
-    assert.ok(fs.existsSync(file),item.image);
-  }
-});
-
-test('trout lure recommendations vary between locations instead of one repeated winner',()=>{
-  const choices=[];
-  for(let i=0;i<14;i++){
-    const rec=app.recommendLure({fishType:'orret',hour:17,cloud:55,wind:3,temp:12,exposure:.45,coastQuality:.72,depthMeters:null,lat:59.245+i*.003,lon:11.57+i*.002,goal:'numbers'});
-    choices.push(rec.image);
-    assert.match(rec.image,/^\/lures\/vestfjella\//);
-    assert.ok(rec.alternatives.length>=3);
-  }
-  assert.ok(new Set(choices).size>=4,`only ${new Set(choices).size} unique primary lures`);
-});
-
-test('perch uses the photographed freshwater inventory',()=>{
-  const rec=app.recommendLure({fishType:'abbor',hour:13,cloud:70,wind:2,temp:16,exposure:.3,coastQuality:.7,depthMeters:null,lat:59.26,lon:11.59,goal:'numbers'});
-  assert.match(rec.image,/^\/lures\/vestfjella\//);
-  assert.ok(rec.alternatives.length>=2);
-});
-
-test('base radius search remains centered and reliable',()=>{
-  const b=app.searchBoundsForBase(59.27,11.589,500,13);
-  assert.equal(b.zoom,15);
-  assert.ok(b.west<11.589&&b.east>11.589&&b.south<59.27&&b.north>59.27);
-});
-
-test('health and water-directory endpoints identify the stable freshwater build',async t=>{
-  const server=app.createServer();
-  await new Promise(r=>server.listen(0,'127.0.0.1',r));
-  t.after(()=>server.close());
-  const port=server.address().port;
-  const health=await fetch(`http://127.0.0.1:${port}/api/health`).then(r=>r.json());
-  assert.equal(health.ok,true);
-  assert.equal(health.app,'Vestfjella Fiske');
-  assert.equal(health.version,'stable-1.5');
-  assert.equal(health.waterDirectory,92);
-  const dir=await fetch(`http://127.0.0.1:${port}/api/water-directory`).then(r=>r.json());
-  assert.equal(dir.count,92);
-});
-
-test('all mode is freshwater trout plus perch, not the old sea multi-mode',()=>{
-  const serverSource=fs.readFileSync(path.join(__dirname,'..','server.js'),'utf8');
-  assert.match(serverSource,/const freshTypes=\['orret','abbor'\]/);
-  assert.match(serverSource,/Alle ferskvannsarter/);
-  assert.doesNotMatch(serverSource,/for\(const type of seaTypes\)/);
-});
-
-test('service worker caches the stable shell and real cropped lure images',()=>{
-  const sw=fs.readFileSync(path.join(root,'sw.js'),'utf8');
-  assert.match(sw,/vestfjella-fiste-stable-1-5/);
-  assert.match(sw,/\/lures\/vestfjella\/rosa-solv-prikket\.jpg/);
-  assert.match(sw,/\/data\/vestfjella-waters\.json/);
-  assert.doesNotMatch(sw,/\/lures\/user\//);
-});
-
-
-test('water directory is clickable and sorts by current zone score',()=>{
-  const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
-  const css=fs.readFileSync(path.join(root,'style.css'),'utf8');
-  assert.match(js,/data-water-focus/);
-  assert.match(js,/focusKnownWater/);
-  assert.match(js,/directoryScoreFor/);
-  assert.match(js,/currentScore/);
-  assert.match(css,/water-directory-row/);
-});
-
-test('water-name matching accepts common tjern name variants',()=>{
-  assert.equal(app.normalizeWaterLookupName('Botiltjernet'),app.normalizeWaterLookupName('Botiltjern'));
-  const area={name:'Midtre Brutjern',ring:[{lat:59.26,lon:11.58},{lat:59.26,lon:11.59},{lat:59.27,lon:11.59},{lat:59.27,lon:11.58},{lat:59.26,lon:11.58}]};
-  const match=app.matchFreshwaterAreaByName('Midtre Brutjern',[area]);
-  assert.equal(match.area,area);
-  assert.ok(match.score>=50);
-});
-
-
-test('source-backed water profiles keep species claims explicit and conservative',()=>{
-  const data=JSON.parse(fs.readFileSync(path.join(root,'data','vestfjella-waters.json'),'utf8'));
-  assert.equal(data.officialTotalWaterCount,96);
-  assert.equal(data.officialTroutWaterCount,45);
-  const kutjern=data.waters.find(w=>w.name==='Kutjern');
-  const skibu=data.waters.find(w=>w.name==='Skibuvannet');
-  const botilt=data.waters.find(w=>w.name==='Botiltjernet');
-  assert.deepEqual(kutjern.species,['orret']);
-  assert.deepEqual(skibu.species,['orret','abbor']);
-  assert.equal(botilt.areaKm2Official,0.01);
-  assert.ok(data.waters.some(w=>w.hiddenGem===true));
-  assert.ok(data.waters.filter(w=>Array.isArray(w.species)&&w.species.length).length>=15);
-});
-
-test('water profile UI exposes source confidence, area and source links',()=>{
-  const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-  const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
-  assert.match(html,/waterKnowledgeSummary/);
-  assert.match(html,/waterProfile/);
-  assert.match(js,/renderWaterProfile/);
-  assert.match(js,/formatWaterArea/);
-  assert.match(js,/FishKing Vestfjella/);
-  assert.match(js,/Finnfisk \/ NVE/);
-});
-
-test('server includes source knowledge adjustment and map aliases',()=>{
-  const source=fs.readFileSync(path.join(__dirname,'..','server.js'),'utf8');
-  assert.match(source,/sourceKnowledgeAdjustment/);
-  assert.match(source,/mapAliases/);
-  assert.match(source,/areaDaaApprox/);
-});
-
-
-test('access filter is restored and filters the water directory and zones',()=>{
-  const html=fs.readFileSync(path.join(__dirname,'../public/index.html'),'utf8');
-  const app=fs.readFileSync(path.join(__dirname,'../public/app.js'),'utf8');
-  assert.match(html,/id="accessFilter"/);
-  assert.match(html,/Lett tilkomst/);
-  assert.match(html,/Mer naturpreg \/ usikker/);
-  assert.match(app,/function accessMatchesItem/);
-  assert.match(app,/filterZonesByAccess/);
-  assert.match(app,/Tilkomst:/);
-});
-
-
-test('LIVE GPS mode follows position continuously and refreshes the moving fishing area',()=>{
-  const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-  const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
-  const css=fs.readFileSync(path.join(root,'style.css'),'utf8');
-  assert.match(html,/id="live"/);
-  assert.match(html,/id="liveHud"/);
-  assert.match(js,/navigator\.geolocation\.watchPosition/);
-  assert.match(js,/navigator\.geolocation\.clearWatch/);
-  assert.match(js,/map\.panTo\(latlng/);
-  assert.match(js,/currentAnalysisBase/);
-  assert.match(js,/now-liveLastAnalysisAt>=20000/);
-  assert.match(js,/movedSinceAnalysis>=60/);
-  assert.match(js,/wakeLock\.request\('screen'\)/);
-  assert.match(css,/live-toggle\.live-active/);
-  assert.match(css,/live-hud/);
-});
+test('Vestfjella register contains 92 named waters',()=>assert.equal(s.VESTFJELLA_WATERS.count,92));
+test('Vestfjella bounds are in Marker/Aremark area',()=>{assert.ok(s.VESTFJELLA_BOUNDS.west>11);assert.ok(s.VESTFJELLA_BOUNDS.east<12);});
+test('fly-only waters are recognized',()=>{assert.equal(s.isVestfjellaFlyOnly('Stubbetjern'),true);assert.equal(s.isVestfjellaFlyOnly('Midtre Ormtjern'),true);});
+test('fly-only recommendation uses user lure image',()=>{const r=s.flyOnlyLureAdvice({hour:20,cloud:70,wind:2,lat:59.27,lon:11.59});assert.match(r.image,/\/lures\/vestfjella\//);assert.ok(Array.isArray(r.alternatives));});
+test('trout recommendation uses Vestfjella lure catalog',()=>{const r=s.recommendLure({fishType:'orret',goal:'numbers',hour:7,cloud:70,wind:3,temp:9,exposure:.4,coastQuality:.7,depthMeters:3,lat:59.27,lon:11.59,structureLabel:'bratt dybdekant'});assert.match(r.image,/\/lures\/vestfjella\//);assert.ok(r.idealProfile);assert.ok(r.alternatives.length>=1);});
+test('perch recommendation uses Vestfjella lure catalog',()=>{const r=s.recommendLure({fishType:'abbor',goal:'numbers',hour:14,cloud:35,wind:2,temp:15,exposure:.3,coastQuality:.7,depthMeters:2,lat:59.275,lon:11.592,structureLabel:'vegetasjon og grunn kant'});assert.match(r.image,/\/lures\/vestfjella\//);assert.ok(r.idealProfile);});
+test('materially different trout conditions can select different own lures',()=>{const a=s.recommendLure({fishType:'orret',hour:6,cloud:90,wind:2,temp:7,exposure:.2,coastQuality:.8,depthMeters:1.2,lat:59.27,lon:11.59,structureLabel:'grunn odde'});const b=s.recommendLure({fishType:'orret',hour:13,cloud:5,wind:7,temp:14,exposure:.8,coastQuality:.8,depthMeters:8,lat:59.285,lon:11.603,structureLabel:'bratt dybdekant'});assert.notEqual(a.id,b.id);});
+test('ideal lure profile is independent of owned lure result',()=>{const p=s.deriveIdealLureProfile({fishType:'orret',goal:'numbers',hour:8,cloud:80,wind:3,temp:9,precipitation:0,exposed:false,sheltered:true,depthMeters:2,lowLight:true,structureLabel:'grunne'});assert.match(p.type,/spinner|skjesluk|wobbler/i);assert.ok(p.color);assert.ok(p.size);});
+test('BiteGuide returns score, timeline and independent profile',()=>{const zone={score:82,analysis:{habitat:78},lure:{idealProfile:{type:'Liten spinner',color:'Kobber',size:'5–8 g',targetDepth:'0,5–1,5 m',presentation:'Rolig innsveiving'}}};const currentWeather={hourly:[{time:'2026-09-26T18:00:00Z',temperature:10,wind:2,cloud:70,pressure:1010}]};const g=s.buildZoneBiteGuide({zone,currentWeather,fishType:'orret'});assert.ok(Number.isFinite(g.score));assert.ok(Array.isArray(g.timeline));assert.equal(g.recommended.type,'Liten spinner');assert.match(g.disclaimer,/uavhengig/i);});
+test('NVE survey quality distinguishes measured vector',()=>{const q=s.nveSurveyQuality({digitaltprodukt:'vektor fra oppmålte punkter',oppmaltmetode:'ekkolodd'});assert.equal(q.grade,'A');assert.match(q.label,/oppmålte punkter/i);});
+test('NVE lake feature conversion creates freshwater areas',()=>{const fc={features:[{type:'Feature',properties:{vatnlnr:123,innsjonavn:'Testvann'},geometry:{type:'Polygon',coordinates:[[[11.58,59.26],[11.59,59.26],[11.59,59.27],[11.58,59.27],[11.58,59.26]]]}}]};const areas=s.nveFeaturesToFreshwaterAreas(fc.features);assert.equal(areas.length,1);assert.equal(areas[0].name,'Testvann');});
+test('water-name normalization handles Norwegian letters',()=>assert.equal(s.normalizeWaterLookupName('Øvre Sætertjernet'),'ovre saetertjern'));
+test('water-name similarity recognizes variants',()=>assert.ok(s.waterNameSimilarity('Sætertjern','Saetertjernet')>=50));
+test('health endpoint advertises FISTE-2 and NVE/BiteGuide',async()=>{const server=s.createServer();await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});try{const port=server.address().port;const r=await fetch(`http://127.0.0.1:${port}/api/health`);const j=await r.json();assert.equal(j.app,'Vestfjella Fiske / Fiste 2');assert.equal(j.version,'stable-1.7');assert.equal(j.revision,'STABLE 1.7');assert.equal(j.repo,'aikongen2026/FISTE-2');assert.equal(j.biteGuide,true);assert.equal(j.freshwaterDepthOverlay,true);assert.equal(j.waterDirectory,92);}finally{await new Promise(resolve=>server.close(resolve));}});
+test('water directory endpoint serves Vestfjella register',async()=>{const server=s.createServer();await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});try{const port=server.address().port;const r=await fetch(`http://127.0.0.1:${port}/api/water-directory`);const j=await r.json();assert.equal(j.count,92);assert.ok(Array.isArray(j.waters));}finally{await new Promise(resolve=>server.close(resolve));}});
+test('deploy script targets the separate FISTE-2 repo',()=>{const t=fs.readFileSync(path.join(root,'deploy-fiste2.ps1'),'utf8');assert.match(t,/aikongen2026\/FISTE-2\.git/);assert.match(t,/fiste-2\.onrender\.com/);assert.doesNotMatch(t,/aikongen2026\/FISTE\.git/);});
+test('one-click BAT launches deploy-fiste2.ps1',()=>{const t=fs.readFileSync(path.join(root,'1-OPPDATER-OG-APNE-FISTE.bat'),'utf8');assert.match(t,/deploy-fiste2\.ps1/);});

@@ -1,0 +1,29 @@
+VESTFJELLA FISKE / FISTE 2 – TESTRESULTAT STABLE 1.7
+=====================================================
+
+Kontrollert 26.09.2026.
+
+- node --check server.js: OK
+- node --check public/app.js: OK
+- npm test: 34/34 tester OK
+- npm run verify: OK
+- /api/health lokal røyk-test: OK
+- /api/water-directory lokal røyk-test: OK (92 vann)
+- AutoDeploy-test: FISTE-2 repo og fiste-2.onrender.com
+
+Dekket av testene:
+- Vestfjella-identitet og STABLE 1.7
+- mobilpanel og forenklet kartmeny
+- Ørret/abbor/alle ferskvannsarter
+- tilkomstfilter
+- 92-vannsregister og kjente vann
+- flue-only-vann
+- egne Vestfjella-sluk/fluer
+- BiteGuide uavhengig av slukboksen
+- NVE depth overlay og dybdeetiketter
+- 3D ferskvannsbatymetri
+- NVE oppmålingskvalitet
+- Live GPS
+- separat FISTE-2 AutoDeploy
+
+Eksterne NVE/MET-tjenester kan variere i tilgjengelighet. Appen har fallback og viser ikke modellerte dybder som om de var oppmålt.

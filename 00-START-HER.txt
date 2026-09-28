@@ -1,1 +1,11 @@
-VESTFJELLA FISKE STABLE 1.5 – last opp innholdet i denne mappen til roten av GitHub-repoet. Render bruker samme Node-oppsett som før.
+FISTE 2 / VESTFJELLA – STABLE 1.7
+=================================
+
+1. Pakk ut HELE ZIP-filen.
+2. Dobbeltklikk: 1-OPPDATER-OG-APNE-FISTE.bat
+3. Scriptet oppdaterer GitHub-repoet aikongen2026/FISTE-2 automatisk.
+4. Render bygger Fiste 2 automatisk.
+5. Når STABLE 1.7 er live åpnes https://fiste-2.onrender.com.
+
+Du skal ikke laste opp filene manuelt i GitHub.
+Første gang på en PC kan Git Credential Manager be om én GitHub-godkjenning.

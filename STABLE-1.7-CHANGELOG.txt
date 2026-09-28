@@ -1,0 +1,14 @@
+VESTFJELLA FISKE / FISTE 2 – STABLE 1.7
+=======================================
+
+- Mobilførst layout med sammenleggbare filtre og paneler.
+- Kartmeny ryddet til Fiskekart – NVE dybder, Detaljert topo, 3D bunn/terreng og Satellitt.
+- Automatisk NVE Innsjødatabase-kobling med vatnLnr.
+- Dybdekurver og dybdepunkter brukes bare når samme innsjø har registrert dybdekart.
+- Fylte dybdesoner, dybdekoter, etiketter og kvalitetsmetadata.
+- NVE-data brukes i 3D-bunn der oppmåling finnes.
+- BiteGuide beregner uavhengig idealprofil før egne sluk/fluer matches.
+- 92 Vestfjella-vann, tilkomstfilter og kjente fluevann beholdt.
+- 29 fotograferte brukeragn/sluk/fluer beholdt.
+- Live GPS, fangstlogg og lokale vannprofiler beholdt.
+- AutoDeploy peker eksplisitt til aikongen2026/FISTE-2 og fiste-2.onrender.com.

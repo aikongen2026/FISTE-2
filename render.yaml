@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: vestfjella-fiske
+    name: fiste-2-guiden
     runtime: node
     plan: free
     buildCommand: "npm install"
@@ -10,5 +10,5 @@ services:
       - key: NODE_VERSION
         value: 20
       - key: MET_USER_AGENT
-        value: "vestfjella-fiske/1.0"
+        value: "vestfjella-fiske/1.7 (+https://github.com/aikongen2026/FISTE-2)"
 # Valgfritt: legg NVE_API_KEY inn manuelt i Render Environment for live HydAPI-data.
